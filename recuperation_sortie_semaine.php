@@ -11,7 +11,7 @@
 <body>
 <?php
 /**
- * oioipp
+ * oioipp commentaire de test
  * transformer le fichier XML en objet $xml
  * 
  */
