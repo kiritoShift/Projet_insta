@@ -28,6 +28,10 @@ foreach($xml->channel->item as $item){
 	$tab_liste_prochaine_sortie_dvd["titre"]=(string)$item->title;
 	$tab_liste_prochaine_sortie_dvd["date"]=(string)$item->pubDate;
 }
+
+foreach ($tab_liste_prochaine_sortie_dvd as $cle => $valeur) {
+	echo $valeur;
+}
 ?>
 
 </body>
