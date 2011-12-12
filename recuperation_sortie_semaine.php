@@ -11,7 +11,7 @@
 <body>
 <?php
 /**
- * oioi
+ * oioipp
  * transformer le fichier XML en objet $xml
  * 
  */
