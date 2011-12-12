@@ -15,7 +15,7 @@
  * transformer le fichier XML en objet $xml
  * 
  */
-$xml=simplexml_load_file('http://rss.allocine.fr/ac/cine/cettesemaine.rss');
+$xml=simplexml_load_file('http://www.premiere.fr/var/premiere/storage/rss/sorties_semaine_dvd.xml');
 
 /**
  * 
@@ -23,11 +23,11 @@ $xml=simplexml_load_file('http://rss.allocine.fr/ac/cine/cettesemaine.rss');
  * 
  */
 $i=0;
-$tab_liste_sortie_semaine=array();
+$tab_liste_prochaine_sortie_dvd=array("titre" =>"", "date"=>"");
 foreach($xml->channel->item as $item){
-	$tab_liste_sortie_semaine[]=(string)$item->title;
+	$tab_liste_prochaine_sortie_dvd["titre"]=(string)$item->title;
+	$tab_liste_prochaine_sortie_dvd["date"]=(string)$item->pubDate;
 }
-print_r($tab_liste_sortie_semaine);
 ?>
 
 </body>
