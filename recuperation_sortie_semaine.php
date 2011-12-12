@@ -27,6 +27,7 @@ $tab_liste_sortie_semaine=array();
 foreach($xml->channel->item as $item){
 	$tab_liste_sortie_semaine[]=(string)$item->title;
 }
+print_r($tab_liste_sortie_semaine);
 ?>
 
 </body>
