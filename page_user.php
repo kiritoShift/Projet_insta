@@ -2,6 +2,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
 <?php $result = mysql_query("select * from films order by titre_films ASC;");
 echo $result;?>
+
+<!-- test -->
  
 <?php
 
