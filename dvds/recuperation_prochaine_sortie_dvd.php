@@ -1,3 +1,4 @@
+<?php include '../connection_bdd.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,7 +12,7 @@
 <body>
 <?php
 /**
- * oioipp commentaire de test
+ * 
  * transformer le fichier XML en objet $xml
  * 
  */
@@ -27,11 +28,9 @@ $tab_liste_prochaine_sortie_dvd=array("titre" =>"", "date"=>"");
 foreach($xml->channel->item as $item){
 	$tab_liste_prochaine_sortie_dvd["titre"]=(string)$item->title;
 	$tab_liste_prochaine_sortie_dvd["date"]=(string)$item->pubDate;
+	// var_dump($tab_liste_prochaine_sortie_dvd);
 }
 
-foreach ($tab_liste_prochaine_sortie_dvd as $cle => $valeur) {
-	echo $valeur;
-}
 ?>
 
 </body>
