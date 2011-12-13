@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données: `bdd_site_web`
 --
-
+CREATE DATABASE `Projet_insta` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `Projet_insta`;
 -- --------------------------------------------------------
 
 --
