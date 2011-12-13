@@ -1,6 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
 
-<?include("connexion.php");
+<?php
+include("connexion.php");
+
 $choix=0;
 if(isset($_GET["choix"]))
 {
@@ -8,20 +10,19 @@ if(isset($_GET["choix"]))
 }
 if($choix==1)
 {
- $result = mysql_query("select * from acteurs order by nom_acteur ASC;");
+ $result = mysql_query("select * from films order by titre_films ASC;");
 }
 else
 {
  if($choix==2)
  {
-  $result = mysql_query("select * from acteurs order by prenom_acteur ASC;");
+  $result = mysql_query("select * from films order by sinopsys_films ASC;");
  }
  else
  { 
-  $result = mysql_query("select * from acteurs;"); 
+  $result = mysql_query("select * from films;"); 
  }
 }?>
-
 
 <html>
 <head>
@@ -40,7 +41,7 @@ else
 	<td>
 
 		<table align="center" bgcolor=#ffffCC border=1>
-			<tr><td><b><font size="-1">Liste des acteurs favoris</font></B></td></tr>
+			<tr><td><b><font size="-1">Liste des films favoris</font></B></td></tr>
 		</table>
 <br />
 		<table align="center">
@@ -49,14 +50,22 @@ else
 				<tr><td>
    					<table border=1>
    						<TR bgcolor=#ffffCC>
-     						<TD><font size="-1"><a href="acteurs_favoris.php?choix=1"><b>Nom de l'acteur</b></a></font></TD>
-     						<td><font size="-1"><a href="acteurs_favoris.php?choix=2"><b>Prenom de l'acteur</b></a></font></td>							
+     						<TD><font size="-1"><b>Jacquette</b></font></TD>
+     						<TD><font size="-1"><a href="page_user.php?choix=1"><b>Nom du film</b></a></font></TD>
+     						<TD><font size="-1"><b>Date de sortie</b></font></TD>
+     						<TD><font size="-1"><b>Nom du realisateur</b></font></TD>
+     						<TD><font size="-1"><b>Nom des acteurs</b></font></TD>
+     						<td><font size="-1"><a href="page_user.php?choix=2"><b>Sinopsys</b></a></font></td>							
      					</TR>
      					<? while ($val = mysql_fetch_array($result)) { ?>
      					<TR bgcolor=white>
      						<form method="post">
-     						<TD><font size="-2"><? echo $val["nom_acteur"]?></font></TD>
-     						<td><font size="-2"><? echo $val["prenom_acteur"]?></font></td>
+     						<TD><font size="-2"></font></TD>
+     						<TD><font size="-2"><? echo $val["titre_films"]?></font></TD>
+     						<TD><font size="-2"></font></TD>
+     						<TD><font size="-2"></font></TD>
+     						<TD><font size="-2"></font></TD>
+     						<td><font size="-2"><? echo $val["sinopsys_films"]?></font></td>
       						<TD><font size="-2"></font><input name="favoris" type="image" src="images/iconePoubelle.gif"> favoris</TD>
      						<TD><font size="-2"></font><input name="email" type="button" value="email"></TD></form>
      					</TR><? } ?>
