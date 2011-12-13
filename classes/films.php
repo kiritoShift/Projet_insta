@@ -18,21 +18,21 @@ class films {
 		$query->execute(array("titre_films" => $this->titre_films, "sinopsys_films" => $this->sinopsys_films));
 	}
 	
-	/*public function films_delete($id_films){
+	public function films_delete(){
 		global $conn;
 		$query = $conn->prepare("DELETE QUICK FROM films WHERE :id_films = id_films;");
 		$conn->execute(array("id_films" => $id_films));
 	}
 	
-	public function films_update($id_films, $nom_films ="", $sinopsys_films ="") {
+	public function films_update() {
 		global $conn;
 		if (!empty($nom_films)) {
-			$query = $conn->prepare("UPDATE films SET nom_films = :nom_films WHERE id_films = :id_films ;");
-			$conn->execute(array("nom_films" => $this->id_films, "id_films" => $this->titre_films));
+			$query = $conn->prepare("UPDATE films SET titre_films = :titre_films WHERE id_films = :id_films ;");
+			$conn->execute(array("titre_films" => $this->titre_films, "id_films" => $this->id_films));
 		}
 		if (!empty($nom_films)) {
 			$query = $conn->prepare("UPDATE films SET sinopsys_films = :sinopsys_films WHERE id_films = :id_films ;");
-			$conn->execute(array("sinopsys" => $this->id_films, "id_films" => $this->sinopsys_films));
+			$conn->execute(array("id" => $this->id_films, "sinopsys_films" => $this->sinopsys_films));
 		}
-	}*/
+	}
 }
