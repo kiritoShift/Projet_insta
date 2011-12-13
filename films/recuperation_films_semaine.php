@@ -26,16 +26,22 @@ $xml=simplexml_load_file('http://rss.allocine.fr/ac/cine/cettesemaine.rss');
  * Mettre la liste des titres des films dans un tableau
  * 
  */
+global $conn;
 $i=0;
-$tab_liste_prochaine_sortie_dvd=array("titre" =>"");
+$titre="";
+$tab_liste_prochaine_sortie_dvd=array($titre);
 foreach($xml->channel->item as $item){
-	$tab_liste_prochaine_sortie_dvd["titre"]=(string)$item->title;
-	var_dump($tab_liste_prochaine_sortie_dvd);
+	$tab_liste_prochaine_sortie_dvd[$i]=(string)$item->title;
+	$i++;
 }
+var_dump($tab_liste_prochaine_sortie_dvd);
+$i=0;
 foreach ($tab_liste_prochaine_sortie_dvd as $tab) {
-	$nom_films= $tab_liste_prochaine_sortie_dvd[$i];
-	$film = new films($nom_films);
+	$titre_films= $tab_liste_prochaine_sortie_dvd[$i];
+	echo $titre_films."<br/>";
+	$film = new films("", $titre_films, "");
 	$film->films_new();
+	$i++;
 }
 
 ?>

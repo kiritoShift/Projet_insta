@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
 
 <?php
-include("connexion.php");
+include("connexion_bdd.php");
 
 $choix=0;
 if(isset($_GET["choix"]))
