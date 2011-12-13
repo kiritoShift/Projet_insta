@@ -1,3 +1,4 @@
+<?php include '../connection_bdd.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 
