@@ -9,7 +9,7 @@ $sql_user = "root";
 $sql_passwd = "root";
 
 //Base de donnees
-$DB_NAME = "";
+$DB_NAME = "Projet_insta";
 
 $db_link = mysql_connect($sql_serveur,$sql_user,$sql_passwd);
 mysql_select_db ($DB_NAME) or die ("base invalide");
