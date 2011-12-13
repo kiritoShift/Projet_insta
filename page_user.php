@@ -1,7 +1,9 @@
+<?php include 'connection_bdd.php'; ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
-
+<?php $result = mysql_query("select * from films order by titre_films ASC;");
+echo $result;?>
+ 
 <?php
-include("connexion_bdd.php");
 
 $choix=0;
 if(isset($_GET["choix"]))
