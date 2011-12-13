@@ -1,0 +1,48 @@
+#menu {
+position: absolute; /* placement du menu */
+top: 0;
+left: 100;
+z-index:100;
+width: 100%; /* correction pour Opera */
+}
+#menu dl {
+float: left;
+width: 12em;
+}
+#menu dt {
+cursor: pointer;
+text-align: center;
+font-weight: bold;
+background: #FFFF80;
+border: 1px solid Black;
+margin: 1px;
+}
+#menu dd {
+display: none;
+border: 1px solid White;
+}
+#menu li {
+text-align: center;
+background: #FFFF80;
+}
+#menu li a, #menu dt a {
+color: Black;
+text-decoration: none;
+display: block;
+height: 100%;
+border: 0 none;
+}
+#menu li a:hover, #menu li a:focus, #menu dt a:hover, #menu dt a:focus {
+background: #98FB98;
+ color: Red;
+}
+#site {
+position: absolute;
+z-index: 1;
+top : 70px;
+left : 10px;
+color: black;
+background-color: yellow;
+padding: 5px;
+border: 1px solid Gray; 
+}

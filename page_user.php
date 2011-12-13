@@ -1,6 +1,10 @@
+<?php include 'connection_bdd.php'; ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+<?php $result = mysql_query("select * from films order by titre_films ASC;");
+echo $result;?>
+ 
+<?php
 
-<?include("connexion_bdd.php");
 $choix=0;
 if(isset($_GET["choix"]))
 {
@@ -8,20 +12,19 @@ if(isset($_GET["choix"]))
 }
 if($choix==1)
 {
- $result = mysql_query("select * from famille order by code_famille ASC;");
+ $result = mysql_query("select * from films order by titre_films ASC;");
 }
 else
 {
  if($choix==2)
  {
-  $result = mysql_query("select * from famille order by libelle ASC;");
+  $result = mysql_query("select * from films order by sinopsys_films ASC;");
  }
  else
  { 
-  $result = mysql_query("select * from famille;"); 
+  $result = mysql_query("select * from films;"); 
  }
 }?>
-
 
 <html>
 <head>
