@@ -19,12 +19,15 @@
 		var_dump($tab2);
 	?>
 	
+	<br />
 	
 	<?php include 'classes/utilisateurs.php';
 		
 		$id_users=5;
-		$users = new utilisateurs("$id_users", "", "", "", "", "", "", "");
+		$users = new utilisateurs("$id_users", "", "", "", "", "", "", "", "");
 		$users->users_delete();
+		echo "L'utilisateur avec l'id '$id_users' a été supprimer";
+		echo "<br />";
 		
 	?>
 	

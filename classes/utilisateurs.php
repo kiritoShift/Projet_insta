@@ -79,6 +79,7 @@ class utilisateurs {
 			$query = $conn->prepare("UPDATE films SET nom_films = :nom_films WHERE id_users = :id_users ;");
 			$query->execute(array("nom_films" => $this->nom_films, "id_users" => $this->id_users));
 		}
+	}
 }
 
 /*	public function suprimer_user($id_users, $pseudo_users, $email_users, $nom_users, $prenom_users, $date_naissance){
