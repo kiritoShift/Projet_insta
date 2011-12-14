@@ -1,0 +1,122 @@
+
+
+body
+{
+ font: 14px Ravie, sans-serif; 
+ background: #000000  url("plan.jpg") no-repeat top center ; 
+ width: 100%;
+ height: 100%;
+
+ margin: 0;
+ padding: 0;
+
+
+}
+       
+#menuDeroulant
+{
+ width: 644px;
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ border: 0;
+}
+#menuDeroulant li
+{
+ float: left;
+ margin: 0;
+ padding: 0;
+ border: 0;
+}
+
+#menuDeroulant .sousMenu
+{
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ border: 0;
+}
+#menuDeroulant .sousMenu li
+{
+ float: none;
+ margin: 0;
+ padding: 0;
+ border: 0;
+}
+
+#menuDeroulant li
+{
+ float: left;
+ width: 150px;
+ margin: 0;
+ padding: 0;
+ border: 0;
+}
+
+#menuDeroulant li a:link, #menuDeroulant li a:visited
+{
+ display: block;
+ height: 1%;
+ color: #FFF;
+ background: #3B4E77;
+ margin: 0;
+ padding: 4px 8px;
+ border-right: 1px solid #fff;
+ text-decoration: none;
+}
+#menuDeroulant li a:hover { background-color: #FF6600; }
+#menuDeroulant li a:active { background-color: #FF6600; }
+
+#menuDeroulant .sousMenu li a:link,
+#menuDeroulant .sousMenu li a:visited
+{
+ display: block;
+ color: #FFF;
+ margin: 0;
+ border: 0;
+ text-decoration: none;
+ background: transparent url("plan.jpg") repeat;
+}
+#menuDeroulant .sousMenu li a:hover
+{
+ background-image: none;
+ background-color: #F2462E;
+}
+      
+
+#menuDeroulant .sousMenu li
+{
+ float: none;
+ margin: 0;
+ padding: 0;
+ border: 0;
+ width: 149px;
+ border-top: 1px solid transparent;
+ border-right: 1px solid transparent;
+}
+
+#menuDeroulant .sousMenu
+{
+ display: none;
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ border: 0;
+}
+#menuDeroulant li:hover > .sousMenu { display: block; }
+
+#menuDeroulant
+{
+ width: 644px;
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ border: 0;
+ position: absolute;
+ top: 337px;
+ left: 400px;
+}
+
+
+
+          
