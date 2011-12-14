@@ -23,17 +23,29 @@
 	
 	<?php include 'classes/utilisateurs.php';
 		
-		$id_users=5;
-		$users = new utilisateurs("$id_users", "", "", "", "", "", "", "", "");
-		$users->users_delete();
-		echo "L'utilisateur avec l'id '$id_users' a été supprimer";
+		$id_users = 5;
+		//$del_use = new utilisateurs("$id_users", "", "", "", "", "", "", "", "");
+		//$del_use->users_delete();
+		//echo "L'utilisateur avec l'id '$id_users' a été supprimer";
 		echo "<br />";
+		
+		$pseudo_users = "frank";
+		$email_users = "frank@opmail.fr";
+		$civilite = "Monsieur";
+		$nom_users = "dupond";
+		$prenom_users = "frank";
+		$date_naissance = "1990-12-16";
+		$ville_users = "bobigny";
+		// problème lors du changement pour le champ newsletter (boolen)
+		$newsletter = true;
+		$up_use = new utilisateurs($id_users, $pseudo_users, $email_users, $civilite, $nom_users, $prenom_users, $date_naissance, $ville_users, $newsletter);
+		$up_use->users_update();
+		
+		
 		
 	?>
 	
-	
-<br>
-<br>
+
 <br>
 <br>
 	

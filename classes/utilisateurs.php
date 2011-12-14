@@ -26,7 +26,9 @@ class utilisateurs {
 	
 	// Ajouter un nouveau utilisateur
 	public function users_new(){
-		
+		global $conn;
+		$query = $conn->prepare("");
+		$query->execute();
 	}
 	
 	// 	Supprimer un utilisateur
@@ -68,12 +70,12 @@ class utilisateurs {
 			$query->execute(array("date_naissance" => $this->date_naissance, "id_users" => $this->id_users));
 		}
 			if (!empty($this->ville_users)) {
-			$query = $conn->prepare("UPDATE utilisateurs SET ville_users = :valid_users WHERE id_users = :id_users ;");
+			$query = $conn->prepare("UPDATE utilisateurs SET ville_users = :ville_users WHERE id_users = :id_users ;");
 			$query->execute(array("ville_users" => $this->ville_users, "id_users" => $this->id_users));
 		}
 			if (!empty($this->newsletter)) {
 			$query = $conn->prepare("UPDATE utilisateurss SET newsletter = :newsletter WHERE id_users = :id_users ;");
-			$query->execute(array("id" => $this->id_films, "sinopsys_films" => $this->sinopsys_films));
+			$query->execute(array("newsletter" => $this->newsletter, "id_users" => $this->id_users));
 		}
 			if (!empty($this->nom_films)) {
 			$query = $conn->prepare("UPDATE films SET nom_films = :nom_films WHERE id_users = :id_users ;");
