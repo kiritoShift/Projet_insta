@@ -11,20 +11,27 @@ body
  padding: 0;
 
 }
+
+img
+{
+margin:0 auto;	
+}
  
  
  
- 
-.messageerror
+div#messageerror
  {
+ text-align:center;
  color:red;
-font-size: 13px;	
+font-size: 13px;
+
 }
 
-.marge
+div#ex
 
 {
-margin-left: 150px;
+font-size: 9px;
+margin-left: 200px;
 	
 	}
 p 
@@ -37,7 +44,21 @@ fond
     color:red;
     size:"100pt";
 }
+.formulaire
+{
+margin:0 auto;	
+}
 
+
+.condition
+{
+text-align:center;
+
+}
+div#test
+{
+	text-align:center;
+}
 fieldset 
 {
 
@@ -66,3 +87,12 @@ span
 	
 }
 
+
+
+
+
+
+
+
+	
+d

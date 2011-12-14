@@ -1,7 +1,11 @@
-
+.addthis_button
+{
+margin: 80%;
+}
 
 body
 {
+ border-radius: 8px;
  font: 14px Ravie, sans-serif; 
  background: #000000  url("plan.jpg") no-repeat top center ; 
  width: 100%;
@@ -15,6 +19,7 @@ body
        
 #menuDeroulant
 {
+ border-radius: 8px;
  width: 644px;
  list-style-type: none;
  margin: 0;
@@ -23,6 +28,7 @@ body
 }
 #menuDeroulant li
 {
+ border-radius: 8px;
  float: left;
  margin: 0;
  padding: 0;
@@ -31,6 +37,7 @@ body
 
 #menuDeroulant .sousMenu
 {
+ border-radius: 8px;
  list-style-type: none;
  margin: 0;
  padding: 0;
@@ -38,6 +45,7 @@ body
 }
 #menuDeroulant .sousMenu li
 {
+ border-radius: 8px;
  float: none;
  margin: 0;
  padding: 0;
@@ -46,6 +54,7 @@ body
 
 #menuDeroulant li
 {
+ border-radius: 8px;
  float: left;
  width: 150px;
  margin: 0;
@@ -55,6 +64,7 @@ body
 
 #menuDeroulant li a:link, #menuDeroulant li a:visited
 {
+ border-radius: 8px;
  display: block;
  height: 1%;
  color: #FFF;
@@ -70,6 +80,7 @@ body
 #menuDeroulant .sousMenu li a:link,
 #menuDeroulant .sousMenu li a:visited
 {
+ border-radius: 8px;
  display: block;
  color: #FFF;
  margin: 0;
@@ -79,6 +90,7 @@ body
 }
 #menuDeroulant .sousMenu li a:hover
 {
+ border-radius: 8px;
  background-image: none;
  background-color: #F2462E;
 }
@@ -86,6 +98,7 @@ body
 
 #menuDeroulant .sousMenu li
 {
+ border-radius: 8px;
  float: none;
  margin: 0;
  padding: 0;
@@ -97,6 +110,7 @@ body
 
 #menuDeroulant .sousMenu
 {
+ border-radius: 8px;
  display: none;
  list-style-type: none;
  margin: 0;
@@ -107,6 +121,7 @@ body
 
 #menuDeroulant
 {
+ border-radius: 8px;
  width: 644px;
  list-style-type: none;
  margin: 0;
