@@ -1,4 +1,4 @@
-<?php include 'connection_bdd.php'; ?>
+<?php include 'connexion_bdd.php'; ?>
 <?php include 'classes/acteurs.php'; ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
 <?php 
