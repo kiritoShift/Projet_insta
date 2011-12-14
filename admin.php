@@ -9,11 +9,22 @@
   </head>
  
 	<body>
-	<h2> Page d'Admin </h2>
+	<h2 align=center> Bienvenue sur la page d'administration</h2>
+	<br />
+
+	<h3>Liste des utilisateurs :</h3>	
+	
+	<?php include '/fonction.php'; 
+		$tab2=liste_users();
+		var_dump($tab2);
+	?>
 	
 	
-	<?php include '/fonction.php'; ?>
-	<?php include 'classes/utilisateurs.php';?>
+	
+<br>
+<br>
+<br>
+<br>
 	
 <form method="post" action="traitement.php">
    <p>
