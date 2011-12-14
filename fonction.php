@@ -9,6 +9,4 @@ function liste_films() {
 	return $liste_films;
 }
 
-$tab=liste_films();
-var_dump($tab);
 ?>
