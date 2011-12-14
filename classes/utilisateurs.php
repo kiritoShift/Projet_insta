@@ -24,19 +24,55 @@ class utilisateurs {
 		$this->newsletter = $newsletter;
 	}
 	
-	public function delete_users(){
+	public function users_new(){
+		
+	}
+	
+	public function users_delete(){
 		global $conn;
 		$query = $conn->prepare("DELETE QUICK FROM utilisateurs WHERE :id_users = id_users;");
 		$query->execute(array("id_users" => $this->id_users));
 	}
 	
-	public function update_users() {
+	public function users_update() {
 		global $conn;
-		if (!empty($nom_films)) {
-			$query = $conn->prepare("UPDATE films SET titre_films = :titre_films WHERE id_films = :id_films ;");
-			$query->execute(array("titre_films" => $this->titre_films, "id_films" => $this->id_films));
+		if (!empty($this->id_users)) {
+			$query = $conn->prepare("UPDATE utilisateurs SET id_users = :id_users WHERE id_users = :id_users ;");
+			$query->execute(array("id_users" => $this->id_users, "id_users" => $this->id_users));
 		}
-		if (!empty($nom_films)) {
+		if (!empty($this->pseudo_users)) {
+			$query = $conn->prepare("UPDATE utilisateurs SET pseudo_users = :pseudo_users WHERE pseudo_users = :pseudo_users ;");
+			$query->execute(array("id" => $this->id_films, "sinopsys_films" => $this->sinopsys_films));
+		}
+			if (!empty($this->email_users)) {
+			$query = $conn->prepare("UPDATE utilisateurs SET email_users = :email_users WHERE email_users = :email_users ;");
+			$query->execute(array("id" => $this->email_users, "email_users" => $this->email_users));
+		}
+			if (!empty($this->civilite)) {
+			$query = $conn->prepare("UPDATE utilisateurs SET civilite = :civilite WHERE civilite = :civilite ;");
+			$query->execute(array("id" => $this->civilite, "civilite" => $this->civilite));
+		}
+			if (!empty($this->nom_users)) {
+			$query = $conn->prepare("UPDATE utilisateurs SET sinopsys_films = :sinopsys_films WHERE id_films = :id_films ;");
+			$query->execute(array("id" => $this->id_films, "sinopsys_films" => $this->sinopsys_films));
+		}
+			if (!empty($this->prenom_users)) {
+			$query = $conn->prepare("UPDATE utilisateurs SET sinopsys_films = :sinopsys_films WHERE id_films = :id_films ;");
+			$query->execute(array("id" => $this->id_films, "sinopsys_films" => $this->sinopsys_films));
+		}
+			if (!empty($this->date_naissance)) {
+			$query = $conn->prepare("UPDATE utilisateurs SET sinopsys_films = :sinopsys_films WHERE id_films = :id_films ;");
+			$query->execute(array("id" => $this->id_films, "sinopsys_films" => $this->sinopsys_films));
+		}
+			if (!empty($this->ville_users)) {
+			$query = $conn->prepare("UPDATE utilisateurs SET sinopsys_films = :sinopsys_films WHERE id_films = :id_films ;");
+			$query->execute(array("id" => $this->id_films, "sinopsys_films" => $this->sinopsys_films));
+		}
+			if (!empty($this->newsletter)) {
+			$query = $conn->prepare("UPDATE utilisateurss SET sinopsys_films = :sinopsys_films WHERE id_films = :id_films ;");
+			$query->execute(array("id" => $this->id_films, "sinopsys_films" => $this->sinopsys_films));
+		}
+			if (!empty($this->nom_films)) {
 			$query = $conn->prepare("UPDATE films SET sinopsys_films = :sinopsys_films WHERE id_films = :id_films ;");
 			$query->execute(array("id" => $this->id_films, "sinopsys_films" => $this->sinopsys_films));
 		}
