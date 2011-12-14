@@ -8,4 +8,15 @@ function liste_films() {
 	$liste_films = $query->fetchAll(PDO::FETCH_ASSOC);
 	return $liste_films;
 }
+
+function liste_users() {
+	global $conn;
+	$query = $conn->prepare("SELECT id_users,pseudo_users,nom_users,prenom_users FROM utilisateurs ORDER BY nom_users ASC;");
+	$query->execute();
+	$liste_users = $query->fetchAll(PDO::FETCH_ASSOC);
+	return $liste_users;
+}
+
+//$tab2=liste_users();
+//var_dump($tab2);
 ?>
