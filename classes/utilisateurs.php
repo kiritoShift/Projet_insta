@@ -9,8 +9,9 @@ class utilisateurs {
 	private $nom_users;
 	private $prenom_users;
 	private $date_naissance;
+	private $ville_users;
 	private $newsletter;
-	public function __construct($id_users, $pseudo_users, $email_users, $civilite, $nom_users, $prenom_users, $date_naissance, $newsletter){
+	public function __construct($id_users, $pseudo_users, $email_users, $civilite, $nom_users, $prenom_users, $date_naissance, $ville_users, $newsletter){
 		
 		$this->id_users = $id_users;
 		$this->pseudo_users = $pseudo_users;
@@ -19,6 +20,7 @@ class utilisateurs {
 		$this->nom_users = $nom_users;
 		$this->prenom_users = $prenom_users;
 		$this->date_naissance = $date_naissance;
+		$this->ville_users = $ville_users;
 		$this->newsletter = $newsletter;
 	}
 	
@@ -27,6 +29,17 @@ class utilisateurs {
 		$query = $conn->prepare("DELETE QUICK FROM utilisateurs WHERE :id_users = id_users;");
 		$query->execute(array("id_users" => $this->id_users));
 	}
+	
+	public function update_users() {
+		global $conn;
+		if (!empty($nom_films)) {
+			$query = $conn->prepare("UPDATE films SET titre_films = :titre_films WHERE id_films = :id_films ;");
+			$query->execute(array("titre_films" => $this->titre_films, "id_films" => $this->id_films));
+		}
+		if (!empty($nom_films)) {
+			$query = $conn->prepare("UPDATE films SET sinopsys_films = :sinopsys_films WHERE id_films = :id_films ;");
+			$query->execute(array("id" => $this->id_films, "sinopsys_films" => $this->sinopsys_films));
+		}
 }
 
 /*	public function suprimer_user($id_users, $pseudo_users, $email_users, $nom_users, $prenom_users, $date_naissance){
