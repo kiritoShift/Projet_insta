@@ -1,5 +1,5 @@
 <?php include 'connexion_bdd.php'; ?>
-<?php include 'classes/acteurs.php'; ?>
+<?php include 'classes/films.php'; ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
 <?php 
 /*
@@ -18,10 +18,10 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
 $result = mysql_query("select * from films order by titre_films ASC;");
 echo $result;
 */
-$nom_acteur="bobo";
-$prenom_acteur="toto";
-$id="4";
-$film = new acteurs($id, $nom_acteur, $prenom_acteur);
-$film->acteurs_drop();
+$var1="toto";
+$var2="dede";
+$id="445";
+$film = new films($id, $var1, $var2);
+$film->films_update();
 
 ?>
