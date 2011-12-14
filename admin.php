@@ -20,6 +20,14 @@
 	?>
 	
 	
+	<?php include 'classes/utilisateurs.php';
+		
+		$id_users=5;
+		$users = new utilisateurs("$id_users", "", "", "", "", "", "", "");
+		$users->delete_users();
+		
+	?>
+	
 	
 <br>
 <br>
