@@ -1,6 +1,5 @@
+<?php include '../connexion_bdd.php'; ?>
 <?php 
-//connection à la base de données
-include '../connexion_bdd.php';
  
 //inclusion de l'objet films
 include '../classes/films.php';

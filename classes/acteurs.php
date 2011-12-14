@@ -34,11 +34,11 @@ class acteurs {
 	// fonction de modification d'un champ dans la table acteurs
 	public function acteur_update() {
 		global $conn;
-		if (!empty($nom_acteur)) {
+		if (!empty($this->nom_acteur)) {
 			$query =$conn->prepare("UPDATE acteur SET nom_acteur = :nom_acteur WHERE id_acteur = :id_acteur;");
 			$query->execute(array("id_acteur" =>$this->id_acteur, "nom_acteur" =>$this->nom_acteur));
 		}
-		if (!empty($nom_acteur)) {
+		if (!empty($this->prenom_acteur)) {
 			$query =$conn->prepare("UPDATE acteur SET prenom_acteur = :prenom_acteur WHERE id_acteur = :id_acteur;");
 			$query->execute(array("id_acteur" =>$this->id_acteur,"prenom_acteur" =>$this->prenom_acteur));
 		}
