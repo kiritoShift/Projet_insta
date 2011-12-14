@@ -1,0 +1,68 @@
+
+
+body
+{
+ font: 14px Ravie, sans-serif; 
+ background: #ffffff  url("") no-repeat top center ; 
+ width: 100%;
+ height: 100%;
+
+ margin: 0;
+ padding: 0;
+
+}
+ 
+ 
+ 
+ 
+.messageerror
+ {
+ color:red;
+font-size: 13px;	
+}
+
+.marge
+
+{
+margin-left: 150px;
+	
+	}
+p 
+{
+    color:red;
+}
+
+fond
+{
+    color:red;
+    size:"100pt";
+}
+
+fieldset 
+{
+
+ padding:2px;
+ margin-bottom:1px;
+ }
+ 
+legend
+  {
+ color:#600902;
+ font-weight:bold
+ }
+ 
+ label
+{
+	display: block;
+	width: 150px;
+	float: left;
+}
+
+span
+{
+	display: block;
+	float: left;
+	width: 300px;
+	
+}
+
