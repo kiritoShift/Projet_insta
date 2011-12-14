@@ -1,3 +1,5 @@
+<?php include "connection_bdd.php"?>
+<?php include "classes/utilisateurs.php"?>
 <!DOCTYPE html>
 <html lang="fr">
  
@@ -9,46 +11,42 @@
   </head>
   
   
-  
-  
- <center><table>
+    
   <body>
-  
-  	<u>
  		 <!-- <FONT size="7pt" face="movie times"> Formulaire d/inscription<br /></FONT>    -->
- 		 <img src="images/Sans titre.jpg" border="0" width="700" height="100"> 
- 		 <br/>
-  	</u>
+ 		 <P style="text-align:center"><img src="images/Sans titre.jpg" border="0" width="700" height="100"></P> 
+ 		 
    
 
 <?php
+  $utilisateurs = new utilisateurs($_POST['civiliter'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['email_users'], $_POST['pseudo_users'], $_POST['date_naissance'], $_POST['newsletter'] );
   
   if (empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['civiliter']) || empty($_POST['email']) || empty($_POST['pseudo']) || empty($_POST['confirmation_Mot_de_passe']) || empty($_POST['Mot_de_passe']) || empty($_POST['condition'])) {
 			  		if (!empty($_POST['btnEnvoyer'])) {
-			  						echo '<FONT color="" class="messageerror">Merci de remplir les champ oblgatoire </FONT>';
+			  						echo '<div id="messageerror">Merci de remplir les champ oblgatoire </div>';
 			  							}
   				
   		echo'
   				
     			
-				<form action="" method="POST">
+				<form method="POST">
 				
 <!--*******************************************************************************************************************************************-->				
 <!--***********************premier encadr� information personnelle (non, prenom, date de naissance, civiliter)*********************************-->
 <!--*******************************************************************************************************************************************-->						
 				
 				
-							<fieldset style="width:350px;">
+							<fieldset class="formulaire" style="width:350px;">
 							<legend> Information personnelle </legend>
 				
 				
 									<!--************************************-->
   									<!--************* civiliter ************-->
   									<!--************************************-->
-  									
-  								<label for="IDciviliter">Civiliter<FONT color="red">*</FONT> :</label>
+  								<br>
+  								<label for="civilite">Civiliter<FONT color="red">*</FONT> :</label>
   							
-								<select id="IDciviliter" name="civiliter">
+								<select id="civilite" name="civiliter">
 									<option value="" selected="selected">M, Mr, Melle</option>
 									<option value="Mr">Messieur</option>
 									<option value="M">Madame</option>
@@ -61,8 +59,8 @@
   									<!--*************** nom ****************-->
   									<!--************************************-->
   									
-								<label for="IDNom">Nom<FONT color="red">*</FONT> :</label>
-								<input type="text" id="IDNom" name="nom"/>
+								<label for="nom_users">Nom<FONT color="red">*</FONT> :</label>
+								<input type="text" id="nom_users" name="nom"/>
 								<br />
 								<br />
 								
@@ -71,8 +69,8 @@
   									<!--*************** prenom *************-->
   									<!--************************************-->
 						
-								<label for="IDPrenom">Prenom<FONT color="red">*</FONT> :</label>
-								<input type="text" id="IDPrenom" name="prenom"/>
+								<label for="prenom_users">Prenom<FONT color="red">*</FONT> :</label>
+								<input type="text" id="prenom_users" name="prenom"/>
 								<br />
 								<br />
 								
@@ -81,8 +79,8 @@
   									<!--********** adresse email ***********-->
   									<!--************************************-->
 								
-								<label for="IDEmail">Adresse Email<FONT color="red">*</FONT> :</label>
-								<input type="text" id="IDEmail" name="email"/>
+								<label for="email_users">Adresse Email<FONT color="red">*</FONT> :</label>
+								<input type="text" id="email_users" name="email"/>
 								<br />
 								<br />
 								
@@ -91,8 +89,8 @@
   									<!--************** Ville ***************-->
   									<!--************************************-->
 						
-								<label for="IDVille">Ville :</label>
-								<input type="text" id="IDVille" name="ville"/>
+								<label for="ville_users">Ville :</label>
+								<input type="text" id="ville_users" name="ville"/>
 								<br />
 								<br />
 								
@@ -102,14 +100,13 @@
   									<!--************************************-->
 				 
 				 
-								<label for="IDDatenaissance">Date de naissance :</label>
-								<input type="text" id="IDDatenaissance" name="Datenaissancejour" maxlength="2" size="2"/>
-								<input type="text" id="IDDatenaissance" name="Datenaissancemois" maxlength="2" size="2"/>
-								<input type="text" id="IDDatenaissance" name="Datenaissanceannee" maxlength="4" size="4"/>
+								<label for="date_naissance">Date de naissance :</label>
+								<input type="text" id="date_naissance" name="date_naissance" maxlength="10" size="10"/>
 								<br />
-								<FONT size="2" class="marge">jj/mm/aaaa</FONT>
+								<div id=ex>jj/mm/aaaa</div>
 								<br />
-								
+								<br />
+									
 								
 							</fieldset>
 							
@@ -119,14 +116,14 @@
 <!--***********************deuxieme encadr� information de connection (pseudo, mdp, cmdp)*********************************-->
 <!--*******************************************************************************************************************************************-->	
 								
-						<fieldset style="width:350px;">
+						<fieldset class="formulaire" style="width:350px;">
 						<legend> Information de connection </legend>
 								
 								
 									<!--************************************-->
 	  								<!--************** Pseudo **************-->
 	  								<!--************************************-->
-						
+								<br>
 								<label for="IDPseudo">Pseudo<FONT color="red">*</FONT> :</label>
 								<input type="text" id="IDPseudo" name="pseudo"/>
 								<br />
@@ -152,53 +149,69 @@
 								<input type="password" id="IDCmdp" name="confirmation_Mot_de_passe"/>
 								<br />
 								<br />
+							
 								
 								
 								</fieldset>				
 						
 <!--*******************************************************************************************************************************************-->				
-<!--***********************premier encadr� information personnelle (non, prenom, date de naissance, civiliter)*********************************-->
+<!--********************************************Troisieme encadré newsletter & conditions générales********************************************-->
 <!--*******************************************************************************************************************************************-->								
 																
 								
-								<fieldset style="width:350px;">
+								<fieldset class="formulaire" style="width:350px;">
 								<legend> Newsletter & conditions g&eacute;n&eacute;rales </legend>
 								
 									<!--*************************************-->
 	  								<!--* Newsletter & conditions g�n�rales *-->
 	  								<!--*************************************-->
-							
-	  							<input class="condition" type="checkbox" id="email_rep" name="email_rep" tabindex="14" />	
+								<br>
+	  							<input type="checkbox" id="email_rep" name="email_rep" tabindex="14" />	
 							    <FONT size="2"><span for="email_rep">Je veut etre informer des prochaine sortie de film</span>
 							    </FONT>
 							    
 							    
 							    <br />
-							    <input class="condition" type="checkbox" id="condition" name="condition" tabindex="14" />
+							    <input type="checkbox" id="condition" name="condition" tabindex="14" />
 							    <FONT size="2"><span for="condition">J&acute;accepte les conditions g&eacute;n&eacute;rale d&acute;utilisation<FONT color="red">*</FONT></span>
 							    </FONT>
-								 
+							    <br />
+							    <br />
+						
+							    
+								
 							  
 							    
 							    </fieldset>
-								
-							
-								
-								
-								<input type="submit" name="btnEnvoyer" value="Envoyer"/>
+								<br />
+								 <div id="test"><input class="condition" type="submit" name="btnEnvoyer" value="Envoyer" /><div>
 								<br />
 								<br />
+								
+								
+								
 						
 						</form>
 						
 						';
 				  	}
   	else {
+  			
+  			if (isset($_POST)){
+  				$utilisateurs->
+  			}
 			echo "Bonjour" .$_POST['civiliter']." ".$_POST['nom']." ".$_POST['prenom'];
 			echo "<br />";
 			echo "bienvenue sur notre site unfauxcine";
 			echo "<br />";
-					/*if($_POST['sexe'] == "H") {
+			
+				//connection_bdd.php();
+				//$sql = "INSERT INTO utilisateurs(id,nom,prenom,ville) ";
+				//$sql = "VALUES ('','$_POST['nom']','$_POST['prenom']','$_POST['ville']')";
+
+				
+				
+				/*if($_POST['sexe'] == "H") {
 						echo " Vous êtes un homme";
 						}
 					else {
@@ -206,7 +219,13 @@
 						}*/
 				
   		}
- 
+ /*
+ 		 
+		
+  */	
+  		
+  		
+  		
 ?>
 
 
@@ -215,6 +234,5 @@
   	
 
 
-	</table></center>
   </body>
 </html>
