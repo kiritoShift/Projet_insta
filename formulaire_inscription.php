@@ -19,9 +19,8 @@
    
 
 <?php
-  $utilisateurs = new utilisateurs($_POST['civiliter'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['email_users'], $_POST['pseudo_users'], $_POST['date_naissance'], $_POST['newsletter'] );
   
-  if (empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['civiliter']) || empty($_POST['email']) || empty($_POST['pseudo']) || empty($_POST['confirmation_Mot_de_passe']) || empty($_POST['Mot_de_passe']) || empty($_POST['condition'])) {
+  if (empty($_POST['nom_users']) || empty($_POST['prenom_users']) || empty($_POST['civilite']) || empty($_POST['email_users']) || empty($_POST['pseudo_users']) || empty($_POST['confirmation_Mot_de_passe']) || empty($_POST['Mot_de_passe']) || empty($_POST['condition'])) {
 			  		if (!empty($_POST['btnEnvoyer'])) {
 			  						echo '<div id="messageerror">Merci de remplir les champ oblgatoire </div>';
 			  							}
@@ -46,7 +45,7 @@
   								<br>
   								<label for="civilite">Civiliter<FONT color="red">*</FONT> :</label>
   							
-								<select id="civilite" name="civiliter">
+								<select id="civilite" name="civilite">
 									<option value="" selected="selected">M, Mr, Melle</option>
 									<option value="Mr">Messieur</option>
 									<option value="M">Madame</option>
@@ -60,7 +59,7 @@
   									<!--************************************-->
   									
 								<label for="nom_users">Nom<FONT color="red">*</FONT> :</label>
-								<input type="text" id="nom_users" name="nom"/>
+								<input type="text" id="nom_users" name="nom_users"/>
 								<br />
 								<br />
 								
@@ -70,7 +69,7 @@
   									<!--************************************-->
 						
 								<label for="prenom_users">Prenom<FONT color="red">*</FONT> :</label>
-								<input type="text" id="prenom_users" name="prenom"/>
+								<input type="text" id="prenom_users" name="prenom_users"/>
 								<br />
 								<br />
 								
@@ -80,7 +79,7 @@
   									<!--************************************-->
 								
 								<label for="email_users">Adresse Email<FONT color="red">*</FONT> :</label>
-								<input type="text" id="email_users" name="email"/>
+								<input type="text" id="email_users" name="email_users"/>
 								<br />
 								<br />
 								
@@ -90,7 +89,7 @@
   									<!--************************************-->
 						
 								<label for="ville_users">Ville :</label>
-								<input type="text" id="ville_users" name="ville"/>
+								<input type="text" id="ville_users" name="ville_users"/>
 								<br />
 								<br />
 								
@@ -124,8 +123,8 @@
 	  								<!--************** Pseudo **************-->
 	  								<!--************************************-->
 								<br>
-								<label for="IDPseudo">Pseudo<FONT color="red">*</FONT> :</label>
-								<input type="text" id="IDPseudo" name="pseudo"/>
+								<label for="Pseudo_user">Pseudo<FONT color="red">*</FONT> :</label>
+								<input type="text" id="Pseudo_users" name="pseudo_users"/>
 								<br />
 								<br />
 								
@@ -166,8 +165,8 @@
 	  								<!--* Newsletter & conditions g�n�rales *-->
 	  								<!--*************************************-->
 								<br>
-	  							<input type="checkbox" id="email_rep" name="email_rep" tabindex="14" />	
-							    <FONT size="2"><span for="email_rep">Je veut etre informer des prochaine sortie de film</span>
+	  							<input type="checkbox" id="newsletter" name="newsletter" tabindex="14" />	
+							    <FONT size="2"><span for="newsletter">Je veut etre informer des prochaine sortie de film</span>
 							    </FONT>
 							    
 							    
@@ -197,10 +196,10 @@
 				  	}
   	else {
   			
-  			if (isset($_POST)){
-  				$utilisateurs->
-  			}
-			echo "Bonjour" .$_POST['civiliter']." ".$_POST['nom']." ".$_POST['prenom'];
+  		$envoie_utilisateurs = new utilisateurs('', $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], $_POST['newsletter'] );	
+  		$envoie_utilisateurs->users_new();
+  			
+			echo "Bonjour " .$_POST['civilite']." ".$_POST['nom_users']." ".$_POST['prenom_users'];
 			echo "<br />";
 			echo "bienvenue sur notre site unfauxcine";
 			echo "<br />";

@@ -53,7 +53,8 @@ class utilisateurs {
 							  "prenom_users" => $this->prenom_users,
 							  "date_naissance" => $this->date_naissance,
 							  "ville_users" => $this->ville_users,
-							  "newsletter" => $this->newsletter));
+							  "newsletter" => ($this->newsletter ? "1" : "0")));
+							
 	}
 	
 	// 	Supprimer un utilisateur
