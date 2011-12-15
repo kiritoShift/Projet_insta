@@ -33,15 +33,23 @@ $xml=simplexml_load_file('http://rss.allocine.fr/ac/cine/cettesemaine.rss');
  */
 
 // initialisation des variables
+var_dump ($xml->channel->item->description);
 $i=0;
 $titre="";
-$tab_liste_prochaine_sortie_dvd=array($titre);
-
+$jaquette="";
+$description="";
+$tab_liste_prochaine_sortie_dvd=array($titre,$description,$jaquette);
 // recuperation du titre des films dans le tableau xml
 foreach($xml->channel->item as $item){
-	$tab_liste_prochaine_sortie_dvd[$i]=(string)$item->title;
+	$sinopsys=$item->description;
+	$tabsinopsys= explode("</p>",$sinopsys);
+	$sinopsys=$tabsinopsys[0];
+	$tab_liste_prochaine_sortie_dvd[$i]=array((string)$item->title,$sinopsys,(string)$item->enclosure->attributes());
+	echo $tab_liste_prochaine_sortie_dvd[$i][0]."<br />".$tab_liste_prochaine_sortie_dvd[$i][1]."<br />".$tab_liste_prochaine_sortie_dvd[$i][2]."<br /><br />";
 	$i++;
 }
+
+	//var_dump ($tab_liste_prochaine_sortie_dvd);
 
 // enrégistrement sur la base de données
 foreach ($tab_liste_prochaine_sortie_dvd as $tab) {
@@ -57,6 +65,12 @@ foreach ($tab_liste_prochaine_sortie_dvd as $tab) {
 	$film->films_new();
 	}
 }
+
+// recuperation des jaquettes des films dans le tableau xml
+/*foreach($xml->channel->item->enclosure as $b) {
+	$tab_jaquette[$i]= $b->attributes();
+	$i++;
+}*/
 
 ?>
 
