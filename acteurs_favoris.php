@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
 
-<?include("connexion_bdd.php");
+<?include("connection_bdd.php");
 $choix=0;
 if(isset($_GET["choix"]))
 {
@@ -8,17 +8,20 @@ if(isset($_GET["choix"]))
 }
 if($choix==1)
 {
- $result = mysql_query("select * from acteurs order by nom_acteur ASC;");
+ $result=$conn->prepare("select * from acteurs order by nom_acteur ASC;");
+ $result->execute();
 }
 else
 {
  if($choix==2)
  {
-  $result = mysql_query("select * from acteurs order by prenom_acteur ASC;");
+  $result=$conn->prepare("select * from acteurs order by prenom_acteur ASC;");
+  $result->execute();
  }
  else
  { 
-  $result = mysql_query("select * from acteurs;"); 
+  $result=$conn->prepare("select * from acteurs;"); 
+  $result->execute();
  }
 }?>
 
@@ -52,7 +55,7 @@ else
      						<TD><font size="-1"><a href="acteurs_favoris.php?choix=1"><b>Nom de l'acteur</b></a></font></TD>
      						<td><font size="-1"><a href="acteurs_favoris.php?choix=2"><b>Prenom de l'acteur</b></a></font></td>							
      					</TR>
-     					<? while ($val = mysql_fetch_array($result)) { ?>
+     					<? while ($val = $result->fetch(PDO::FETCH_ASSOC)) { ?>
      					<TR bgcolor=white>
      						<form method="post">
      						<TD><font size="-2"><? echo $val["nom_acteur"]?></font></TD>

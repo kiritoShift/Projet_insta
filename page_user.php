@@ -1,30 +1,28 @@
-<?php include 'connection_bdd.php'; ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
-<?php $result = mysql_query("select * from films order by titre_films ASC;");
-echo $result;?>
 
-<!-- test -->
- 
-<?php
+<?php include_once ("connexion_bdd.php");
 
 $choix=0;
-if(isset($_GET["choix"]))
+if(isset($_POST["choix"]))
 {
-   $choix=$_GET["choix"];
+   $choix=$_POST["choix"];
 }
 if($choix==1)
 {
- $result = mysql_query("select * from films order by titre_films ASC;");
+ $result=$conn->prepare("SELECT * FROM films order by titre_films ASC");
+ $result->execute();	
 }
 else
 {
  if($choix==2)
  {
-  $result = mysql_query("select * from films order by sinopsys_films ASC;");
- }
+  $result=$conn->prepare("SELECT * FROM films ORDER BY sinopsys_films ASC");
+  $result->execute(); 
+}
  else
  { 
-  $result = mysql_query("select * from films;"); 
+  $result=$conn->prepare("SELECT * FROM films");
+  $result->execute(); 
  }
 }?>
 
@@ -61,7 +59,7 @@ else
      						<TD><font size="-1"><b>Nom des acteurs</b></font></TD>
      						<td><font size="-1"><a href="page_user.php?choix=2"><b>Sinopsys</b></a></font></td>							
      					</TR>
-     					<? while ($val = mysql_fetch_array($result)) { ?>
+     					<? while ($val = $result->fetch(PDO::FETCH_ASSOC)) { ?>
      					<TR bgcolor=white>
      						<form method="post">
      						<TD><font size="-2"></font></TD>
