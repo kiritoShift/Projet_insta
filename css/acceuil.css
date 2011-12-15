@@ -1,13 +1,30 @@
+div.bando
+{
+background: url("image/bando.jpg");
+}
+
 .addthis_button
 {
 margin: 80%;
 }
 
+.bouton_souscrire
+{
+ border-radius: 8px;
+
+}
+.bla
+{
+color: red;
+right: 50%;
+bottom: 50%;
+		
+}
 body
 {
  border-radius: 8px;
  font: 14px Ravie, sans-serif; 
- background: #000000  url("plan.jpg") no-repeat top center ; 
+ background: #000000  url("image/plan.jpg") no-repeat top center ; 
  width: 100%;
  height: 100%;
 
@@ -16,6 +33,10 @@ body
 
 
 }
+
+
+
+/***************************menu************************************/ 
        
 #menuDeroulant
 {
