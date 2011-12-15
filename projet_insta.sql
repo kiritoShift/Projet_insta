@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le : Jeu 15 Décembre 2011 à 11:52
+-- Généré le : Jeu 15 Décembre 2011 à 14:43
 -- Version du serveur: 5.5.16
 -- Version de PHP: 5.3.8
 
@@ -85,7 +85,8 @@ CREATE TABLE IF NOT EXISTS `films` (
   `id_films` int(11) NOT NULL AUTO_INCREMENT,
   `titre_films` varchar(255) NOT NULL,
   `sinopsys_films` varchar(255) NOT NULL,
-  `jaquette` varchar(255) NOT NULL,
+  `jaquette_films` varchar(255) NOT NULL,
+  `type_films` varchar(255) NOT NULL,
   PRIMARY KEY (`id_films`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
@@ -93,9 +94,9 @@ CREATE TABLE IF NOT EXISTS `films` (
 -- Contenu de la table `films`
 --
 
-INSERT INTO `films` (`id_films`, `titre_films`, `sinopsys_films`, `jaquette`) VALUES
-(1, 'Om Shanti Om', 'C''est l''histoire d''un homme qui se réincarne 20 ans plutard après avoir été tué ...', ''),
-(2, 'Awarapan', 'C''est l''histoire d''un homme qui sauve la vie d''une femme esclave au péril de sa vie ....', '');
+INSERT INTO `films` (`id_films`, `titre_films`, `sinopsys_films`, `jaquette_films`, `type_films`) VALUES
+(1, 'Om Shanti Om', 'C''est l''histoire d''un homme qui se réincarne 20 ans plutard après avoir été tué ...', '', ''),
+(2, 'Awarapan', 'C''est l''histoire d''un homme qui sauve la vie d''une femme esclave au péril de sa vie ....', '', '');
 
 -- --------------------------------------------------------
 
