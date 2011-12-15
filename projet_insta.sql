@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le : Mer 14 Décembre 2011 à 17:00
+-- Généré le : Jeu 15 Décembre 2011 à 11:52
 -- Version du serveur: 5.5.16
 -- Version de PHP: 5.3.8
 
@@ -85,6 +85,7 @@ CREATE TABLE IF NOT EXISTS `films` (
   `id_films` int(11) NOT NULL AUTO_INCREMENT,
   `titre_films` varchar(255) NOT NULL,
   `sinopsys_films` varchar(255) NOT NULL,
+  `jaquette` varchar(255) NOT NULL,
   PRIMARY KEY (`id_films`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
@@ -92,9 +93,9 @@ CREATE TABLE IF NOT EXISTS `films` (
 -- Contenu de la table `films`
 --
 
-INSERT INTO `films` (`id_films`, `titre_films`, `sinopsys_films`) VALUES
-(1, 'Om Shanti Om', 'C''est l''histoire d''un homme qui se réincarne 20 ans plutard après avoir été tué ...'),
-(2, 'Awarapan', 'C''est l''histoire d''un homme qui sauve la vie d''une femme esclave au péril de sa vie ....');
+INSERT INTO `films` (`id_films`, `titre_films`, `sinopsys_films`, `jaquette`) VALUES
+(1, 'Om Shanti Om', 'C''est l''histoire d''un homme qui se réincarne 20 ans plutard après avoir été tué ...', ''),
+(2, 'Awarapan', 'C''est l''histoire d''un homme qui sauve la vie d''une femme esclave au péril de sa vie ....', '');
 
 -- --------------------------------------------------------
 
@@ -204,19 +205,23 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `nom_users` varchar(15) NOT NULL,
   `prenom_users` varchar(15) NOT NULL,
   `date_naissance` date NOT NULL,
-  `ville_users` int(5) NOT NULL,
+  `ville_users` varchar(30) NOT NULL,
   `newsletter` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_users`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `utilisateurs`
 --
 
 INSERT INTO `utilisateurs` (`id_users`, `pseudo_users`, `email_users`, `civilite`, `nom_users`, `prenom_users`, `date_naissance`, `ville_users`, `newsletter`) VALUES
-(1, 'jfrancois', 'j.francois@yopmail.fr', '', 'Francois', 'Jean', '2011-12-05', 0, 0),
-(2, 'jesuisbeau', 'jesuisleplusbeau@yopmail.fr', '', 'Dupont', 'Frank', '2002-03-05', 0, 0),
-(3, 'jean-jacques', 'jjacques@yopmail.fr', '', 'jean', 'jacques', '2011-12-06', 0, 0);
+(1, 'jfrancois', 'j.francois@yopmail.fr', '', 'Francois', 'Jean', '2011-12-05', '0', 0),
+(2, 'jesuisbeau', 'jesuisleplusbeau@yopmail.fr', '', 'Dupont', 'Frank', '2002-03-05', '0', 0),
+(3, 'jean-jacques', 'jjacques@yopmail.fr', '', 'jean', 'jacques', '2011-12-06', '0', 0),
+(4, 'cinephile', 'mickael', 'monsieur', 'Gates', 'mickael', '1975-07-15', 'Amiens', 1),
+(5, 'frank', 'frank@opmail.fr', 'Monsieur', 'dupond', 'frank', '1990-12-16', 'bobigny', 1),
+(6, 'mich', 'mich@yopmail.fr', 'Monsieur', 'leblanc', 'michel', '1988-12-06', 'monaco', 0),
+(7, 'drichard', 'richard@opmail.fr', 'Monsieur', 'Dulac', 'richard', '1958-10-06', 'lille', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
