@@ -47,8 +47,8 @@
 		//$up_use->users_update();
 		
 		//Ajouter un nouveau utilisateur
-		$add_use = new utilisateurs($id_users, $pseudo_users, $email_users, $civilite, $nom_users, $prenom_users, $date_naissance, $ville_users, $newsletter);
-		$add_use->users_new();
+		//$add_use = new utilisateurs($id_users, $pseudo_users, $email_users, $civilite, $nom_users, $prenom_users, $date_naissance, $ville_users, $newsletter);
+		//$add_use->users_new();
 		
 		
 		
