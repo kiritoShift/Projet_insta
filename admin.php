@@ -32,7 +32,7 @@
 		//echo "L'utilisateur avec l'id '$id_users' a été supprimer";
 		echo "<br />";
 		
-		
+		 
 		
 		//Modifier un utilisateur
 		$pseudo_users = "drichard";
