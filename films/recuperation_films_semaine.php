@@ -38,39 +38,40 @@ $i=0;
 $titre="";
 $jaquette="";
 $description="";
-$tab_liste_prochaine_sortie_dvd=array($titre,$description,$jaquette);
+$type="";
+$tab_liste_prochaine_sortie_dvd=array($titre,$description,$jaquette, $type);
 // recuperation du titre des films dans le tableau xml
 foreach($xml->channel->item as $item){
 	$sinopsys=$item->description;
 	$tabsinopsys= explode("</p>",$sinopsys);
-	$sinopsys=$tabsinopsys[0];
-	$tab_liste_prochaine_sortie_dvd[$i]=array((string)$item->title,$sinopsys,(string)$item->enclosure->attributes());
-	echo $tab_liste_prochaine_sortie_dvd[$i][0]."<br />".$tab_liste_prochaine_sortie_dvd[$i][1]."<br />".$tab_liste_prochaine_sortie_dvd[$i][2]."<br /><br />";
+	$sinopsys=strip_tags($tabsinopsys[0]);
+	
+	$tabtype=explode("(",$sinopsys);
+	$type=$tabtype[0];
+	// tableau avec (dans l'ordre) : titre du fulm, sinopsys du film, jaquette du film, type du film
+	$tab_liste_prochaine_sortie_dvd[$i]=array((string)$item->title,$sinopsys,(string)$item->enclosure->attributes(),$type);
+	//echo $tab_liste_prochaine_sortie_dvd[$i][0]."<br />".$tab_liste_prochaine_sortie_dvd[$i][1]."<br />".$tab_liste_prochaine_sortie_dvd[$i][2]."<br />".$type."<br /><br />";
 	$i++;
 }
 
 	//var_dump ($tab_liste_prochaine_sortie_dvd);
-
+	//die;
+$i=0;
+	echo $tab_liste_prochaine_sortie_dvd[0][0]."laa<br />";
 // enrégistrement sur la base de données
 foreach ($tab_liste_prochaine_sortie_dvd as $tab) {
-	//recupération de la ligne du tableau
-	$titre_films= $tab;
-	//préparation de la requete SQL
+	//echo $tab[0]." ici";
+	var_dump ($tab);
+	
 	$sth = $conn->prepare("SELECT * FROM films WHERE UPPER(titre_films) = UPPER(:titre)");
-	//exécution de la requete SQL
-	$sth->execute(array("titre" => $titre_films));
+	$sth->execute(array("titre" => $tab[0]));
 	//vérification d'existance (rowCount()) pour eviter les doublons en regardant si oui ou non la variable existe déja dans la base
 	if (!$sth->rowCount()) {
-	$film = new films("", $titre_films, "");
+	$film = new films("", $tab[0], $tab[1], $tab[2], $tab[3]);
 	$film->films_new();
+	$i++;
 	}
 }
-
-// recuperation des jaquettes des films dans le tableau xml
-/*foreach($xml->channel->item->enclosure as $b) {
-	$tab_jaquette[$i]= $b->attributes();
-	$i++;
-}*/
 
 ?>
 
