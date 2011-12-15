@@ -37,7 +37,7 @@
 		$date_naissance = "1990-12-16";
 		$ville_users = "bobigny";
 		// problème lors du changement pour le champ newsletter (boolen)
-		$newsletter = true;
+		$newsletter = 1;
 		$up_use = new utilisateurs($id_users, $pseudo_users, $email_users, $civilite, $nom_users, $prenom_users, $date_naissance, $ville_users, $newsletter);
 		$up_use->users_update();
 		
