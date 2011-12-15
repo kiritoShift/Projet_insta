@@ -14,7 +14,9 @@
 
 	<h3>Liste des utilisateurs :</h3>	
 	
+	
 	<?php include '/fonction.php'; 
+	// Afficher la liste de tous les utilisateurs
 		$tab2=liste_users();
 		var_dump($tab2);
 	?>
@@ -23,23 +25,31 @@
 	
 	<?php include 'classes/utilisateurs.php';
 		
-		$id_users = 5;
+		//Supprimer un utilisateur via son 'id'
+		$id_users = 7;
 		//$del_use = new utilisateurs("$id_users", "", "", "", "", "", "", "", "");
 		//$del_use->users_delete();
 		//echo "L'utilisateur avec l'id '$id_users' a été supprimer";
 		echo "<br />";
 		
-		$pseudo_users = "frank";
-		$email_users = "frank@opmail.fr";
+		
+		
+		//Modifier un utilisateur
+		$pseudo_users = "drichard";
+		$email_users = "richard@opmail.fr";
 		$civilite = "Monsieur";
-		$nom_users = "dupond";
-		$prenom_users = "frank";
-		$date_naissance = "1990-12-16";
-		$ville_users = "bobigny";
-		// problème lors du changement pour le champ newsletter (boolen)
+		$nom_users = "Dulac";
+		$prenom_users = "richard";
+		$date_naissance = "1958-10-06";
+		$ville_users = "lille";
 		$newsletter = 1;
-		$up_use = new utilisateurs($id_users, $pseudo_users, $email_users, $civilite, $nom_users, $prenom_users, $date_naissance, $ville_users, $newsletter);
-		$up_use->users_update();
+		//$up_use = new utilisateurs($id_users, $pseudo_users, $email_users, $civilite, $nom_users, $prenom_users, $date_naissance, $ville_users, $newsletter);
+		//$up_use->users_update();
+		
+		//Ajouter un nouveau utilisateur
+		$add_use = new utilisateurs($id_users, $pseudo_users, $email_users, $civilite, $nom_users, $prenom_users, $date_naissance, $ville_users, $newsletter);
+		$add_use->users_new();
+		
 		
 		
 		

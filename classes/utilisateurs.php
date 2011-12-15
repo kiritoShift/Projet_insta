@@ -26,9 +26,34 @@ class utilisateurs {
 	
 	// Ajouter un nouveau utilisateur
 	public function users_new(){
-		global $conn;
-		$query = $conn->prepare("");
-		$query->execute();
+				global $conn;
+		$query = $conn->prepare("INSERT INTO utilisateurs(id_users, 
+															pseudo_users,
+															email_users,
+															civilite,
+															nom_users,
+															prenom_users,
+															date_naissance,
+															ville_users,
+															newsletter) 
+								VALUES (:id_users,
+									    :pseudo_users,
+										:email_users,
+										:civilite,
+										:nom_users,
+										:prenom_users,
+										:date_naissance,
+										:ville_users,
+										:newsletter)");
+		$query->execute(array("id_users" => $this->id_users, 
+							  "pseudo_users" => $this->pseudo_users,
+							  "email_users" => $this->email_users,
+							  "civilite" => $this->civilite,
+							  "nom_users" => $this->nom_users,
+							  "prenom_users" => $this->prenom_users,
+							  "date_naissance" => $this->date_naissance,
+							  "ville_users" => $this->ville_users,
+							  "newsletter" => $this->newsletter));
 	}
 	
 	// 	Supprimer un utilisateur
