@@ -1,0 +1,98 @@
+
+
+body
+{
+ font: 14px Ravie, sans-serif; 
+ background: #ffffff  url("") no-repeat top center ; 
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ padding: 0;
+}
+
+img
+{
+margin:0 auto;	
+}
+ 
+ 
+ 
+div#messageerror
+ {
+ text-align:center;
+ color:red;
+ font-size: 13px;
+
+}
+
+div#ex
+
+{
+font-size: 9px;
+margin-left: 200px;
+	
+	}
+p 
+{
+    color:red;
+}
+
+fond
+{
+    color:red;
+    size:"100pt";
+}
+.formulaire
+{
+margin:0 auto;
+border-radius: 8px;
+}
+
+
+.condition
+{
+text-align:center;
+
+}
+div#test
+{
+	text-align:center;
+}
+fieldset 
+{
+
+ padding:2px;
+ margin-bottom:1px;
+ border-radius: 8px;
+ }
+ 
+legend
+  {
+ color:#600902;
+ font-weight:bold
+ }
+ 
+ label
+{
+	display: block;
+	width: 150px;
+	float: left;
+}
+
+span
+{
+	display: block;
+	float: left;
+	width: 300px;
+	
+}
+
+
+
+
+
+
+
+
+	
+d
