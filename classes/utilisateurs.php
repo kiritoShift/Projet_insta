@@ -108,6 +108,8 @@ class utilisateurs {
 			$query->execute(array("nom_films" => $this->nom_films, "id_users" => $this->id_users));
 		}
 	}
+	
+	public function users_add_mdp
 }
 
 /*	
