@@ -7,7 +7,7 @@
 	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4be01d572857270c"></script>
 <div id="bando">
 	
-	<img src="images/bando.jpg" border="0" width="780px" height="180px" />
+	<img src="images/bando1.jpg" border="0" width="780px" height="180px" />
 </div>
 
 
