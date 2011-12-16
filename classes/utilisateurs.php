@@ -1,4 +1,4 @@
-<?php include 'connection_bdd.php'; ?>
+<?php include 'connexion_bdd.php'; ?>
 <?php
 
 class utilisateurs {
