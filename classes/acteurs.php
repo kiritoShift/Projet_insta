@@ -19,9 +19,10 @@ class acteurs {
 		
 		$query = $conn->prepare("SELECT id_acteur FROM acteurs WHERE :nom_acteur = nom_acteur");
 		$query->execute(array("nom_acteur" => $nom_acteur));
-		
+		if ($query->rowcount()){
 		$select_id = $query->fetch(PDO::FETCH_OBJ);
 		$this->select_id = $select_id->id_acteur;
+		}
 	}
 	
 	// fonction de recupération d'un id

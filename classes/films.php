@@ -22,10 +22,10 @@ class films {
 		
 		$query = $conn->prepare("SELECT id_films FROM films WHERE :titre_films = titre_films");
 		$query->execute(array("titre_films" => $titre_films));
-		
+		if ($query->rowcount()){
 		$select_id = $query->fetch(PDO::FETCH_OBJ);
 		$this->select_id = $select_id->id_films;
-		
+		}
 	}
 	
 	// fonction de recupération d'un id
