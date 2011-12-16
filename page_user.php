@@ -3,28 +3,49 @@
 <?php include_once ("connexion_bdd.php");
 
 $choix=0;
-if(isset($_POST["choix"]))
+if(isset($_GET["choix"]))
 {
-   $choix=$_POST["choix"];
+   $choix=$_GET["choix"];
 }
 if($choix==1)
 {
- $result=$conn->prepare("SELECT * FROM films order by titre_films ASC");
+ $result=$conn->prepare("SELECT * FROM films order by jaquette_films ASC");
  $result->execute();	
 }
 else
 {
  if($choix==2)
  {
+  $result=$conn->prepare("SELECT * FROM films ORDER BY titre_films ASC");
+  $result->execute(); 
+}
+ else
+ { 
+  if($choix==3)
+ {
   $result=$conn->prepare("SELECT * FROM films ORDER BY sinopsys_films ASC");
   $result->execute(); 
 }
  else
  { 
+  if($choix==4)
+ {
+  $result=$conn->prepare("SELECT * FROM films ORDER BY sinopsys_films ASC");
+  $result->execute(); 
+}
+ else
+ {
+ if($choix==5)
+ {
+  $result=$conn->prepare("SELECT * FROM films ORDER BY id_films");
+  $result->execute();
+ }
+ else
+ {
   $result=$conn->prepare("SELECT * FROM films");
   $result->execute(); 
- }
-}?>
+ }}}}}
+?>
 
 <html>
 <head>
@@ -41,7 +62,7 @@ else
 <?php include("menu_user.php");	?>
 	</td>
 	<td>
-
+<?php include("entete.php")?>
 		<table align="center" bgcolor=#ffffCC border=1>
 			<tr><td><b><font size="-1">Liste des films favoris</font></B></td></tr>
 		</table>
@@ -52,24 +73,21 @@ else
 				<tr><td>
    					<table border=1>
    						<TR bgcolor=#ffffCC>
-     						<TD><font size="-1"><b>Jacquette</b></font></TD>
-     						<TD><font size="-1"><a href="page_user.php?choix=1"><b>Nom du film</b></a></font></TD>
-     						<TD><font size="-1"><b>Date de sortie</b></font></TD>
-     						<TD><font size="-1"><b>Nom du realisateur</b></font></TD>
-     						<TD><font size="-1"><b>Nom des acteurs</b></font></TD>
-     						<td><font size="-1"><a href="page_user.php?choix=2"><b>Sinopsys</b></a></font></td>							
+   							<TD><font size="1"><b>ID</b></font></TD>
+     						<TD><font size="-1"><a href="page_user.php?choix=1"><b>Jacquette</b></a></font></TD>
+     						<TD><font size="-1"><a href="page_user.php?choix=2"><b>Nom du film</b></a></font></TD>
+     						<TD><font size="-1"><a href="page_user.php?choix=3"><b>Date de sortie</b></a></font></TD>
+     						<td><font size="-1"><a href="page_user.php?choix=4"><b>Sinopsys</b></a></font></td>							
      					</TR>
      					<? while ($val = $result->fetch(PDO::FETCH_ASSOC)) { ?>
      					<TR bgcolor=white>
      						<form method="post">
-     						<TD><font size="-2"></font></TD>
-     						<TD><font size="-2"><? echo $val["titre_films"]?></font></TD>
-     						<TD><font size="-2"></font></TD>
-     						<TD><font size="-2"></font></TD>
-     						<TD><font size="-2"></font></TD>
-     						<td><font size="-2"><? echo $val["sinopsys_films"]?></font></td>
-      						<TD><font size="-2"></font><input name="favoris" type="image" src="images/iconePoubelle.gif"> favoris</TD>
-     						<TD><font size="-2"></font><input name="email" type="button" value="email"></TD></form>
+     						<TD><font size="-2"><?php echo $val["id_films"]?></font></TD>
+     						<TD><font size="-2"><img src="<? echo $val["jaquette_films"]?>" width=90 height=110 /></font></TD>
+     						<TD height=110 width=200><font size="-2"><? echo $val["titre_films"]?></font></TD>
+     						<TD height=110><font size="-2"></font></TD>
+     						<td height=110 width=500><font size="-2"><? echo $val["sinopsys_films"]?></font></td>
+      						<TD><font size="-2"></font><input name="favoris" type="image" src="images/iconePoubelle.gif"> favoris</TD></form>
      					</TR><? } ?>
    					</table>
    				</td></tr>
