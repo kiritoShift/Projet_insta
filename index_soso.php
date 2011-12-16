@@ -14,7 +14,7 @@
       <?php
 
         include "acceuil.php";
-        include "connection_bdd.php";
+        include "connexion_bdd.php";
         include "menugauche.php";
 
       ?>   
