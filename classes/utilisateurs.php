@@ -109,28 +109,5 @@ class utilisateurs {
 		}
 	}
 }
-
-/*	public function suprimer_user($id_users, $pseudo_users, $email_users, $nom_users, $prenom_users, $date_naissance){
-		$query = "INSERT INTO `projet_insta`.`utilisateurs` (`id_users` ,`pseudo_users` ,`email_users` ,`nom_users` ,`prenom_users` ,`date_naissance`) 
-VALUES ('"$id_users" = id_users', '"$pseudo_users" = pseudo_users', '"$email_users" = email_users', '"$nom_users" = nom_users', '"$prenom_users" = prenom_users', '"$date_naissance" = date_naissance"');";
-		$conn->query($this->nom_acteur, $this->prenom_acteur);
-	}
-	
-	public function modifier_user($id_acteur){
-		$query = "DELETE QUICK FROM acteurs WHERE ".$id_acteur." = id_acteur;";
-		$conn->query($this->acteur);
-	}
-	
-	public function reinit_mdp($id_acteur, $nom_acteur, $prenom_acteur) {
-		if (!empty($nom_acteur)) {
-			$query = "UPDATE acteur SET nom_acteur = ".$nom_acteur." WHERE id_acteur = ".$id_acteur.";";
-			$conn->query($this->acteur, $this->nom_acteur);
-		}
-		if (!empty($nom_acteur)) {
-			$query = "UPDATE acteur SET prenom_acteur = ".$prenom_acteur." WHERE id_acteur = ".$id_acteur.";";
-			$conn->query($this->acteur, $this->prenom_acteur);
-		}
-	}
-} */
 	
 ?>
