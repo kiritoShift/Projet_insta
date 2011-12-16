@@ -1,5 +1,9 @@
 <?php include '../connexion_bdd.php'; ?>
 <?php 
+//inclusison de l'objet jouer
+include '../classes/jouer.php';
+//inclusison de l'objet realiser
+include '../classes/realiser.php';
 //inclusison de l'objet realisateurs
 include '../classes/realisateurs.php';
 
@@ -92,11 +96,11 @@ foreach($xml->channel->item as $item){
 	// tableau avec (dans l'ordre) : titre du fulm, sinopsys du film, jaquette du film, type du film
 	$tab_liste_prochaine_sortie_cine[$i]=array((string)$item->title,$sinopsys,(string)$item->enclosure->attributes(),$type);
 	//echo $tab_liste_prochaine_sortie_cine[$i][0]."<br />".$tab_liste_prochaine_sortie_cine[$i][1]."<br />".$tab_liste_prochaine_sortie_cine[$i][2]."<br />".$type."<br /><br />";
+	
 	$tab_film_acteur_realisateur[$i]=array($item->title,$tab_realisateur[$i],$tab_acteur[$i]);
 	
 	$i++;
 }
-var_dump ($tab_film_acteur_realisateur);
 // enrégistrement sur la base de données des films
 foreach ($tab_liste_prochaine_sortie_cine as $tab) {	
 	
@@ -115,13 +119,7 @@ foreach ($tab_liste_prochaine_sortie_cine as $tab) {
 foreach ($tab_realisateur as $realisateur_liste){
 	foreach ($realisateur_liste as $realisateur)
 	if (isset($realisateur)){
-		$prenom_nom_realisateur= explode(" ",$realisateur);
-		if (!isset($prenom_nom_realisateur[1])){
-			$prenom_nom_realisateur[1]=" ";
-		}
-		if (!isset($prenom_nom_realisateur[0])){
-			$prenom_nom_realisateur[0]=" ";
-		}
+		$prenom_nom_realisateur = prenom_nom($realisateur);
 		$sth = $conn->prepare("SELECT * FROM realisateurs WHERE UPPER(nom_realisateur) = UPPER(:nom_realisateur) AND UPPER(prenom_realisateur) = UPPER(:prenom_realisateur)");
 		$sth->execute(array("nom_realisateur" => $prenom_nom_realisateur[1], "prenom_realisateur" => $prenom_nom_realisateur[0]));
 		if (!$sth->rowCount()) {
@@ -136,13 +134,7 @@ foreach ($tab_realisateur as $realisateur_liste){
 foreach ($tab_acteur as $acteur_liste){
 	foreach ($acteur_liste as $acteur)
 	if (isset($acteur)){
-		$prenom_nom_acteur= explode(" ",$acteur);
-		if (!isset($prenom_nom_acteur[1])){
-			$prenom_nom_acteur[1]=" ";
-		}
-		if (!isset($prenom_nom_acteur[0])){
-			$prenom_nom_acteur[0]=" ";
-		}
+		$prenom_nom_acteur= prenom_nom($acteur);
 		$sth = $conn->prepare("SELECT * FROM acteurs WHERE UPPER(nom_acteur) = UPPER(:nom_acteur) AND UPPER(prenom_acteur) = UPPER(:prenom_acteur)");
 		$sth->execute(array("nom_acteur" => $prenom_nom_acteur[1], "prenom_acteur" => $prenom_nom_acteur[0]));
 		if (!$sth->rowCount()) {
@@ -155,8 +147,29 @@ foreach ($tab_acteur as $acteur_liste){
 
 //enregistrement sur la base de données jouer et realiser
 foreach ($tab_film_acteur_realisateur as $tab){
+	$film= new films("",$tab[0],"","","");
+	$id_film= $film->films_get_id();
 	foreach ($tab[1] as $realisateurs){
-		$realiser= new 
+		$nom_prenom_realisateur= prenom_nom($realisateurs);
+		$realiser= new realisateurs("",$nom_prenom_realisateur[1],"");
+		$id_realisateur = $realiser->realisateurs_get_id();
+		$sth = $conn->prepare("SELECT * FROM realiser WHERE UPPER(id_films) = UPPER(:id_films) AND UPPER(id_realisateur) = UPPER(:id_realisateur)");
+		$sth->execute(array("id_films" => $id_film, "id_realisateur" => $id_realisateur));
+		if (!$sth->rowCount()) {
+			$realiser= new realiser($id_realisateur,$id_film);
+			$realiser->realiser_new();
+		}
+	}
+	foreach ($tab[2] as $acteurs){
+		$nom_prenom_acteur= prenom_nom($acteurs);
+		$jouer= new acteurs("",$nom_prenom_acteur[1],"");
+		$id_acteur = $jouer->acteurs_get_id();
+		$sth = $conn->prepare("SELECT * FROM jouer WHERE UPPER(id_films) = UPPER(:id_films) AND UPPER(id_acteur) = UPPER(:id_acteur)");
+		$sth->execute(array("id_films" => $id_film, "id_acteur" => $id_acteur));
+		if (!$sth->rowCount()) {
+			$jouer= new jouer($id_acteur,$id_film);
+			$jouer->jouer_new();
+		}		
 	}
 }
 

@@ -1,5 +1,6 @@
 <?php include 'connexion_bdd.php'; ?>
 <?php include 'classes/films.php'; ?>
+<?php include 'classes/realisateurs.php'; ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
 <?php 
 /*
@@ -19,11 +20,14 @@ $result = mysql_query("select * from films order by titre_films ASC;");
 echo $result;
 */
 $var1="toto";
-$var2="dede";
+$var2="";
 $var3="";
 $var4="";
 $id="";
 $film = new films($id, $var1, $var2,$var3,$var4);
-echo $film->films_get_id();
+//echo $film->films_get_id();
+$real = new realisateurs("",$var1	,"");
+//$real->realisateurs_new();
+echo $real->realisateurs_get_id();
 
 ?>

@@ -9,13 +9,28 @@ class acteurs {
 	private $id_acteur;
 	private $nom_acteur;
 	private $prenom_acteur;
+	private $select_id;
 	
 	public function __construct($id_acteur= "", $nom_acteur= "", $prenom_acteur= ""){
-		
+		global $conn;
 		$this->id_acteur = $id_acteur;
 		$this->nom_acteur = $nom_acteur;
 		$this->prenom_acteur = $prenom_acteur;
+		
+		$query = $conn->prepare("SELECT id_acteur FROM acteurs WHERE :nom_acteur = nom_acteur");
+		$query->execute(array("nom_acteur" => $nom_acteur));
+		
+		$select_id = $query->fetch(PDO::FETCH_OBJ);
+		$this->select_id = $select_id->id_acteur;
 	}
+	
+	// fonction de recupération d'un id
+	
+	public function acteurs_get_id (){
+		global $conn;
+		return $this->select_id;
+	}
+	
 	// fonction d'ajout d'un nouveau acteur
 	public function acteurs_new(){
 		global $conn;
