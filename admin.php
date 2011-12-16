@@ -1,4 +1,3 @@
-<?php //include 'entete.php';?>
 <!DOCTYPE html>
 <html lang="fr">
  
@@ -18,8 +17,8 @@
 	
 	<?php include 'fonction.php'; 
 	// Afficher la liste de tous les utilisateurs
-		$tab2=liste_users();
-		var_dump($tab2);
+		//$tab2=liste_users();
+		//var_dump($tab2);
 	?>
 	
 	<br />
@@ -55,16 +54,18 @@
 
 		
 		//Ajouter un mdp
-		//$mdp = "toto2";
+		$mdp = "toto3";
 		//$new_mdp = new mot_de_passe("", $mdp);
 		//$new_mdp->mot_de_passe_new();
 
 		//Supprimer un MDP
-		$id_mdp = "5";
-		$mdp = "toto2";
-		$del_mdp = new mot_de_passe($id_mdp, $mdp);
-		$del_mdp->mot_de_passe_update();
+		$id_mdp = "6";
+		//$del_mdp = new mot_de_passe($id_mdp, "");
+		//$del_mdp->mot_de_passe_delete();
 		
+		//Modifier un MDP
+		//$del_mdp = new mot_de_passe($id_mdp, $mdp);
+		//$del_mdp->mot_de_passe_update();
 		
 		
 		
