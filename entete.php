@@ -19,11 +19,6 @@
 	
 	<img src="images/bando1.jpg" border="0" width="780px" height="180px" />
 </div>
-
-<div id="bouton_souscrire"><input type="submit" name="btninscription" value="Inscription" href="formulaire_inscription.php" onclick="window.open('formulaire_inscription.php', 'exemple', 'height=800%, width=800, top=90, left=350, toolbar=no, menubar=no, location=yes, resizable=yes, scrollbars=yes, status=no'); return false;"/> 
-</div>		
-   
-   
    
    
 <ul id="menuDeroulant">
