@@ -1,4 +1,4 @@
-<?php include 'entete.php';?>
+<?php //include 'entete.php';?>
 <!DOCTYPE html>
 <html lang="fr">
  
@@ -16,7 +16,7 @@
 	<h3>Liste des utilisateurs :</h3>	
 	
 	
-	<?php include '/fonction.php'; 
+	<?php include 'fonction.php'; 
 	// Afficher la liste de tous les utilisateurs
 		$tab2=liste_users();
 		var_dump($tab2);
@@ -25,6 +25,7 @@
 	<br />
 	
 	<?php include 'classes/utilisateurs.php';
+		  include 'classes/mot_de_passe.php';
 		
 		//Supprimer un utilisateur via son 'id'
 		//$id_users = 7;
@@ -51,12 +52,17 @@
 		//$add_use = new utilisateurs($id_users, $pseudo_users, $email_users, $civilite, $nom_users, $prenom_users, $date_naissance, $ville_users, $newsletter);
 		//$add_use->users_new();
 		
-		include 'classes/mot_de_passe.php';
+
 		
 		//Ajouter un mdp
-		$mdp = "toto"
-		$new_mdp=new mot_de_passe("", $mdp);
-		
+		$mdp = "toto2";
+		//$new_mdp = new mot_de_passe("", $mdp);
+		//$new_mdp->mot_de_passe_new();
+
+		//Supprimer un MDP
+		$id_mdp = "3";
+		$del_mdp = new mot_de_passe($id_mdp, $id_mdp);
+		$del_mdp->mot_de_passe_update();
 		
 		
 		

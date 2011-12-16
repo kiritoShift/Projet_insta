@@ -34,7 +34,7 @@ class mot_de_passe {
 		global $conn;
 		if (!empty($this->mdp)) {
 			$query = $conn->prepare("UPDATE mot_de_passe SET mdp = :mdp WHERE mdp = :mdp AND :id_mdp = id_mdp;");
-			$query->execute(array("titre_films" => $this->titre_films, "mdp" => $this->mdp));
+			$query->execute(array("mdp" => $this->mdp, "id_mdp" => $this->id_mdp));
 		}
 		if (!empty($this->id_mdp)) {
 			$query = $conn->prepare("UPDATE mot_de_passe SET id_mdp = :id_mdp WHERE mdp = :mdp AND :id_mdp = id_mdp;");
