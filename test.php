@@ -20,13 +20,13 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
 $result = mysql_query("select * from films order by titre_films ASC;");
 echo $result;
 */
-$var1="toto";
+$var1="pipi";
 $var2="";
 $var3="";
 $var4="";
-$id="3";
-$film = new mot_de_passe($id, "");
+$id=4;
+$film = new mot_de_passe($id, $var1);
 //echo $film->films_get_id();
-$film->mot_de_passe_delete();
+$film->mot_de_passe_update();
 
 ?>
