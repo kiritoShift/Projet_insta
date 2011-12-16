@@ -1,27 +1,11 @@
-<html lang="fr">
- 
-  <head>
- 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- 
-    <title>Page d'ajout utilisateurs</title>
-    <link rel="stylesheet" href="css/admin.css" />
-    
-  </head>
- 
-	<body>
-	<h2 align=center> Bienvenue sur la page d'ajout de nouveaux utilisateurs</h2>
-	
-	
 	<?php include 'classes/utilisateurs.php';
 
 		if (empty($_POST['nom_users']) || empty($_POST['prenom_users']) || empty($_POST['civilite']) || empty($_POST['email_users']) || empty($_POST['pseudo_users']) || empty($_POST['confirmation_Mot_de_passe']) || empty($_POST['Mot_de_passe'])) {
 			  		if (!empty($_POST['btnEnvoyer'])) {
-			  			echo '<div id="messageerror">Merci de remplir les champ oblgatoire </div>';
-			  		}
+			  						echo '<div id="messageerror">Merci de remplir les champ oblgatoire </div>';
 			  							}
 	
-	echo '
+	echo'
   				
     			
 				<form method="POST">
@@ -145,13 +129,14 @@
 																
 								
 								<fieldset class="formulaire" style="width:350px;">
-								<legend> Newsletter </legend>
+								<legend> Newsletter & conditions g&eacute;n&eacute;rales </legend>
 								
-	  								<!--* Newsletter *-->
-
+									<!--*************************************-->
+	  								<!--* Newsletter & conditions g�n�rales *-->
+	  								<!--*************************************-->
 								<br>
 	  							<input type="checkbox" id="newsletter" name="newsletter" tabindex="14" />	
-							    <FONT size="2"><span for="newsletter">L utilisateur recevra la newsletter</span>
+							    <FONT size="2"><span for="newsletter">Je veut etre informer des prochaine sortie de film</span>
 							    </FONT>
 
 											    
@@ -167,20 +152,10 @@
 						</form>
 						
 						';
-				  	}
 
-	else {
-	 		$envoie_form = new utilisateurs('', $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], $_POST['newsletter'] );	
-	 		$envoie_form->users_new();
-	 		
-	 		
+//	else {
+		
+		$envoie_utilisateurs = new utilisateurs('', $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], $_POST['newsletter'] );	
+		$envoie_utilisateurs->users_new();
   		
-	}
-  			
-  		
-  		
-?>
-	
-	
- 	</body>
-</html>
+//	}
