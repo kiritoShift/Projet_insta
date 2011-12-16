@@ -11,14 +11,28 @@ class films {
 	private $sinopsys_films;
 	private $type_films;
 	private $jaquette_films;
-	
+	private $select_id;
 	public function __construct($id_films = "", $titre_films = "", $sinopsys_films = "", $jaquette_films = "", $type_films =""){
-		
+		global $conn;
 		$this->id_films = $id_films;
 		$this->titre_films = $titre_films;
 		$this->sinopsys_films = $sinopsys_films;
 		$this->jaquette_films = $jaquette_films;
 		$this->type_films = $type_films;
+		
+		$query = $conn->prepare("SELECT id_films FROM films WHERE :titre_films = titre_films");
+		$query->execute(array("titre_films" => $titre_films));
+		
+		$select_id = $query->fetch(PDO::FETCH_OBJ);
+		$this->select_id = $select_id->id_films;
+		
+	}
+	
+	// fonction de recupération d'un id
+	
+	public function films_get_id (){
+		global $conn;
+		return $this->select_id;
 	}
 	
 	// fonction d'ajout d'un nouveau film
@@ -32,7 +46,7 @@ class films {
 	public function films_delete(){
 		global $conn;
 		$query = $conn->prepare("DELETE QUICK FROM films WHERE :id_films = id_films;");
-		$query->execute(array("id_films" => $id_films));
+		$query->execute(array("id_films" => $this->id_films));
 	}
 	
 	// fonction de modification d'un champ dans la table films
