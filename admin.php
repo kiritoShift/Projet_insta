@@ -55,14 +55,14 @@
 
 		
 		//Ajouter un mdp
-		$mdp = "toto2";
+		//$mdp = "toto2";
 		//$new_mdp = new mot_de_passe("", $mdp);
 		//$new_mdp->mot_de_passe_new();
 
 		//Supprimer un MDP
 		$id_mdp = "3";
-		$del_mdp = new mot_de_passe($id_mdp, $id_mdp);
-		$del_mdp->mot_de_passe_update();
+		$del_mdp = new mot_de_passe($id_mdp, "");
+		$del_mdp->mot_de_passe_delete();
 		
 		
 		
