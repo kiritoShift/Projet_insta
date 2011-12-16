@@ -108,18 +108,6 @@ class utilisateurs {
 			$query->execute(array("nom_films" => $this->nom_films, "id_users" => $this->id_users));
 		}
 	}
-	
-	public function users_add_mdp
 }
-
-/*	
-	public function reinit_mdp($id_acteur, $nom_acteur, $prenom_acteur) {
-		if (!empty($nom_acteur)) {
-			$query = "UPDATE acteur SET nom_acteur = ".$nom_acteur." WHERE id_acteur = ".$id_acteur.";";
-			$conn->query($this->acteur, $this->nom_acteur);
-		}
-
-	}
-*/
 	
 ?>
