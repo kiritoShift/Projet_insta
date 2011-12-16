@@ -39,7 +39,7 @@ class acteurs {
 	}
 	
 	// fonction de supression d'un acteur
-	public function acteurs_drop(){
+	public function acteurs_delete(){
 		global $conn;
 		$query =$conn->prepare( "DELETE QUICK FROM acteurs WHERE :id_acteur = id_acteur;");
 		$query->execute(array("id_acteur" =>$this->id_acteur));
