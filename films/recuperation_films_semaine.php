@@ -91,10 +91,12 @@ foreach($xml->channel->item as $item){
 	
 	// tableau avec (dans l'ordre) : titre du fulm, sinopsys du film, jaquette du film, type du film
 	$tab_liste_prochaine_sortie_cine[$i]=array((string)$item->title,$sinopsys,(string)$item->enclosure->attributes(),$type);
-	
 	//echo $tab_liste_prochaine_sortie_cine[$i][0]."<br />".$tab_liste_prochaine_sortie_cine[$i][1]."<br />".$tab_liste_prochaine_sortie_cine[$i][2]."<br />".$type."<br /><br />";
+	$tab_film_acteur_realisateur[$i]=array($item->title,$tab_realisateur[$i],$tab_acteur[$i]);
+	
 	$i++;
 }
+var_dump ($tab_film_acteur_realisateur);
 // enrégistrement sur la base de données des films
 foreach ($tab_liste_prochaine_sortie_cine as $tab) {	
 	
@@ -152,7 +154,11 @@ foreach ($tab_acteur as $acteur_liste){
 }
 
 //enregistrement sur la base de données jouer et realiser
-
+foreach ($tab_film_acteur_realisateur as $tab){
+	foreach ($tab[1] as $realisateurs){
+		$realiser= new 
+	}
+}
 
 ?>
 </body>

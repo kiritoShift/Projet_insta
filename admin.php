@@ -1,3 +1,4 @@
+<?php include 'entete.php';?>
 <!DOCTYPE html>
 <html lang="fr">
  
@@ -26,7 +27,7 @@
 	<?php include 'classes/utilisateurs.php';
 		
 		//Supprimer un utilisateur via son 'id'
-		$id_users = 7;
+		//$id_users = 7;
 		//$del_use = new utilisateurs("$id_users", "", "", "", "", "", "", "", "");
 		//$del_use->users_delete();
 		//echo "L'utilisateur avec l'id '$id_users' a été supprimer";
@@ -49,6 +50,13 @@
 		//Ajouter un nouveau utilisateur
 		//$add_use = new utilisateurs($id_users, $pseudo_users, $email_users, $civilite, $nom_users, $prenom_users, $date_naissance, $ville_users, $newsletter);
 		//$add_use->users_new();
+		
+		include 'classes/mot_de_passe.php';
+		
+		//Ajouter un mdp
+		$mdp = "toto"
+		$new_mdp=new mot_de_passe("", $mdp);
+		
 		
 		
 		
