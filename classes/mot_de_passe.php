@@ -32,13 +32,7 @@ class mot_de_passe {
 	// fonction de modification d'un champ dans la table mot_de_passe
 	public function mot_de_passe_update() {
 		global $conn;
-		if (!empty($this->mdp)) {
-			$query = $conn->prepare("UPDATE mot_de_passe SET mdp = :mdp WHERE mdp = :mdp AND :id_mdp = id_mdp;");
-			$query->execute(array("mdp" => $this->mdp, "id_mdp" => $this->id_mdp));
-		}
-		if (!empty($this->id_mdp)) {
-			$query = $conn->prepare("UPDATE mot_de_passe SET id_mdp = :id_mdp WHERE mdp = :mdp AND :id_mdp = id_mdp;");
-			$query->execute(array("mdp" => $this->mdp, "id_mdp" => $this->id_mdp));
-		}
+		$query = $conn->prepare("UPDATE mot_de_passe SET mdp = :mdp WHERE :id_mdp = id_mdp;");
+		$query->execute(array("mdp" => $this->mdp, "id_mdp" => $this->id_mdp));
 	}
 }
