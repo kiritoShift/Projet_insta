@@ -5,9 +5,9 @@
 <head>
        <title>LOUPAC-PROD CORPORATION</title>
        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-       <link rel="stylesheet" media="screen" type="text/css" title="loupac" href="css/acceuil.css" />
+</head>
 
-   </head>
+
 
     <body>
   
