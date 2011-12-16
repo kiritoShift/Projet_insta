@@ -20,8 +20,10 @@ echo $result;
 */
 $var1="toto";
 $var2="dede";
-$id="445";
-$film = new films($id, $var1, $var2);
-$film->films_update();
+$var3="";
+$var4="";
+$id="";
+$film = new films($id, $var1, $var2,$var3,$var4);
+echo $film->films_get_id();
 
 ?>
