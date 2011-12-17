@@ -1,4 +1,4 @@
-<?php
+<?php include 'connexion_bdd.php';
 /**
  * 
  * creation de l'objet mot_de_passe avec des fonctions pour la modification SQL

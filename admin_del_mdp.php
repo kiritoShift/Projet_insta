@@ -14,9 +14,8 @@
 	
 	
 	<?php include 'classes/mot_de_passe.php';
-		  include 'connexion_bdd.php';
 
-		if (empty($_POST['id_mdp']) || empty($_POST['mdp']) || empty($_POST['mdp_conf'])) {
+				if (empty($_POST['id_mdp']) || empty($_POST['mdp']) || empty($_POST['mdp_conf'])) {
 				if (!empty($_POST['btnEnvoyer'])) {
 				  			echo '<div id="messageerror">Merci de remplir les champs oblgatoire </div>';
 				  					}
@@ -82,7 +81,7 @@
 	 		$envoie_form = new mot_de_passe($_POST['id_mdp'], $_POST['mdp']);	
 	 		$envoie_form->mot_de_passe_update();
 	 		
-	 		echo "Le mot de passe a bien été supprimer de la base de données";
+	 		echo "Le mot de passe a bien été supprimer depuis la base de données";
 	 		
   		
 	}
