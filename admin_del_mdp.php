@@ -78,6 +78,7 @@
 				  	}
 
 	else {
+
 	 		$envoie_form = new mot_de_passe($_POST['id_mdp'], $_POST['mdp']);	
 	 		$envoie_form->mot_de_passe_update();
 	 		
