@@ -4,18 +4,18 @@
  
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
  
-    <title>Page modification MDP</title>
+    <title>Page ajout MDP</title>
     <link rel="stylesheet" href="css/admin.css" />
     
   </head>
  
 	<body>
-	<h2 align=center> Page de modification des mots de passe utilisateurs</h2>
+	<h2 align=center> Page d'ajout des mots de passe utilisateurs</h2>
 	
 	
 	<?php include 'classes/mot_de_passe.php';
 
-		if (empty($_POST['id_users']) || empty($_POST['confirmation_Mot_de_passe']) || empty($_POST['Mot_de_passe'])) {
+		if (empty($_POST['id_mdp']) || empty($_POST['mdp']) || empty($_POST['mdp_conf'])) {
 			  		if (!empty($_POST['btnEnvoyer'])) {
 			  			echo '<div id="messageerror">Merci de remplir les champs oblgatoire </div>';
 			  					}
@@ -38,8 +38,8 @@
   									<!--** id **-->
 
   									
-								<label for="id_users">ID<FONT color="red">*</FONT> :</label>
-								<input type="text" id="id_users" name="id_users"/>
+								<label for="id_mdp">ID<FONT color="red">*</FONT> :</label>
+								<input type="text" id="id_mdp" name="id_mdp"/>
 								<br />
 								<br />					
 
@@ -48,8 +48,8 @@
 	  								<!--********** Mot de passe ************-->
 
 						
-								<label for="IDMdp">Mot de passe<FONT color="red">*</FONT> :</label>
-								<input type="password" id="IDMdp" name="mdp"/>
+								<label for="mdp">Mot de passe<FONT color="red">*</FONT> :</label>
+								<input type="password" id="mdp" name="mdp"/>
 								<br />
 								<br />
 																
@@ -58,8 +58,8 @@
 	  								<!--**** confirmation Mot de passe *****-->
 
 						
-								<label for="IDCmdp">confirmation du Mot de passe<FONT color="red">*</FONT> :</label>
-								<input type="password" id="IDCmdp" name="confirmation_Mot_de_passe"/>
+								<label for="mdp_conf">confirmation du Mot de passe<FONT color="red">*</FONT> :</label>
+								<input type="password" id="mdp_conf" name="mdp_conf"/>
 								<br />
 								<br />
 							
@@ -81,10 +81,10 @@
 				  	}
 
 	else {
-	 		$envoie_form = new utilisateurs($_POST['id_users'], $_POST['mdp']);	
-	 		$envoie_form->users_new();
+	 		$envoie_form = new mot_de_passe($_POST['id_mdp'], $_POST['mdp']);	
+	 		$envoie_form->mot_de_passe_new();
 	 		
-	 		echo "L'utilisateur " .$_POST['nom_users']." ".$_POST['prenom_users']. " a bien été ajouter à la base de données";
+	 		echo "Le mot de passe de l'utilisateur a bien été ajouter à la base de données";
 	 		
   		
 	}

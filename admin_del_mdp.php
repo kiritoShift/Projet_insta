@@ -15,9 +15,9 @@
 	
 	<?php include 'classes/mot_de_passe.php';
 
-				if (empty($_POST['id_mdp']) || empty($_POST['mdp']) || empty($_POST['mdp_conf'])) {
+				if (empty($_POST['id_mdp'])) {
 				if (!empty($_POST['btnEnvoyer'])) {
-				  			echo '<div id="messageerror">Merci de remplir les champs oblgatoire </div>';
+				  			echo '<div id="messageerror">Merci de fournir l\'id a supprimer </div>';
 				  					}
 	
 	echo '
@@ -40,31 +40,6 @@
 								<br />
 								<br />					
 
-																
-
-	  								<!--********** Mot de passe ************-->
-
-						
-								<label for="mdp">Mot de passe<FONT color="red">*</FONT> :</label>
-								<input type="password" id="mdp" name="mdp"/>
-								<br />
-								<br />
-																
-								
-
-	  								<!--**** confirmation Mot de passe *****-->
-
-						
-								<label for="mdp_conf">confirmation du Mot de passe<FONT color="red">*</FONT> :</label>
-								<input type="password" id="mdp_conf" name="mdp_conf"/>
-								<br />
-								<br />
-							
-								
-								
-								</fieldset>				
-						
-
 
 								<!--** Bouton Envoyer **-->
 								
@@ -79,10 +54,10 @@
 
 	else {
 
-	 		$envoie_form = new mot_de_passe($_POST['id_mdp'], $_POST['mdp']);	
-	 		$envoie_form->mot_de_passe_update();
+	 		$envoie_form = new mot_de_passe($_POST['id_mdp'], "");	
+	 		$envoie_form->mot_de_passe_delete();
 	 		
-	 		echo "Le mot de passe a bien été supprimer depuis la base de données";
+	 		echo "Le mot de passe a bien été supprimer de la base de données";
 	 		
   		
 	}
