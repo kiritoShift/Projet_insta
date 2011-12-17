@@ -55,7 +55,7 @@
 
 		
 		//Ajouter un mdp
-		$mdp = "toto3";
+		$mdp = "to";
 		//$new_mdp = new mot_de_passe("", $mdp);
 		//$new_mdp->mot_de_passe_new();
 

@@ -14,12 +14,12 @@
 	
 	
 	<?php include 'classes/mot_de_passe.php';
+		  include 'connexion_bdd.php';
 
-		if (empty($_POST['id_mdp']) || empty($_POST['confirmation_Mot_de_passe']) || empty($_POST['Mot_de_passe'])) {
-			  		if (!empty($_POST['btnEnvoyer'])) {
-			  			echo '<div id="messageerror">Merci de remplir les champs oblgatoire </div>';
-			  					}
-
+		if (empty($_POST['id_mdp']) || empty($_POST['mdp']) || empty($_POST['mdp_conf'])) {
+				if (!empty($_POST['btnEnvoyer'])) {
+				  			echo '<div id="messageerror">Merci de remplir les champs oblgatoire </div>';
+				  					}
 	
 	echo '
   				
@@ -56,8 +56,8 @@
 	  								<!--**** confirmation Mot de passe *****-->
 
 						
-								<label for="mdp">confirmation du Mot de passe<FONT color="red">*</FONT> :</label>
-								<input type="password" id="mdp" name="mdp"/>
+								<label for="mdp_conf">confirmation du Mot de passe<FONT color="red">*</FONT> :</label>
+								<input type="password" id="mdp_conf" name="mdp_conf"/>
 								<br />
 								<br />
 							
@@ -79,8 +79,8 @@
 				  	}
 
 	else {
-	 		$envoie_form = new mot_de_passe($_POST['id_users'], "");	
-	 		$envoie_form->mot_de_passe_delete();
+	 		$envoie_form = new mot_de_passe($_POST['id_mdp'], $_POST['mdp']);	
+	 		$envoie_form->mot_de_passe_update();
 	 		
 	 		echo "Le mot de passe a bien été supprimer de la base de données";
 	 		
