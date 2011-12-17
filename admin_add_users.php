@@ -17,7 +17,7 @@
 
 		if (empty($_POST['nom_users']) || empty($_POST['prenom_users']) || empty($_POST['civilite']) || empty($_POST['email_users']) || empty($_POST['pseudo_users']) || empty($_POST['confirmation_Mot_de_passe']) || empty($_POST['Mot_de_passe'])) {
 			  		if (!empty($_POST['btnEnvoyer'])) {
-			  			echo '<div id="messageerror">Merci de remplir les champ oblgatoire </div>';
+			  			echo '<div id="messageerror">Merci de remplir les champs oblgatoire </div>';
 			  					}
 	
 	echo '
