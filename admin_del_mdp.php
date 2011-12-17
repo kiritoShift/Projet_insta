@@ -37,8 +37,7 @@
   									
 								<label for="id_mdp">ID<FONT color="red">*</FONT> :</label>
 								<input type="text" id="id_mdp" name="id_mdp"/>
-								<br />
-								<br />					
+								<br />				
 
 
 								<!--** Bouton Envoyer **-->

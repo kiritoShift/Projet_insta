@@ -40,9 +40,7 @@
 								<label for="id_users">ID<FONT color="red">*</FONT> :</label>
 								<input type="text" id="id_users" name="id_users"/>
 								<br />
-								<br />	
-				
-				
+
   									<!--************* civilite *************-->
 
   								<br>
@@ -102,7 +100,6 @@
 								<br />
 								<div id=ex>jj/mm/aaaa</div>
 								<br />
-								<br />
 									
 								
 							</fieldset>
@@ -113,7 +110,7 @@
 	
 								
 						<fieldset class="formulaire" style="width:350px;">
-						<legend> Pseudo et mot de passe utilisateur </legend>
+						<legend> Pseudo et newsletter </legend>
 																
 
 	  								<!--************** Pseudo **************-->
@@ -121,16 +118,12 @@
 								<br>
 								<label for="Pseudo_user">Pseudo<FONT color="red">*</FONT> :</label>
 								<input type="text" id="Pseudo_users" name="pseudo_users"/>
-								<br />
-								<br />		
+								<br />	
 						
 				
 <!--********************************************newsletter********************************************-->
 							
 																
-								
-								<fieldset class="formulaire" style="width:350px;">
-								<legend> Newsletter </legend>
 								
 	  								<!--* Newsletter *-->
 

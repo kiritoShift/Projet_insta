@@ -9,7 +9,7 @@
     
   </head>
  
-	<body>
+	<body: BGCOLOR="#4682B4">
 	<h2 align=center> Page d'ajout des mots de passe utilisateurs</h2>
 	
 	

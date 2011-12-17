@@ -93,7 +93,6 @@
 								<br />
 								<div id=ex>jj/mm/aaaa</div>
 								<br />
-								<br />
 									
 								
 							</fieldset>
@@ -150,7 +149,7 @@
 
 								<br>
 	  							<input type="checkbox" id="newsletter" name="newsletter" tabindex="14" />	
-							    <FONT size="2"><span for="newsletter">L utilisateur recevra la newsletter</span>
+							    <FONT size="2"><span for="newsletter">L\'utilisateur recevra la newsletter</span>
 							    </FONT>
 
 											    
