@@ -14,7 +14,7 @@
 	<h1 align=center>Bienvenue sur la page d'administration</h1>
 	<br />
 
-	<h3 align=center>Ajouter, Modifier, Supprimer un utilisateur :</h3>
+	<u><h3 align=center>Ajouter, Modifier, Supprimer un utilisateur :</h3></u>
 			<B> 
 			<form action="admin_add_users"> 
 			<p> 
@@ -42,9 +42,10 @@
 			onClick="self.location.href='admin_del_users.php'"></center>
 			</p> 
 			</form></B>
+			<br />
 			
 			
-		<h3 align=center>Ajouter, Modifier, Supprimer un mot de passe :</h3>
+		<u><h3 align=center>Ajouter, Modifier, Supprimer un mot de passe :</h3></u>
 			<B> 
 			<form action="admin_add_mdp"> 
 			<p> 
