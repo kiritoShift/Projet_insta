@@ -11,14 +11,15 @@
   </head>
  
 	<body>
-	<h2 align=center> Bienvenue sur la page d'administration</h2>
+	<h1 align=center>Bienvenue sur la page d'administration</h1>
 	<br />
 
+	<h3 align=center>Ajouter, Modifier, Supprimer un utilisateur :</h3>
 			<B> 
 			<form action="admin_add_users"> 
 			<p> 
-			<input type="button" name="lien" value="Ajouter un utilisateur" 
-			onClick="self.location.href='admin_add_users.php'"> 
+			<center><input type="button" name="lien" value="Ajouter un utilisateur" 
+			onClick="self.location.href='admin_add_users.php'"></center>
 			</p> 
 			</form></B>
 			
@@ -27,8 +28,8 @@
 			<B> 
 			<form action="admin_update_users"> 
 			<p> 
-			<input type="button" name="lien" value="Modification un utilisateur" 
-			onClick="self.location.href='admin_update_users.php'"> 
+			<center><input type="button" name="lien" value="Modification un utilisateur" 
+			onClick="self.location.href='admin_update_users.php'"></center> 
 			</p> 
 			</form></B>
 			
@@ -37,18 +38,18 @@
 			<B> 
 			<form action="admin_delete_users"> 
 			<p> 
-			<input type="button" name="lien" value="Supprimer un utilisateur" 
-			onClick="self.location.href='admin_del_users.php'"> 
+			<center><input type="button" name="lien" value="Supprimer un utilisateur" 
+			onClick="self.location.href='admin_del_users.php'"></center>
 			</p> 
 			</form></B>
 			
 			
-			
+		<h3 align=center>Ajouter, Modifier, Supprimer un mot de passe :</h3>
 			<B> 
 			<form action="admin_add_mdp"> 
 			<p> 
-			<input type="button" name="lien" value="Créer le MDP d'un utilisateur" 
-			onClick="self.location.href='admin_add_mdp.php'"> 
+			<center><input type="button" name="lien" value="Créer le MDP d'un utilisateur" 
+			onClick="self.location.href='admin_add_mdp.php'"></center>
 			</p> 
 			</form></B>
 		
@@ -57,8 +58,8 @@
 			<B> 
 			<form action="admin_update_mdp"> 
 			<p> 
-			<input type="button" name="lien" value="Modifier le MDP d'un utilisateur" 
-			onClick="self.location.href='admin_update_mdp.php'"> 
+			<center><input type="button" name="lien" value="Modifier le MDP d'un utilisateur" 
+			onClick="self.location.href='admin_update_mdp.php'"></center>
 			</p> 
 			</form></B>
 			
@@ -67,8 +68,8 @@
 			<B> 
 			<form action="admin_del_mdp"> 
 			<p> 
-			<input type="button" name="lien" value="Supprimer le MDP d'un utilisateur" 
-			onClick="self.location.href='admin_del_mdp.php'"> 
+			<center><input type="button" name="lien" value="Supprimer le MDP d'un utilisateur" 
+			onClick="self.location.href='admin_del_mdp.php'"></center>
 			</p> 
 			</form></B>
 
