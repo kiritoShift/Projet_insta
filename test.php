@@ -1,6 +1,7 @@
 <?php include 'connexion_bdd.php'; ?>
 <?php include 'classes/films.php'; ?>
 <?php include 'classes/realisateurs.php'; ?>
+<?php include 'classes/mot_de_passe.php'; ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
 <?php 
 /*
@@ -19,15 +20,13 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
 $result = mysql_query("select * from films order by titre_films ASC;");
 echo $result;
 */
-$var1="toto";
+$var1="pipi";
 $var2="";
 $var3="";
 $var4="";
-$id="";
-$film = new films($id, $var1, $var2,$var3,$var4);
+$id=4;
+$film = new mot_de_passe($id, $var1);
 //echo $film->films_get_id();
-$real = new realisateurs("",$var1	,"");
-//$real->realisateurs_new();
-echo $real->realisateurs_get_id();
+$film->mot_de_passe_update();
 
 ?>

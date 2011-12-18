@@ -19,9 +19,10 @@ class acteurs {
 		
 		$query = $conn->prepare("SELECT id_acteur FROM acteurs WHERE :nom_acteur = nom_acteur");
 		$query->execute(array("nom_acteur" => $nom_acteur));
-		
+		if ($query->rowcount()){
 		$select_id = $query->fetch(PDO::FETCH_OBJ);
 		$this->select_id = $select_id->id_acteur;
+		}
 	}
 	
 	// fonction de recupération d'un id
@@ -39,7 +40,7 @@ class acteurs {
 	}
 	
 	// fonction de supression d'un acteur
-	public function acteurs_drop(){
+	public function acteurs_delete(){
 		global $conn;
 		$query =$conn->prepare( "DELETE QUICK FROM acteurs WHERE :id_acteur = id_acteur;");
 		$query->execute(array("id_acteur" =>$this->id_acteur));

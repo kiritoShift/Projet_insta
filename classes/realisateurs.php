@@ -19,9 +19,10 @@ class realisateurs {
 		
 		$query = $conn->prepare("SELECT id_realisateur FROM realisateurs WHERE :nom_realisateur = nom_realisateur");
 		$query->execute(array("nom_realisateur" => $nom_realisateur));
-		
+		if ($query->rowcount()){
 		$select_id = $query->fetch(PDO::FETCH_OBJ);
 		$this->select_id = $select_id->id_realisateur;
+		}
 	}
 	
 	// fonction de recupération d'un id

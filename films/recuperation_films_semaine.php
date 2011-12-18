@@ -1,20 +1,7 @@
 <?php include '../connexion_bdd.php'; ?>
-<?php 
-//inclusison de l'objet jouer
-include '../classes/jouer.php';
-//inclusison de l'objet realiser
-include '../classes/realiser.php';
-//inclusison de l'objet realisateurs
-include '../classes/realisateurs.php';
-
-//inclusion de l'Objet acteurs
-include '../classes/acteurs.php';
-
-//inclusion de l'objet films
-include '../classes/films.php';
-
-//inclusion des fonctions
+<?php
 include '../fonction.php';
+spl_autoload_register('autoClass');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
