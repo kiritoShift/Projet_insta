@@ -13,9 +13,9 @@
   
       <?php
 
-        include "acceuil.php";
+ 
         include "connexion_bdd.php";
-        include "menugauche.php";
+        include "pub.php";
 
       ?>   
       

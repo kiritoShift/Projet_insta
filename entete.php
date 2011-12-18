@@ -17,7 +17,7 @@
 
 <div id="bando">
 	
-	<img src="images/bando1.jpg" border="0" width="780px" height="180px" />
+	<img src="images/bando1 (2).jpg" border="0" width="780px" height="180px" />
 </div>
    
    
