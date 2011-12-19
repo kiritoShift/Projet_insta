@@ -17,15 +17,7 @@
  		 <!-- <FONT size="7pt" face="movie times"> Formulaire d/inscription<br /></FONT>    -->
  		 <P style="text-align:center"><img src="images/Sans titre.jpg" border="0" width="700" height="100"></P> 
  		 
-   
-
-   
-   
-   
-   
-   
-   
-   
+  
 
 <?php
   
@@ -216,7 +208,7 @@
   		
   		
   		
-		  	   if(($_POST['mdp']) == ($_POST['cmdp'])){
+		  	   /*if(($_POST['mdp']) == ($_POST['cmdp'])){
 						$pseudo_users=$_POST['pseudo_users'];
 						global $conn;
 						$user = new utilisateurs("",$pseudo_users,"","","","","","");
@@ -227,7 +219,7 @@
 						
 						echo "Le MDP a bien été ajouter";
 
-			}
+			}*/
   	}
   		
  //tu le met ici cooooooooooooooooooooooooooooooooooooooooooooooooooooooonnardddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd//
