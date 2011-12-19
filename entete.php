@@ -26,7 +26,7 @@
   
   <a href="#">FILM</a>
   <ul class="sousMenu">
-   <li><a href="#">Test</a></li>
+   <li><a href="liste_films.php">Liste des films</a></li>
    <li><a href="#">A VENIR</a></li>
   </ul>
  </li>
@@ -35,7 +35,7 @@
  <li>
   <a href="#">DVD</a>
   <ul class="sousMenu">
-   <li><a href="#">Test</a></li>
+   <li><a href="#">Liste des DVD</a></li>
    <li><a href="#">A VENIR</a></li>
  </ul>
  </li>
@@ -44,7 +44,7 @@
  <li>
   <a href="#">BLUE RAY</a>
   <ul class="sousMenu">
-   <li><a href="#">Test</a></li>
+   <li><a href="#">Liste des Blue-Ray</a></li>
    <li><a href="#">A VENIR</a></li>
  </ul>
  </li>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le : Jeu 15 Décembre 2011 à 14:43
+-- Généré le : Lun 19 Décembre 2011 à 14:52
 -- Version du serveur: 5.5.16
 -- Version de PHP: 5.3.8
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données: `projet_insta`
 --
+CREATE DATABASE `projet_insta` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `projet_insta`;
 
 -- --------------------------------------------------------
 
@@ -117,17 +119,23 @@ CREATE TABLE IF NOT EXISTS `jouer` (
 
 CREATE TABLE IF NOT EXISTS `mot_de_passe` (
   `id_mdp` int(11) NOT NULL AUTO_INCREMENT,
-  `mdp` varchar(20) NOT NULL,
+  `id_users` int(1) NOT NULL,
+  `mdp` varchar(20) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id_mdp`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Contenu de la table `mot_de_passe`
 --
 
-INSERT INTO `mot_de_passe` (`id_mdp`, `mdp`) VALUES
-(1, 'jfrancois'),
-(2, 'jesuisbeau');
+INSERT INTO `mot_de_passe` (`id_mdp`, `id_users`, `mdp`) VALUES
+(1, 0, '5a105e8b9d40e1329780'),
+(2, 0, 'f6f4061a1bddc1c04d81'),
+(6, 2, '4a7d1ed414474e4033ac'),
+(7, 4, 'd79c8788088c2193f024'),
+(8, 0, 'toto'),
+(9, 0, 'test9'),
+(10, 0, 'test9');
 
 -- --------------------------------------------------------
 
@@ -205,11 +213,11 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `civilite` varchar(8) NOT NULL,
   `nom_users` varchar(15) NOT NULL,
   `prenom_users` varchar(15) NOT NULL,
-  `date_naissance` date NOT NULL,
+  `date_naissance` varchar(10) NOT NULL,
   `ville_users` varchar(30) NOT NULL,
   `newsletter` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_users`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Contenu de la table `utilisateurs`
@@ -222,7 +230,14 @@ INSERT INTO `utilisateurs` (`id_users`, `pseudo_users`, `email_users`, `civilite
 (4, 'cinephile', 'mickael', 'monsieur', 'Gates', 'mickael', '1975-07-15', 'Amiens', 1),
 (5, 'frank', 'frank@opmail.fr', 'Monsieur', 'dupond', 'frank', '1990-12-16', 'bobigny', 1),
 (6, 'mich', 'mich@yopmail.fr', 'Monsieur', 'leblanc', 'michel', '1988-12-06', 'monaco', 0),
-(7, 'drichard', 'richard@opmail.fr', 'Monsieur', 'Dulac', 'richard', '1958-10-06', 'lille', 1);
+(7, 'drichard', 'richard@opmail.fr', 'Monsieur', 'Dulac', 'richard', '1958-10-06', 'lille', 1),
+(8, 'test01', 'test01@yopmail.fr', 'M', 'test01', 'test01', '0000-00-00', 'paris', 1),
+(9, 'mohinder', 'mohinder@yompail.fr', 'Mr', 'mohinder', 'j', '0000-00-00', 'bobigny', 1),
+(10, 'pseudo', 'adressemail', '', 'nom', 'prenom', '0000-00-00', 'ville', 1),
+(11, 'mohinder', 'adressemail', 'Mr', 'nom', 'prenom', '0000-00-00', 'bobigny', 1),
+(12, 'mohinder', 'adressemail', 'Mr', 'nom', 'prenom', '0000-00-00', 'bobigny', 1),
+(16, 'alice', 'aliceadsl@aliceadsl.fr', 'Mme', 'adsl', 'alice', '02/05/0995', 'Tiscali', 1),
+(17, 'allo', 'allo@yopmail.fr', 'Mme', 'allo', 'allo', '02/05/1220', 'allo', 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
