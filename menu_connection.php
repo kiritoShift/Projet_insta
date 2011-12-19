@@ -58,7 +58,7 @@
  
  
  $sql=$conn->prepare("SELECT id_users, pseudo_users FROM utilisateurs, mot_de_passe
- 					 WHERE id_users = id_mdp
+ 					 WHERE id_users = id_users
  					 AND pseudo_users=:pseudo_users
  					 AND mdp=:mdp");
  
