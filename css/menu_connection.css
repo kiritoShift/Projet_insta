@@ -1,0 +1,25 @@
+#carreconnection
+{
+	
+ position: absolute;
+ top:70px; 
+ right:11;
+ border-radius: 8px;
+
+}
+
+legend
+{
+ color:#600902;
+ font-weight:bold
+}
+
+fieldset
+{
+ position: absolute;
+ top:255;
+ right:11;
+ border-radius: 8px;
+
+
+}

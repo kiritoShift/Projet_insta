@@ -17,7 +17,7 @@
 <div id="entete">
 <div id="bando">
 	
-	<img src="images/bando1 (2).jpg" border="0" width="900px" height="170px" />
+	<img src="images/bando (2).png" border="0" width="900px" height="170px" />
 </div>
    
    

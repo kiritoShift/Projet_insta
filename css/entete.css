@@ -2,6 +2,7 @@
 {
 	width: 900px;
 	margin: 0 auto;
+	border-radius: 8px;
 }
 
 #atbtop {
@@ -14,6 +15,7 @@
 
 body
 {
+
  border-radius: 8px;
  font: 14px Ravie, sans-serif; 
  background: #000 url("../images/texture3.jpg") no-repeat top center ; 
@@ -27,7 +29,7 @@ body
 
 #entete
 {
-margin: 0 auto;
+margin: 20 auto;
 }
 
 
@@ -36,6 +38,7 @@ margin: 0 auto;
        
 #menuDeroulant
 {
+	 border:2px solid #000000;
  border-radius: 8px;
  width: 644px;
  list-style-type: none;
@@ -46,6 +49,7 @@ margin: 0 auto;
 }
 #menuDeroulant li
 {
+	 border:2px solid #000000;
  border-radius: 8px;
  float: left;
  margin: 0 auto;
@@ -56,6 +60,7 @@ margin: 0 auto;
 
 #menuDeroulant .sousMenu
 {
+	 border:2px solid #000000;
  border-radius: 8px;
  list-style-type: none;
  margin: 0 auto;
@@ -64,6 +69,7 @@ margin: 0 auto;
 }
 #menuDeroulant .sousMenu li
 {
+	 border:2px solid #000000;
  border-radius: 8px;
  float: none;
  margin: 0 auto;
@@ -73,6 +79,7 @@ margin: 0 auto;
 
 #menuDeroulant li
 {
+	 border:2px solid #000000;
  border-radius: 8px;
  float: left;
  width: 150px;
@@ -83,6 +90,7 @@ margin: 0 auto;
 
 #menuDeroulant li a:link, #menuDeroulant li a:visited
 {
+	 border:2px solid #000000;
  border-radius: 8px;
  display: block;
  height: 2%;
@@ -93,12 +101,13 @@ margin: 0 auto;
  border-right: 1px solid #fff;
  text-decoration: none;
 }
-#menuDeroulant li a:hover { background-image: url("../images/paper.jpg"); }
-#menuDeroulant li a:active { background-color: #831207; }
+#menuDeroulant li a:hover { background-image: url("../images/texture3.jpg"); border:2px solid #000000; }
+#menuDeroulant li a:active { background-color: #831207; border:2px solid #000000; }
 
 #menuDeroulant .sousMenu li a:link,
 #menuDeroulant .sousMenu li a:visited
 {
+	 border:2px solid #000000;
  border-radius: 8px;
  display: block;
  color: #fff;
@@ -109,6 +118,7 @@ margin: 0 auto;
 }
 #menuDeroulant .sousMenu li a:hover
 {
+	 border:2px solid #000000;
  border-radius: 8px;
  background-image: none;
  background-color: #831207;
@@ -117,6 +127,7 @@ margin: 0 auto;
 
 #menuDeroulant .sousMenu li
 {
+	 border:2px solid #000000;
  border-radius: 8px;
  float: none;
  margin: 0 auto;
@@ -129,6 +140,7 @@ margin: 0 auto;
 
 #menuDeroulant .sousMenu
 {
+	 border:2px solid #000000;
  border-radius: 8px;
  display: none;
  list-style-type: none;
@@ -140,6 +152,7 @@ margin: 0 auto;
 
 #menuDeroulant
 {
+	 border:2px solid #000000;
  border-radius: 8px;
  width: 644px;
  list-style-type: none;
