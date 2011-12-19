@@ -1,3 +1,8 @@
+<?php include 'connexion_bdd.php'; ?>
+<?php
+include 'fonction.php';
+spl_autoload_register('autoClass_racine');
+?>
 <html lang="fr">
  
   <head>
@@ -13,9 +18,10 @@
 	<h2 align=center> Page de supression des mots de passe utilisateurs</h2>
 	
 	
-	<?php include 'classes/mot_de_passe.php';
+	<?php 
+	//include 'classes/mot_de_passe.php';
 
-				if (empty($_POST['id_mdp'])) {
+				if (empty($_POST['pseudo']) {
 				if (!empty($_POST['btnEnvoyer'])) {
 				  			echo '<div id="messageerror">Merci de fournir l\'id a supprimer </div>';
 				  					}
@@ -32,12 +38,13 @@
 				
 				
 
-  									<!--** id **-->
+  									<!--** pseudo **-->
 
   									
-								<label for="id_mdp">ID<FONT color="red">*</FONT> :</label>
-								<input type="text" id="id_mdp" name="id_mdp"/>
-								<br />				
+								<label for="pseudo">Pseudo utilisateur<FONT color="red">*</FONT> :</label>
+								<input type="text" id="pseudo" name="pseudo"/>
+								<br />
+								<br />					
 
 
 								<!--** Bouton Envoyer **-->
@@ -51,6 +58,10 @@
 						';
 				  	}
 
+				  	
+		elseif (($_POST['mdp']) == ($_POST['mdp_conf'])) { 
+		$pseudo=$_POST['pseudo'];
+		
 	else {
 
 	 		$envoie_form = new mot_de_passe($_POST['id_mdp'], "");	
