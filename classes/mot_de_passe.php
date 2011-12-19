@@ -8,11 +8,12 @@
 class mot_de_passe {
 	private $id_mdp;
 	private $mdp;
-	
-	public function __construct($id_mdp = "", $mdp = ""){
+	private $id_users;
+	public function __construct($id_mdp = "", $mdp = "", $id_users = ""){
 		
 		$this->mdp = $mdp;
 		$this->id_mdp = $id_mdp;
+		$this->id_users = $id_users;
 	}
 	
 	// fonction d'ajout d'un nouveau mot_de_passe
@@ -32,7 +33,7 @@ class mot_de_passe {
 	// fonction de modification d'un champ dans la table mot_de_passe
 	public function mot_de_passe_update() {
 		global $conn;
-		$query = $conn->prepare("UPDATE mot_de_passe SET mdp = :mdp WHERE :id_mdp = id_mdp;");
-		$query->execute(array("mdp" => $this->mdp, "id_mdp" => $this->id_mdp));
+		$query = $conn->prepare("UPDATE mot_de_passe SET mdp = :mdp WHERE :id_users = id_users;");
+		$query->execute(array("mdp" => $this->mdp, "id_users" => $this->id_users));
 	}
 }
