@@ -1,3 +1,8 @@
+<?php include 'connexion_bdd.php'; ?>
+<?php
+include 'fonction.php';
+spl_autoload_register('autoClass_racine');
+?>
 <html lang="fr">
  
   <head>
@@ -13,9 +18,10 @@
 	<h2 align=center> Page d'ajout des mots de passe utilisateurs</h2>
 	
 	
-	<?php include 'classes/mot_de_passe.php';
+	<?php 
+	//include 'classes/mot_de_passe.php';
 
-		if (empty($_POST['id_mdp']) || empty($_POST['mdp']) || empty($_POST['mdp_conf'])) {
+		if (empty($_POST['pseudo']) || empty($_POST['mdp']) || empty($_POST['mdp_conf'])) {
 			  		if (!empty($_POST['btnEnvoyer'])) {
 			  			echo '<div id="messageerror">Merci de remplir les champs oblgatoire </div>';
 			  					}
@@ -35,13 +41,13 @@
 				
 				
 
-  									<!--** id **-->
+  									<!--** pseudo **-->
 
   									
-								<label for="id_mdp">ID<FONT color="red">*</FONT> :</label>
-								<input type="text" id="id_mdp" name="id_mdp"/>
+								<label for="pseudo">Pseudo utilisateur<FONT color="red">*</FONT> :</label>
+								<input type="text" id="pseudo" name="pseudo"/>
 								<br />
-								<br />					
+								<br />				
 
 																
 
@@ -79,13 +85,23 @@
 						
 						';
 				  	}
+				  	
+	elseif (($_POST['mdp']) == ($_POST['mdp_conf'])){
+		$pseudo=$_POST['pseudo'];
+		global $conn;
+		$user = new utilisateurs("",$pseudo,"","","","","","");
+		$id_user = $user->users_get_id();
+		var_dump ($id_user);
+		$mot_de_passe = new mot_de_passe("", md5($_POST['mdp']),$id_user);
+		$mot_de_passe->mot_de_passe_new();
+		
+		echo "Le MDP a bien été ajouter";
+				  			
+				}
 
 	else {
-	 		$envoie_form = new mot_de_passe($_POST['id_mdp'], $_POST['mdp']);	
-	 		$envoie_form->mot_de_passe_new();
-	 		
-	 		echo "Le mot de passe de l'utilisateur a bien été ajouter à la base de données";
-	 		
+		
+		echo '<div id="messageerror">Le mot de passe n\'est pas identique</div>';	
   		
 	}
   			

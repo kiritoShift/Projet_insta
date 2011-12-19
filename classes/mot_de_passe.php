@@ -19,15 +19,15 @@ class mot_de_passe {
 	// fonction d'ajout d'un nouveau mot_de_passe
 	public function mot_de_passe_new(){
 		global $conn;
-		$query = $conn->prepare("INSERT INTO mot_de_passe(id_mdp, mdp) VALUES (:id_mdp, :mdp)");
-		$query->execute(array("id_mdp" => $this->id_mdp, "mdp" => $this->mdp));
+		$query = $conn->prepare("INSERT INTO mot_de_passe(id_users, mdp) VALUES (:id_users, :mdp)");
+		$query->execute(array("id_users" => $this->id_users, "mdp" => $this->mdp));
 	}
 	
 	// fonction de supression d'un mot_de_passe
 	public function mot_de_passe_delete(){
 		global $conn;
-		$query = $conn->prepare("DELETE FROM mot_de_passe WHERE id_mdp = :id_mdp;");
-		$query->execute(array("id_mdp" => $this->id_mdp ));
+		$query = $conn->prepare("DELETE FROM mot_de_passe WHERE :id_users = id_users;");
+		$query->execute(array("id_users" => $this->id_users));
 	}
 	
 	// fonction de modification d'un champ dans la table mot_de_passe
