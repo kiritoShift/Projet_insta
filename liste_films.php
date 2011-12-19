@@ -52,7 +52,7 @@ else
 
 <html>
 <head>
-<title>page utilisateur</title>
+<title>liste des films</title>
 <meta http-equiv="Content-Type" content="text/html; charset=MacRoman">
 <link rel="stylesheet" media="screen" type="text/css" title="menu" href="css/menu.css" />
 
