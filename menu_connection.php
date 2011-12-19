@@ -8,6 +8,9 @@
        <link rel="stylesheet" media="screen" type="text/css" title="" href="css/menu_connection.css" />
 </head>
 
+
+<fieldset class="formulaire" style="width:200px;">
+
 <?php 
  if (empty($_POST['pseudo_users']) || empty($_POST['mdp'])) {
 			  		if (!empty($_POST['btnEnvoyer'])) {
@@ -17,7 +20,6 @@
   		echo'
   		<form method="POST">
 
-	<fieldset class="formulaire" style="width:200px;">
 	
 	
 	<legend> Connection </legend>
@@ -37,11 +39,11 @@
 								<br />
 								<br />
 					
-<input type="submit" name="btninscription" value="Inscription" href="formulaire_inscription.php" onclick="window.open(\'formulaire_inscription.php\', \'exemple\', \'height=800%, width=800, top=90, left=350, toolbar=no, menubar=no, location=yes, resizable=yes, scrollbars=yes, status=no\'); return false;"/> 
+	<input type="submit" name="btninscription" value="Inscription" href="formulaire_inscription.php" onclick="window.open(\'formulaire_inscription.php\', \'exemple\', \'height=800%, width=800, top=90, left=350, toolbar=no, menubar=no, location=yes, resizable=yes, scrollbars=yes, status=no\'); return false;"/> 
 
 	
 	
-	</fieldset>
+	
 	
 	</form>
 
@@ -66,8 +68,8 @@
  	$row=$sql->fetch(PDO::FETCH_ASSOC);
  	$_SESSION['pseudo_users'] = $row['pseudo_users'];
 
- 	echo "Tu es connecté.";
-    echo "<a href='http://www.siteduzero.com'> Deconnection </a>";
+ 	echo "Vous  etes connecté.<br />";
+    echo "<a href='http://www.siteduzero.com'>Deconnection </a>";
  }
  else {
  	echo 'Tes identifiants sont erronés.';
@@ -93,8 +95,12 @@ else {
 }
 */
 	}
+	
+
 
 ?>
+
+</fieldset>
 
 
 

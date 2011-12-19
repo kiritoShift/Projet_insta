@@ -1,5 +1,6 @@
 <?php include "connexion_bdd.php"?>
 <?php include "classes/utilisateurs.php"?>
+<?php include "classes/mot_de_passe.php"?>
 <!DOCTYPE html>
 <html lang="fr">
  
@@ -16,6 +17,14 @@
  		 <!-- <FONT size="7pt" face="movie times"> Formulaire d/inscription<br /></FONT>    -->
  		 <P style="text-align:center"><img src="images/Sans titre.jpg" border="0" width="700" height="100"></P> 
  		 
+   
+
+   
+   
+   
+   
+   
+   
    
 
 <?php
@@ -199,12 +208,30 @@
   		$envoie_utilisateurs->users_new();
   		
   		
- //tu le met ici cooooooooooooooooooooooooooooooooooooooooooooooooooooooonnardddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd//
-  			
-			echo "Bonjour " .$_POST['civilite']." ".$_POST['nom_users']." ".$_POST['prenom_users'];
+  		echo "Bonjour " .$_POST['civilite']." ".$_POST['nom_users']." ".$_POST['prenom_users'];
 			echo "<br />";
 			echo "bienvenue sur notre site unfauxcine";
 			echo "<br />";
+			
+  		
+  		
+  		
+		  	   if(($_POST['mdp']) == ($_POST['cmdp'])){
+						$pseudo_users=$_POST['pseudo_users'];
+						global $conn;
+						$user = new utilisateurs("",$pseudo_users,"","","","","","");
+						$id_user = $user->users_get_id();
+						var_dump ($id_user);
+						$mot_de_passe = new mot_de_passe("", md5($_POST['mdp']),$id_user);
+						$mot_de_passe->mot_de_passe_new();
+						
+						echo "Le MDP a bien été ajouter";
+
+			}
+  	}
+  		
+ //tu le met ici cooooooooooooooooooooooooooooooooooooooooooooooooooooooonnardddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd//
+  			
 			
 				//connection_bdd.php();
 				//$sql = "INSERT INTO utilisateurs(id,nom,prenom,ville) ";
@@ -219,7 +246,7 @@
 						echo "Vous êtes une femme";
 						}*/
 				
-  		}
+  		
  /*
  		 
 		
