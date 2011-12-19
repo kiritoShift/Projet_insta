@@ -1,6 +1,6 @@
 #bando
 {
-	width: 780px;
+	width: 900px;
 	margin: 0 auto;
 }
 
@@ -25,6 +25,11 @@ body
 
 }
 
+#entete
+{
+margin: 0 auto;
+}
+
 
 
 /***************************menu************************************/ 
@@ -46,7 +51,7 @@ body
  margin: 0 auto;
  padding: 0;
  border: 0;
- background-image: url("../images/texture3.jpg");
+ background-image: url("../images/texture33.jpg");
 }
 
 #menuDeroulant .sousMenu
@@ -80,7 +85,7 @@ body
 {
  border-radius: 8px;
  display: block;
- height: 1%;
+ height: 2%;
  color: #fff;
  background: url("");
  margin: 0 auto;

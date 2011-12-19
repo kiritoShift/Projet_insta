@@ -14,10 +14,10 @@
 		<img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:none;" />
 	</a>
 	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4be01d572857270c"></script>
-
+<div id="entete">
 <div id="bando">
 	
-	<img src="images/bando1 (2).jpg" border="0" width="780px" height="180px" />
+	<img src="images/bando1 (2).jpg" border="0" width="900px" height="170px" />
 </div>
    
    
@@ -26,7 +26,7 @@
   
   <a href="#">FILM</a>
   <ul class="sousMenu">
-   <li><a href="#">SORTIE DE LA SEMAINE</a></li>
+   <li><a href="#">Test</a></li>
    <li><a href="#">A VENIR</a></li>
   </ul>
  </li>
@@ -35,7 +35,7 @@
  <li>
   <a href="#">DVD</a>
   <ul class="sousMenu">
-   <li><a href="#">SORTIE DE LA SEMAINE</a></li>
+   <li><a href="#">Test</a></li>
    <li><a href="#">A VENIR</a></li>
  </ul>
  </li>
@@ -44,7 +44,7 @@
  <li>
   <a href="#">BLUE RAY</a>
   <ul class="sousMenu">
-   <li><a href="#">SORTIE DE LA SEMAINE</a></li>
+   <li><a href="#">Test</a></li>
    <li><a href="#">A VENIR</a></li>
  </ul>
  </li>
@@ -53,14 +53,13 @@
  <li>
   <a href="#">ACTUALITER</a>
   <ul class="sousMenu">
-   <li><a href="#">TOUTE L'ACTUALITER</a></li>
+   <li><a href="#">Test</a></li>
  </ul>
  </li>
 
 </ul>
 
-
-
+</div>
 </body>
     </body>
 </html>

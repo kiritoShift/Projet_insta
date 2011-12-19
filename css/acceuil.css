@@ -1,7 +1,17 @@
 
 #bla
 {
- 
+border:2px solid #000000;
+top: 10%;
+	
+width: 898px;
+margin: 70 auto;
+background-color: url("../images/texture33.jpg");
+border-left:1px solid #000000; /* couleur du cadre */
+border-right:1px solid #000000;
+border-bottom:1px solid #000000;
+border-top:1px solid #000000;
+
 color: blue;
 text-align: center;
 		
