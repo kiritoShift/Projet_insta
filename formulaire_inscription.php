@@ -126,8 +126,8 @@
 	  								<!--************** Pseudo **************-->
 	  								<!--************************************-->
 								<br>
-								<label for="Pseudo_user">Pseudo<FONT color="red">*</FONT> :</label>
-								<input type="text" id="Pseudo_users" name="pseudo_users" required/>
+								<label for="pseudo_user">Pseudo<FONT color="red">*</FONT> :</label>
+								<input type="text" id=pseudo_users" name="pseudo_users" required/>
 								<br />
 								<br />
 								

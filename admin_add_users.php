@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
  
     <title>Page d'ajout utilisateurs</title>
-    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/admin.css" /> 
     
   </head>
  
@@ -13,7 +13,7 @@
 	<h2 align=center> Page d'ajout de nouveaux utilisateurs</h2>
 	
 	
-	<?php include 'classes/utilisateurs.php';
+	<?php include "classes/utilisateurs.php";
 
 		if (empty($_POST['nom_users']) || empty($_POST['prenom_users']) || empty($_POST['civilite']) || empty($_POST['email_users']) || empty($_POST['pseudo_users']) || empty($_POST['confirmation_Mot_de_passe']) || empty($_POST['Mot_de_passe'])) {
 			  		if (!empty($_POST['btnEnvoyer'])) {
