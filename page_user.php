@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
 
 <?php include_once ("connexion_bdd.php");
-include("entete.php");
+
 
 // recherche dans la base de donnée pour séléctionner les données à afficher et pouvoir faire le tri par colonne
 $choix=0;

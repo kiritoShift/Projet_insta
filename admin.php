@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
  
     <title>Page d'administration</title>
-    <link rel="stylesheet" href="css/admin.css" />
+  <!--   <link rel="stylesheet" href="css/admin.css" /> -->
     
   </head>
  

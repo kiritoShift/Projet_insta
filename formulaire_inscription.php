@@ -20,7 +20,7 @@
 
 <?php
   
-  if (empty($_POST['nom_users']) || empty($_POST['prenom_users']) || empty($_POST['civilite']) || empty($_POST['email_users']) || empty($_POST['pseudo_users']) || empty($_POST['confirmation_Mot_de_passe']) || empty($_POST['Mot_de_passe']) || empty($_POST['condition'])) {
+  if (empty($_POST['nom_users']) || empty($_POST['prenom_users']) || empty($_POST['civilite']) || empty($_POST['email_users']) || empty($_POST['pseudo_users']) || empty($_POST['cmdp']) || empty($_POST['mdp']) ||  empty($_POST['condition'])) {
 			  		if (!empty($_POST['btnEnvoyer'])) {
 			  						echo '<div id="messageerror">Merci de remplir les champ oblgatoire </div>';
 			  							}
@@ -59,7 +59,7 @@
   									<!--************************************-->
   									
 								<label for="nom_users">Nom<FONT color="red">*</FONT> :</label>
-								<input type="text" id="nom_users" name="nom_users"/>
+								<input type="text" id="nom_users" name="nom_users" required/>
 								<br />
 								<br />
 								
@@ -69,7 +69,7 @@
   									<!--************************************-->
 						
 								<label for="prenom_users">Prenom<FONT color="red">*</FONT> :</label>
-								<input type="text" id="prenom_users" name="prenom_users"/>
+								<input type="text" id="prenom_users" name="prenom_users" required/>
 								<br />
 								<br />
 								
@@ -79,7 +79,7 @@
   									<!--************************************-->
 								
 								<label for="email_users">Adresse Email<FONT color="red">*</FONT> :</label>
-								<input type="text" id="email_users" name="email_users"/>
+								<input type="text" id="email_users" name="email_users" required/>
 								<br />
 								<br />
 								
@@ -124,7 +124,7 @@
 	  								<!--************************************-->
 								<br>
 								<label for="Pseudo_user">Pseudo<FONT color="red">*</FONT> :</label>
-								<input type="text" id="Pseudo_users" name="pseudo_users"/>
+								<input type="text" id="Pseudo_users" name="pseudo_users" required/>
 								<br />
 								<br />
 								
@@ -133,8 +133,8 @@
 	  								<!--********** Mot de passe ************-->
 	  								<!--************************************-->
 						
-								<label for="IDMdp">Mot de passe<FONT color="red">*</FONT> :</label>
-								<input type="password" id="IDMdp" name="Mot_de_passe"/>
+								<label for="Mdp">Mot de passe<FONT color="red">*</FONT> :</label>
+								<input type="password" id="Mdp" name="mdp" required/>
 								<br />
 								<br />
 								
@@ -144,8 +144,8 @@
 	  								<!--**** confirmation Mot de passe *****-->
 	  								<!--************************************-->
 						
-								<label for="IDCmdp">confirmation du Mot de passe<FONT color="red">*</FONT> :</label>
-								<input type="password" id="IDCmdp" name="confirmation_Mot_de_passe"/>
+								<label for="Cmdp">confirmation du Mot de passe<FONT color="red">*</FONT> :</label>
+								<input type="password" id="Cmdp" name="cmdp" required/>
 								<br />
 								<br />
 							
@@ -164,14 +164,14 @@
 									<!--*************************************-->
 	  								<!--* Newsletter & conditions g�n�rales *-->
 	  								<!--*************************************-->
-								<br>
+								<br />
 	  							<input type="checkbox" id="newsletter" name="newsletter" tabindex="14" />	
 							    <FONT size="2"><span for="newsletter">Je veut etre informer des prochaine sortie de film</span>
 							    </FONT>
 							    
 							    
 							    <br />
-							    <input type="checkbox" id="condition" name="condition" tabindex="14" />
+							    <input type="checkbox" id="condition" name="condition" tabindex="14" required/>
 							    <FONT size="2"><span for="condition">J&acute;accepte les conditions g&eacute;n&eacute;rale d&acute;utilisation<FONT color="red">*</FONT></span>
 							    </FONT>
 							    <br />
@@ -195,9 +195,11 @@
 						';
 				  	}
   	else {
-  			
-  		$envoie_utilisateurs = new utilisateurs('', $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], $_POST['newsletter'] );	
+  		$envoie_utilisateurs = new utilisateurs('', $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], (isset($_POST['newsletter']) && $_POST['newsletter'] ? "1" : "0") );	
   		$envoie_utilisateurs->users_new();
+  		
+  		
+ //tu le met ici cooooooooooooooooooooooooooooooooooooooooooooooooooooooonnardddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd//
   			
 			echo "Bonjour " .$_POST['civilite']." ".$_POST['nom_users']." ".$_POST['prenom_users'];
 			echo "<br />";
