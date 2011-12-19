@@ -1,7 +1,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
 
 <?php include_once ("connexion_bdd.php");
+include("entete.php");
 
+// recherche dans la base de donnée pour séléctionner les données à afficher et pouvoir faire le tri par colonne
 $choix=0;
 if(isset($_GET["choix"]))
 {
@@ -9,45 +11,38 @@ if(isset($_GET["choix"]))
 }
 if($choix==1)
 {
- $result=$conn->prepare("SELECT * FROM films order by jaquette_films ASC");
+ $result=$conn->prepare("SELECT jaquette_films FROM avoir_films_favoris, films WHERE avoir_films_favoris.id_films = films.id_films AND films.id_films = films.jaquette_films order by jaquette_films ASC");
  $result->execute();	
 }
 else
 {
  if($choix==2)
  {
-  $result=$conn->prepare("SELECT * FROM films ORDER BY titre_films ASC");
+  $result=$conn->prepare("SELECT titre_films FROM avoir_films_favoris, films WHERE avoir_films_favoris.id_films = films.id_films AND films.id_films = films.titre_films  ORDER BY titre_films ASC");
   $result->execute(); 
 }
  else
  { 
   if($choix==3)
  {
-  $result=$conn->prepare("SELECT * FROM films ORDER BY sinopsys_films ASC");
+  $result=$conn->prepare("SELECT * FROM avoir_films_favoris, films WHERE avoir_films_favoris.id_films = films.id_films AND films.id_films = films.sinopsys_films ORDER BY sinopsys_films ASC");
   $result->execute(); 
 }
  else
  { 
   if($choix==4)
  {
-  $result=$conn->prepare("SELECT * FROM films ORDER BY sinopsys_films ASC");
+  $result=$conn->prepare("SELECT sinopsys_films FROM avoir_films_favoris, films WHERE avoir_films_favoris.id_films = films.id_films AND films.id_films = films.sinopsys_films ORDER BY sinopsys_films ASC");
   $result->execute(); 
 }
  else
  {
- if($choix==5)
- {
-  $result=$conn->prepare("SELECT * FROM films ORDER BY id_films");
-  $result->execute();
- }
- else
- {
-  $result=$conn->prepare("SELECT * FROM films");
+  $result=$conn->prepare("SELECT * FROM avoir_films_favoris, films");
   $result->execute(); 
- }}}}}
+ }}}}
 ?>
 
-<html>
+
 <head>
 <title>page utilisateur</title>
 <meta http-equiv="Content-Type" content="text/html; charset=MacRoman">
@@ -57,12 +52,13 @@ else
 
 </head>
 	<body>
+	<br /><br /><br /><br /><br /><br /><br /><br />
 <table border=1 width="100%">
 	<tr><td>
 <?php include("menu_user.php");	?>
 	</td>
 	<td>
-<?php include("entete.php")?>
+
 		<table align="center" bgcolor=#ffffCC border=1>
 			<tr><td><b><font size="-1">Liste des films favoris</font></B></td></tr>
 		</table>
@@ -79,7 +75,8 @@ else
      						<TD><font size="-1"><a href="page_user.php?choix=3"><b>Date de sortie</b></a></font></TD>
      						<td><font size="-1"><a href="page_user.php?choix=4"><b>Sinopsys</b></a></font></td>							
      					</TR>
-     					<? while ($val = $result->fetch(PDO::FETCH_ASSOC)) { ?>
+     					<? //affichage des données sous forme de tableau 
+     					while ($val = $result->fetch(PDO::FETCH_ASSOC)) { ?>
      					<TR bgcolor=white>
      						<form method="post">
      						<TD><font size="-2"><?php echo $val["id_films"]?></font></TD>
@@ -97,4 +94,3 @@ else
 	</td></tr>
 </table>
 </body>
-</html>
