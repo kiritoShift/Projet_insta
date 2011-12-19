@@ -15,7 +15,7 @@ spl_autoload_register('autoClass_racine');
   </head>
  
 	<body>
-	<h2 align=center> Page d'ajout de nouveaux utilisateurs</h2>
+	<h2 align=center> Page d'ajout de nouveaux administrateurs</h2>
 	
 	
 	<?php 
@@ -101,9 +101,9 @@ spl_autoload_register('autoClass_racine');
 								<br />
 									
 								
-							</fieldset>
 							
-														
+							
+							</fieldset>							
 			
 <!--***********************deuxieme encadr� information de connection (pseudo, mdp, cmdp)*********************************-->
 	
@@ -157,6 +157,11 @@ spl_autoload_register('autoClass_racine');
 	  							<input type="checkbox" id="newsletter" name="newsletter" tabindex="14" />	
 							    <FONT size="2"><span for="newsletter">L\'utilisateur recevra la newsletter</span>
 							    </FONT>
+							    
+								<br />
+	  							<input type="checkbox" id="type_compte" name="type_compte" tabindex="14" />	
+							    <FONT size="2"><span for="type_compte">Compte Admin</span>
+							    </FONT>
 
 											    
 							    </fieldset>
@@ -174,8 +179,8 @@ spl_autoload_register('autoClass_racine');
 						  	}
   	else {
   			
-  		$envoie_utilisateurs = new utilisateurs('', $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], $_POST['newsletter'] );	
-  		$envoie_utilisateurs->users_new();
+  		$envoie_utilisateurs = new utilisateurs('', $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], (isset($_POST['newsletter']) && $_POST['newsletter'] ? "1" : "0"), (isset($_POST['type_compte']) && $_POST['type_compte'] ? "1" : "0") );		
+  		$envoie_utilisateurs->users_admin();
   			
 			echo "L'utilisateur " .$_POST['nom_users']." ".$_POST['prenom_users']. " a bien été créer";
 			echo "<br />";
@@ -183,7 +188,7 @@ spl_autoload_register('autoClass_racine');
 		if (($_POST['mdp']) == ($_POST['mdp_conf'])){
 		$pseudo_users=$_POST['pseudo_users'];
 		global $conn;
-		$user = new utilisateurs("",$pseudo_users,"","","","","","");
+		$user = new utilisateurs("",$pseudo_users,"","","","","","","","");
 		$id_user = $user->users_get_id();
 		$mot_de_passe = new mot_de_passe("", md5($_POST['mdp']),$id_user);
 		$mot_de_passe->mot_de_passe_new();
