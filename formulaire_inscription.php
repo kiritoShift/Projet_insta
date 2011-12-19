@@ -25,7 +25,9 @@
 			  		if (!empty($_POST['btnEnvoyer'])) {
 			  						echo '<div id="messageerror">Merci de remplir les champ oblgatoire </div>';
 			  							}
-  				
+			  							
+  	
+  								
   		echo'
   				
     			
@@ -195,17 +197,40 @@
 						
 						';
 				  	}
-  	else {
-  		$envoie_utilisateurs = new utilisateurs('', $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], (isset($_POST['newsletter']) && $_POST['newsletter'] ? "1" : "0") );	
-  		$envoie_utilisateurs->users_new();
+  	elseif (($_POST['mdp']) == ($_POST['cmdp'])){
+  										$envoie_utilisateurs = new utilisateurs('', $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], (isset($_POST['newsletter']) && $_POST['newsletter'] ? "1" : "0") );	
+								  		$envoie_utilisateurs->users_new();
+								  		
+										$pseudo_users=$_POST['pseudo_users'];
+										global $conn;
+										$user = new utilisateurs("",$pseudo_users,"","","","","","");
+										$id_user = $user->users_get_id();
+										$mot_de_passe = new mot_de_passe("", md5($_POST['mdp']),$id_user);
+										$mot_de_passe->mot_de_passe_new();
+										
+								  		
+								  		
+								  		echo "Le MDP a bien été ajouter";
+										echo "Bonjour " .$_POST['civilite']." ".$_POST['nom_users']." ".$_POST['prenom_users'];
+										echo "<br />";
+										echo "bienvenue sur notre site unfauxcine";
+										echo "<br />";
   		
   		
-  		echo "Bonjour " .$_POST['civilite']." ".$_POST['nom_users']." ".$_POST['prenom_users'];
-			echo "<br />";
-			echo "bienvenue sur notre site unfauxcine";
-			echo "<br />";
+  		
+  		
+  		
+  		
+  			
+									}
+  								else{
+  									echo "error";
+  								}	
+  		
+  		
 			
-  		
+			
+							  
   		
   		
 		  	   /*if(($_POST['mdp']) == ($_POST['cmdp'])){
@@ -220,7 +245,7 @@
 						echo "Le MDP a bien été ajouter";
 
 			}*/
-  	}
+  	
   		
  //tu le met ici cooooooooooooooooooooooooooooooooooooooooooooooooooooooonnardddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd//
   			
