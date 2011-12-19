@@ -11,8 +11,9 @@ class utilisateurs {
 	private $date_naissance;
 	private $ville_users;
 	private $newsletter;
-	public function __construct($id_users, $pseudo_users, $email_users, $civilite, $nom_users, $prenom_users, $date_naissance, $ville_users, $newsletter){
-		
+	private $select_id;
+	public function __construct($id_users = "", $pseudo_users = "", $email_users = "", $civilite = "", $nom_users = "", $prenom_users = "", $date_naissance = "", $ville_users = "", $newsletter = ""){
+		global $conn;
 		$this->id_users = $id_users;
 		$this->pseudo_users = $pseudo_users;
 		$this->email_users = $email_users;
@@ -22,7 +23,23 @@ class utilisateurs {
 		$this->date_naissance = $date_naissance;
 		$this->ville_users = $ville_users;
 		$this->newsletter = $newsletter;
+		
+				
+		$query = $conn->prepare("SELECT id_users FROM utilisateurs WHERE :pseudo_users = pseudo_users");
+		$query->execute(array("pseudo_users" => $pseudo_users));
+		if ($query->rowcount()){
+		$select_id = $query->fetch(PDO::FETCH_OBJ);
+		$this->select_id = $select_id->id_users;
+		}
 	}
+	
+		// fonction de recupération d'un id
+	
+	public function users_get_id(){
+		global $conn;
+		return $this->select_id;
+	}
+	
 	
 	// Ajouter un nouveau utilisateur
 	public function users_new(){
