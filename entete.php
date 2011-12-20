@@ -5,7 +5,11 @@
 
 <head>
        <link rel="stylesheet" media="screen" type="text/css" title="" href="css/entete.css" />
-
+		
+ 		<link rel="stylesheet" href="css/formulaire_inscription.css" />
+       	<link rel="stylesheet" media="screen" type="text/css" title="" href="css/zone_central.css" />
+       	<link rel="stylesheet" media="screen" type="text/css" title="" href="css/menu_connection.css" />
+       	
 </head>
 
 
@@ -60,6 +64,5 @@
 </ul>
 
 </div>
-</body>
-    </body>
-</html>
+
+<?php include "menu_connection.php"?>

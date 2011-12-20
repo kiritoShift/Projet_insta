@@ -1,30 +1,17 @@
 <?php include "connexion_bdd.php"?>
-<?php
-include "fonction.php";
-spl_autoload_register("autoClass_racine");
-?>
+<?php include "classes/mot_de_passe.php"?>
+<?php include "classes/utilisateurs.php"?>
+<?php include "entete.php" ?>
 
 
- 
-  <head>
- 
-    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- 		<title>Formulaire inscription</title>
- 		<link rel="stylesheet" href="css/formulaire_inscription.css" />
-  </head>
+
+ <div id="moncadre">
   
   
     
-  <body>
+
  		 <!-- <FONT size="7pt" face="movie times"> Formulaire d/inscription<br /></FONT>    -->
- 		 <P style="text-align:center"><img src="images/Sans titre.jpg" border="0" width="700" height="100"></P> 
- 		 
-  
-
-
-
-
-
+ 		 <p style="text-align:center"><img src="images/Sans titre.jpg" border="0" width="700" height="100"></p> 
 
 <?php
   
@@ -205,12 +192,12 @@ spl_autoload_register("autoClass_racine");
 						';
 				  	}
   	elseif (($_POST['mdp']) == ($_POST['cmdp'])){
-  										$envoie_utilisateurs = new utilisateurs('', $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], (isset($_POST['newsletter']) && $_POST['newsletter'] ? "1" : "0"));	
+  										$envoie_utilisateurs = new utilisateurs('', $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], (isset($_POST['newsletter']) && $_POST['newsletter'] ? "1" : "0"), '');	
 								  		$envoie_utilisateurs->users_new();
 								  		
 										$pseudo_users=$_POST['pseudo_users'];
 										global $conn;
-										$user = new utilisateurs("",$pseudo_users,"","","","","","","");
+										$user = new utilisateurs("",$pseudo_users,"","","","","","","","");
 										$id_user = $user->users_get_id();
 										$mot_de_passe = new mot_de_passe("", md5($_POST['mdp']),$id_user);
 										$mot_de_passe->mot_de_passe_new();
@@ -257,6 +244,6 @@ spl_autoload_register("autoClass_racine");
   
   	
 
-
+		</div>
   </body>
 </html>

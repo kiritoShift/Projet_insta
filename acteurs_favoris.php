@@ -1,4 +1,14 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+<?php include "connexion_bdd.php"?>
+<?php include "classes/mot_de_passe.php"?>
+<?php include "classes/utilisateurs.php"?>
+<?php include "entete.php" ?>
+
+
+
+ <div id="moncadre">
+  
+  
+  
 
 <?include("connection_bdd.php");
 $choix=0;
@@ -70,5 +80,5 @@ else
 		</table>
 	</td></tr>
 </table>
-</body>
 </html>
+</div>
