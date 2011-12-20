@@ -1,4 +1,6 @@
 <?php 
+include 'fonction.php';
+
 /*
 $test = "toto";
 echo $test;
@@ -22,10 +24,10 @@ $var4="";
 $id=4;
 $film = new mot_de_passe($id, $var1);
 //echo $film->films_get_id();
-$film->mot_de_passe_update();*/
+$film->mot_de_passe_update();
 include "/classes/PHPMailer_5.2.0/class.phpmailer.php";
 //require_once("/classes/PHPMailer_5.2.0/class.smtp.php");
-/*
+
 try {
 	$O_mail	= new MonGmailer();
 	$O_mail->AddAddress('vincent.voisin1986@gmail.com', 'vincent.voisin1986@gmail.com');
@@ -68,12 +70,12 @@ $message = "testooooo";
 	$mail->Body=$message; // corp du message
 	//$mail->AddAttachment($fichier); //pour une piece jointe, $ fichier contient le chemin d'accès à la piece jointe.
 	$mail->Send();
-*/
+
 
 $sujet = "test bobo";
 $message = "testooooo";
 
-/*	$mail = new PHPmailer();
+	$mail = new PHPmailer();
 	$mail->Host='smtp.gmail.com';  
 	$mail->Port='465';   
 	$mail->Username   = 'couraud.boris@gmail.com'; // SMTP account username  
@@ -98,7 +100,7 @@ $message = "testooooo";
 	else {
 		echo "Message has been sent";
 	
-	}*/
+	}
 	
 	$mail = new PHPmailer();
 $mail->CharSet = 'UTF-8'; // choix de l'encodage.
@@ -128,4 +130,9 @@ else {
 echo 'Le courriel a été envoyé';
 }
 $mail->SmtpClose();
+
+*/
+$pseudo='caca';
+$verif= verification_compte($pseudo);
+echo $verif;
 ?>

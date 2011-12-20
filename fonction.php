@@ -11,10 +11,10 @@ function autoClass_racine($name) {
 
 function verification_compte($pseudo){
 	global $conn;
-	$query = $conn->prepare("SELECT * FROM films ORDER BY titre_films ASC;");
-	$query->execute();
-	$liste_films = $query->fetchAll(PDO::FETCH_ASSOC);
-	return $liste_films;
+	$query = $conn->prepare("SELECT type_compte FROM utilisateurs WHERE pseudo_users = :pseudo_users;");
+	$query->execute(array("pseudo_users" => $pseudo));
+	$type_compte = $query->fetchAll(PDO::FETCH_ASSOC);
+	return $type_compte[0]['type_compte'];
 }
 
 function formatage_date($date) {
