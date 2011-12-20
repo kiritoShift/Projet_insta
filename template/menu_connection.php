@@ -37,9 +37,18 @@
 	 <input class="condition" type="submit" name="btnEnvoyer" value="Envoyer" />
 								<br />
 								<br />
-					
-	<input type="submit" name="btninscription" value="Inscription" href="formulaire_inscription.php" onclick="window.open(\'formulaire_inscription.php\', \'exemple\', \'height=800%, width=800, top=90, left=350, toolbar=no, menubar=no, location=yes, resizable=yes, scrollbars=yes, status=no\'); return false;"/> 
+	<a href="formulaire_inscription.php">inscription</a>
 
+	
+	
+	
+	
+	
+	
+	<!--<input type="submit" name="btninscription" value="Inscription" href="formulaire_inscription.php" onclick="document.location.href="formulaire_incription.php"; />
+	
+	onclick="window.open(\'formulaire_inscription.php\', \'exemple\', \'height=800%, width=800, top=90, left=350, toolbar=no, menubar=no, location=yes, resizable=yes, scrollbars=yes, status=no\'); return false;"/> 
+-->
 	
 	
 	
@@ -89,8 +98,13 @@
 								<br />
 								<br />
 					
-	<input type="submit" name="btninscription" value="Inscription" href="formulaire_inscription.php" onclick="window.open(\'formulaire_inscription.php\', \'exemple\', \'height=800%, width=800, top=90, left=350, toolbar=no, menubar=no, location=yes, resizable=yes, scrollbars=yes, status=no\'); return false;"/> 
-
+	<p>Bonjour. Souhaitez-vous visiter <a href="formulaire_inscription.php">la page 2</a> ?</p>
+	<!--<input type="submit" name="btninscription" value="Inscription" href="formulaire_inscription.php" onclick="document.location.href="formulaire_incription.php"/>
+	 onclick="window.open(\'formulaire_inscription.php\', \'exemple\', \'height=800%, width=800, top=90, left=350, toolbar=no, menubar=no, location=yes, resizable=yes, scrollbars=yes, status=no\'); return false;"/> 
+	-->
+	
+	
+	
 	
 	
 	

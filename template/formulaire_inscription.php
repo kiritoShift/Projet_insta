@@ -1,8 +1,13 @@
 <?php include "connexion_bdd.php"?>
-<?php include "classes/utilisateurs.php"?>
-<?php include "classes/mot_de_passe.php"?>
-<!DOCTYPE html>
-<html lang="fr">
+<?php
+include 'fonction.php';
+spl_autoload_register('autoClass_racine');
+?>
+<?php include "entete.php" ?>
+<?php include "menugauche.php" ?>
+<?php include "menu_connection.php" ?>
+
+
  
   <head>
  
@@ -18,6 +23,11 @@
  		 <P style="text-align:center"><img src="images/Sans titre.jpg" border="0" width="700" height="100"></P> 
  		 
   
+<div id="moncadre">
+
+
+
+
 
 <?php
   
@@ -198,12 +208,12 @@
 						';
 				  	}
   	elseif (($_POST['mdp']) == ($_POST['cmdp'])){
-  										$envoie_utilisateurs = new utilisateurs('', $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], (isset($_POST['newsletter']) && $_POST['newsletter'] ? "1" : "0") );	
+  										$envoie_utilisateurs = new utilisateurs('', $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], (isset($_POST['newsletter']) && $_POST['newsletter'] ? "1" : "0"));	
 								  		$envoie_utilisateurs->users_new();
 								  		
 										$pseudo_users=$_POST['pseudo_users'];
 										global $conn;
-										$user = new utilisateurs("",$pseudo_users,"","","","","","","1");
+										$user = new utilisateurs("",$pseudo_users,"","","","","","","");
 										$id_user = $user->users_get_id();
 										$mot_de_passe = new mot_de_passe("", md5($_POST['mdp']),$id_user);
 										$mot_de_passe->mot_de_passe_new();
@@ -213,69 +223,37 @@
 								  	
 										echo "<div id='ok'>Bonjour " .$_POST['civilite']." ".$_POST['nom_users']." ".$_POST['prenom_users'];
 										echo "<br />";
-										echo "bienvenue sur notre site unfauxcine";
+										echo "bienvenue sur notre site unfauxcine</A>";
+										/*echo "<br /> <html>
+											<head>
+												<a href=# onclick='windows.close();'>
+												Cliquez ici pour fermer la fenêtre
+												</a>
+												</head>
+												
+												";*/
+										//echo "<input type='submit' name='fermer' value='fermer' href=(onclick='windows.close()');/>" ;
+										//echo "<input type="submit" name="btninscription" value="Inscription" href="formulaire_inscription.php" onclick="window.open(\'formulaire_inscription.php\',); return false;"/>" 
+										
+										
+										
+										
+										
 										//echo "<br /><A href="javascript:self.close('Formulaire inscription');">Cliquez ici pour fermer la fenêtre</A>"
 										//<A href=javascript:self.close('formulaire_inscription.php');></A></div>; 
-										//<A href='javascript:self.close("Formulaire inscription");'>Cliquez ici pour fermer la fenêtre</A>
-  										
-										
-  		
-  		
-  		
-  		
-  		
+										//<A href='javascript:self.close("Formulaire inscription");'>Cliquez ici pour fermer la fenêtre
+												 
   			
 									}
   								else{
-  									echo "error";
+  									echo "<div id='ok'>error</a>";
   								}	
-  		
-  		
-			
-			
-							  
-  		
-  		
-		  	   /*if(($_POST['mdp']) == ($_POST['cmdp'])){
-						$pseudo_users=$_POST['pseudo_users'];
-						global $conn;
-						$user = new utilisateurs("",$pseudo_users,"","","","","","");
-						$id_user = $user->users_get_id();
-						var_dump ($id_user);
-						$mot_de_passe = new mot_de_passe("", md5($_POST['mdp']),$id_user);
-						$mot_de_passe->mot_de_passe_new();
-						
-						echo "Le MDP a bien été ajouter";
-
-			}*/
-  	
-  		
- //tu le met ici cooooooooooooooooooooooooooooooooooooooooooooooooooooooonnardddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd//
-  			
-			
-				//connection_bdd.php();
-				//$sql = "INSERT INTO utilisateurs(id,nom,prenom,ville) ";
-				//$sql = "VALUES ('','$_POST['nom']','$_POST['prenom']','$_POST['ville']')";
-
-				
-				
-				/*if($_POST['sexe'] == "H") {
-						echo " Vous êtes un homme";
-						}
-					else {
-						echo "Vous êtes une femme";
-						}*/
-				
-  		
- /*
- 		 
-		
-  */	
   		
   		
   		
 ?>
 
+</div>
 
   <!--  if (isset($_POST["btnEnvoyer"])) { -->
   
