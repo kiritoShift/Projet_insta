@@ -2,7 +2,7 @@
 <?php include "classes/mot_de_passe.php"?>
 <?php include "classes/utilisateurs.php"?>
 <?php include "entete.php" ?>
-
+<?php session_start()?>
 
 
  <div id="moncadre">
@@ -86,5 +86,4 @@
 
 	
  	
-</html>
 </div>

@@ -6,7 +6,7 @@
 
 <?php 
  if (empty($_POST['pseudo_users']) || empty($_POST['mdp'])) {
-			  		if (!empty($_POST['btnEnvoyer'])) {
+			  		if (!empty($_POST['btnEnvoyer1'])) {
 			  						echo '<div id="messageerror">Merci de remplir les champ oblgatoire </div>';
 		  							}
   				
@@ -24,7 +24,7 @@
 								<br />
 	
 
-	 <input class="condition" type="submit" name="btnEnvoyer" value="Envoyer" />
+	 <input class="condition" type="submit" name="btnEnvoyer1" value="Envoyer" />
 								<br />
 								
 	<a href="formulaire_inscription.php">Inscription</a>
@@ -69,13 +69,22 @@
 			 $sql->execute(array("pseudo_users" => $_POST['pseudo_users'], "mdp" => $pass));
 
 					 if ($sql->rowCount()) {
+
 					 	$row=$sql->fetch(PDO::FETCH_ASSOC);
 					 	$_SESSION['pseudo_users'] = $row['utilisateurs_pseudo_users'];
-					
 					 	echo "Vous  etes connecté.<br />";
 					    echo "<a href='deconnection.php'>Ce Deconnecter </a>";
 
+							 	/*include_once 'fonction.php';
+							 	$verif= verification_compte();
+							 	if ($verif==0){
+							 		header('Location: admin.php'); 
+							 	}
+							 	else {
+							 		header('Location: page_user.php'); 
+							 	}*/
 						 }
+						 
  
 							 else {
 							 	echo 'Tes identifiants sont erronés.<br/>

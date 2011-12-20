@@ -5,6 +5,7 @@
 <?php include "zone_central.php" ?>
 
 
+
 <body>
 <head>
        <link rel="stylesheet" media="screen" type="text/css" title="" href="css/acceuil.css" />
