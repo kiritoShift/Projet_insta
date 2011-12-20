@@ -14,6 +14,14 @@
 	<h1 align=center>Bienvenue sur la page d'administration</h1>
 	<br />
 
+		<u><h3>Afficher tous les utilisateurs :</h3></u>
+			<B> 
+			<p> 
+			<a href="admin_liste_users.php">Liste utilisateurs</a>
+			</p> 
+			</B>
+
+
 		<u><h3>Ajouter, Modifier, Supprimer un utilisateur :</h3></u>
 			<B> 
 			<p> 
