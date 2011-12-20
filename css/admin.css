@@ -1,14 +1,20 @@
 
 
+
 body
 {
- font: 14px Bookman Old Style, Book Antiqua, Garamond; 
- background: #4682B4  url("") no-repeat top center ; 
+
+ border-radius: 8px;
+ font: 14px Ravie, sans-serif; 
+ background: #000 url("../images/texture3.jpg") no-repeat top center ; 
+ background-attachment:fixed;
  width: 100%;
- height: 100%;
  margin: 0;
  padding: 0;
+
+
 }
+
 
 img
 {

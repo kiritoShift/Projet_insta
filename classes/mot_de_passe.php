@@ -1,11 +1,12 @@
-<?php include 'connexion_bdd.php';
+<?php include "connexion_bdd.php";
 /**
  * 
  * creation de l'objet mot_de_passe avec des fonctions pour la modification SQL
  * @author bobo
  *
  */
-class mot_de_passe {
+
+class mot_de_passe{
 	private $id_mdp;
 	private $mdp;
 	private $id_users;
@@ -37,3 +38,5 @@ class mot_de_passe {
 		$query->execute(array("mdp" => $this->mdp, "id_users" => $this->id_users));
 	}
 }
+
+?>

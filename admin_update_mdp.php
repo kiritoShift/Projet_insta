@@ -3,7 +3,15 @@
 include 'fonction.php';
 spl_autoload_register('autoClass_racine');
 ?>
-<html lang="fr">
+<?php include "connexion_bdd.php"?>
+<?php include "classes/mot_de_passe.php"?>
+<?php include "classes/utilisateurs.php"?>
+<?php include "entete.php" ?>
+
+
+
+ <div id="moncadre">
+
  
   <head>
  
@@ -108,5 +116,5 @@ spl_autoload_register('autoClass_racine');
   		
 ?>
 	
- 	</body>
+ 	</div>
 </html>
