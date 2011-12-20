@@ -15,6 +15,8 @@ spl_autoload_register('autoClass');
 
 <body>
 <?php
+
+set_time_limit(300);
 /**
  * 
  * transformer le fichier XML en objet $xml
@@ -44,13 +46,32 @@ foreach($xml->channel->item as $item){
 	//recupération de la balise description du xml
 	$sinopsys=$item->description;
 	
+	//recuperation de l'id allocine du film
+	//var_dump ($sinopsys);
+	$allocine_id_film= explode('<a href="http://www.allocine.fr/film/fichefilm_gen_cfilm=',$sinopsys);
+	$allocine_id_film= explode('.html">', $allocine_id_film[1]);
+	$allocine_id_film= $allocine_id_film[0];
+	
+	//récupération de la date de sortie du film
+	
+	$url="http://www.allocine.fr/film/fichefilm_gen_cfilm=".$allocine_id_film.".html";
+	$code_html_url=file_get_contents($url);
+	
+	$date_sortie_cine= explode('itemprop="datePublished" content="',$code_html_url);
+	$date_sortie_cine = explode ('">', $date_sortie_cine[1]);
+	$date_sortie_cine= $date_sortie_cine[0];
+
+	
+	
 	//séparation du contenu dans un tableau
 	$tabdescription= explode("</p>",$sinopsys);
-	
+	//var_dump ($tabdescription);
 	//recupération du sinopsys et suppression des balise html a l'aide de la fonction strip_tags
 	$sinopsys=strip_tags($tabdescription[0]);
 	$realisateur_acteur=strip_tags($tabdescription[1]);
 	
+	
+
 	//sépparation des acteurs et realisateur en liste
 	$tab_realisateur_acteur= explode("Avec", $realisateur_acteur);
 	$tab_realisateur_liste= explode("Un film de",$tab_realisateur_acteur[0]);
@@ -80,10 +101,10 @@ foreach($xml->channel->item as $item){
 	$tabtype=explode("(",$sinopsys);
 	$type=trim($tabtype[0]);
 	
-	// tableau avec (dans l'ordre) : titre du fulm, sinopsys du film, jaquette du film, type du film
-	$tab_liste_prochaine_sortie_cine[$i]=array((string)$item->title,$sinopsys,(string)$item->enclosure->attributes(),$type);
+	// tableau avec (dans l'ordre) : titre du fulm, sinopsys du film, jaquette du film, type du film, date de sortie cine
+	$tab_liste_prochaine_sortie_cine[$i]=array((string)$item->title,$sinopsys,(string)$item->enclosure->attributes(),$type ,$date_sortie_cine, $allocine_id_film);
 	//echo $tab_liste_prochaine_sortie_cine[$i][0]."<br />".$tab_liste_prochaine_sortie_cine[$i][1]."<br />".$tab_liste_prochaine_sortie_cine[$i][2]."<br />".$type."<br /><br />";
-	
+	//var_dump($item);
 	$tab_film_acteur_realisateur[$i]=array($item->title,$tab_realisateur[$i],$tab_acteur[$i]);
 	
 	$i++;
@@ -97,11 +118,26 @@ foreach ($tab_liste_prochaine_sortie_cine as $tab) {
 	if (!$sth->rowCount()) {
 		
 		//ajout à la base de données d'un nouveau film
-		$film = new films("", $tab[0], $tab[1], $tab[2], $tab[3]);
+		$film = new films("", $tab[0], $tab[1], $tab[2], $tab[3], $tab[5]);
 		$film->films_new();
+		
+
 	}
 }
 
+foreach ($tab_liste_prochaine_sortie_cine as $tab){
+	
+//vérification d'existance (rowCount()) pour eviter les doublons en regardant si oui ou non la variable existe déja dans la base
+$film = new films("",$tab[0],"","","");
+$id_film = $film->films_get_id();
+
+$sth = $conn->prepare("SELECT * FROM sortir WHERE id_films = :id_films AND type_sortie_films = 'cine'");
+$sth->execute(array("id_films" => $id_film));
+if (!$sth->rowCount()) {
+	$date_sortie_cine = new sortir($id_film,"cine",$tab[4]);
+	$date_sortie_cine->sortir_new();
+}
+}
 //enregistrement sur la basee de données des realisateurs
 foreach ($tab_realisateur as $realisateur_liste){
 	foreach ($realisateur_liste as $realisateur)
@@ -159,6 +195,8 @@ foreach ($tab_film_acteur_realisateur as $tab){
 		}		
 	}
 }
+
+
 
 ?>
 </body>
