@@ -1,6 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
 
-<?php include_once ("connexion_bdd.php");
+<?php 
+session_start();
+include_once ("connexion_bdd.php");
 include("entete.php");
 include("fonction.php");
 spl_autoload_register('autoClass_racine');
@@ -93,14 +95,15 @@ else
 											</TR>
 											<? //affichage des données sous forme de tableau
 											while ($val = $result->fetch(PDO::FETCH_ASSOC)) { ?>
+											
 											<TR bgcolor=white>
-												<TD><font size="-2"><?php echo $val["id_films"]?> </font></TD>
+												<TD><font size="-2"><?php echo $val["id_films"]?></font></TD>
 												<TD><font size="-2"><img src="<? echo $val["jaquette_films"]?>" width=90 height=110 /> </font></TD>
 												<TD height=110 width=200><font size="-2"><? echo $val["titre_films"]?></font></TD>
 												<TD height=110><font size="-2"></font></TD>
 												<td height=110 width=500><font size="-2"><? echo $val["sinopsys_films"]?></font></td>
 												<TD><font size="-2"></font>
-													<form action="favoris_del.php" method="post"><input name="favoris" value="favoris" type="image" src="images/iconePoubelle.gif"> favoris</form>
+												<a href="favoris_del.php?id=<? echo $val['id_films']?>" title="supprimer favoris"><img src="images/iconePoubelle.gif" alt="iconePoubelle" border="0"></a>
 												</TD>
 											</TR>
 											<? } ?>
