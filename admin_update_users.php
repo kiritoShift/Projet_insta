@@ -1,3 +1,8 @@
+<?php include 'connexion_bdd.php'; ?>
+<?php
+include 'fonction.php';
+spl_autoload_register('autoClass_racine');
+?>
 <html lang="fr">
  
   <head>
@@ -13,7 +18,8 @@
 	<h2 align=center> Page de modification des utilisateurs</h2>
 	
 	
-	<?php include 'classes/utilisateurs.php';
+	<?php 
+	//include 'classes/utilisateurs.php';
 
 		if (empty($_POST['id_users']) || empty($_POST['nom_users']) || empty($_POST['prenom_users']) || empty($_POST['civilite']) || empty($_POST['email_users']) || empty($_POST['pseudo_users'])) {
 			  		if (!empty($_POST['btnEnvoyer'])) {
@@ -53,6 +59,14 @@
 									<option value="Mlle">Mademoiselle</option>	
 								</select>
 								<br />
+								<br />
+								
+									<!--************** Pseudo **************-->
+
+								<br>
+								<label for="Pseudo_user">Pseudo<FONT color="red">*</FONT> :</label>
+								<input type="text" id="Pseudo_users" name="pseudo_users"/>
+								<br />	
 								<br />
 								
 
@@ -105,31 +119,25 @@
 							</fieldset>
 							
 														
-			
-<!--***********************deuxieme encadr� information de connection (pseudo, mdp, cmdp)*********************************-->
-	
-								
-						<fieldset class="formulaire" style="width:350px;">
-						<legend> Pseudo et newsletter </legend>
-																
-
-	  								<!--************** Pseudo **************-->
-
-								<br>
-								<label for="Pseudo_user">Pseudo<FONT color="red">*</FONT> :</label>
-								<input type="text" id="Pseudo_users" name="pseudo_users"/>
-								<br />	
 						
 				
-<!--********************************************newsletter********************************************-->
+						<!--********* Newsletter et compte Admin ***********-->
 							
 																
 								
-	  								<!--* Newsletter *-->
+								<fieldset class="formulaire" style="width:350px;">
+								<legend> Newsletter et compte Admin </legend>
+								
+	  								<!--* Newsletter et compte Admin *-->
 
 								<br>
 	  							<input type="checkbox" id="newsletter" name="newsletter" tabindex="14" />	
-							    <FONT size="2"><span for="newsletter">L utilisateur recevra la newsletter</span>
+							    <FONT size="2"><span for="newsletter">L\'utilisateur recevra la newsletter</span>
+							    </FONT>
+							    
+								<br />
+	  							<input type="checkbox" id="type_compte" name="type_compte" tabindex="14" />	
+							    <FONT size="2"><span for="type_compte">Compte Admin</span>
 							    </FONT>
 
 											    
@@ -143,13 +151,14 @@
 								
 						
 						</form>
+
 						
 						';
 				  	}
 
 	else {
-	 		$envoie_form = new utilisateurs($_POST['id_users'], $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], $_POST['newsletter'] );	
-	 		$envoie_form->users_update();
+  		$envoie_form = new utilisateurs('', $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], (isset($_POST['newsletter']) && $_POST['newsletter'] ? "1" : "0"), (isset($_POST['type_compte']) && $_POST['type_compte'] ? "1" : "0") );
+ 	 	$envoie_form->users_update();
 	 		
 	 		echo "L'utilisateur " .$_POST['nom_users']." ".$_POST['prenom_users']. " a bien été modifier sur la base de données";
 	 		

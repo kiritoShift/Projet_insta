@@ -144,14 +144,14 @@ spl_autoload_register('autoClass_racine');
 								</fieldset>				
 						
 				
-<!--********************************************newsletter********************************************-->
+<!--********************************************Newsletter et compte Admin********************************************-->
 							
 																
 								
 								<fieldset class="formulaire" style="width:350px;">
-								<legend> Newsletter </legend>
+								<legend> Newsletter et compte Admin </legend>
 								
-	  								<!--* Newsletter *-->
+	  								<!--* Newsletter et compte Admin *-->
 
 								<br>
 	  							<input type="checkbox" id="newsletter" name="newsletter" tabindex="14" />	
@@ -188,7 +188,7 @@ spl_autoload_register('autoClass_racine');
 		if (($_POST['mdp']) == ($_POST['mdp_conf'])){
 		$pseudo_users=$_POST['pseudo_users'];
 		global $conn;
-		$user = new utilisateurs("",$pseudo_users,"","","","","","","","","");
+		$user = new utilisateurs("",$pseudo_users,"","","","","","","","");
 		$id_user = $user->users_get_id();
 		$mot_de_passe = new mot_de_passe("", md5($_POST['mdp']),$id_user);
 		$mot_de_passe->mot_de_passe_new();
