@@ -26,8 +26,8 @@ class mot_de_passe {
 	// fonction de supression d'un mot_de_passe
 	public function mot_de_passe_delete(){
 		global $conn;
-		$query = $conn->prepare("DELETE FROM mot_de_passe WHERE id_mdp = :id_mdp;");
-		$query->execute(array("id_mdp" => $this->id_mdp ));
+		$query = $conn->prepare("DELETE FROM mot_de_passe WHERE :id_users = id_users;");
+		$query->execute(array("id_users" => $this->id_users));
 	}
 	
 	// fonction de modification d'un champ dans la table mot_de_passe
