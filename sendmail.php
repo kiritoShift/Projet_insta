@@ -33,8 +33,7 @@ foreach ($tab_sortir as $tab){
 	$date_limite=date( "Y-m-d");
 	$date_limite=date( "Y-m-d", time() + 7 * 24 * 60 * 60 );
 	if ($tab->date_sortie == $date_limite){
-		echo "salut";
-		
+
 		$mail = new PHPmailer();
 		$mail->CharSet = 'UTF-8'; // choix de l'encodage.
 		$mail->IsSMTP();
