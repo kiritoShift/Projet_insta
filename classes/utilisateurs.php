@@ -72,7 +72,7 @@ class utilisateurs {
 							  "prenom_users" => $this->prenom_users,
 							  "date_naissance" => $this->date_naissance,
 							  "ville_users" => $this->ville_users,
-							  "newsletter" => ($this->newsletter ? "1" : "0")));
+							  "newsletter" => $this->newsletter));
 							
 	}
 	
@@ -97,7 +97,7 @@ class utilisateurs {
 										:prenom_users,
 										:date_naissance,
 										:ville_users,
-										:newsletter
+										:newsletter,
 										:type_compte)");
 		$query->execute(array("id_users" => $this->id_users, 
 							  "pseudo_users" => $this->pseudo_users,
@@ -107,8 +107,8 @@ class utilisateurs {
 							  "prenom_users" => $this->prenom_users,
 							  "date_naissance" => $this->date_naissance,
 							  "ville_users" => $this->ville_users,
-							  "newsletter" => ($this->newsletter ? "1" : "0"),
-							  "type_compte" => ($this->type_compte ? "1" : "0")));
+							  "newsletter" => $this->newsletter,
+							  "type_compte" => $this->type_compte));
 							
 	}
 	
