@@ -11,8 +11,9 @@ class utilisateurs {
 	private $date_naissance;
 	private $ville_users;
 	private $newsletter;
+	private $type_compte;
 	private $select_id;
-	public function __construct($id_users = "", $pseudo_users = "", $email_users = "", $civilite = "", $nom_users = "", $prenom_users = "", $date_naissance = "", $ville_users = "", $newsletter = ""){
+	public function __construct($id_users = "", $pseudo_users = "", $email_users = "", $civilite = "", $nom_users = "", $prenom_users = "", $date_naissance = "", $ville_users = "", $newsletter = "", $type_compte = ""){
 		global $conn;
 		$this->id_users = $id_users;
 		$this->pseudo_users = $pseudo_users;
@@ -23,6 +24,7 @@ class utilisateurs {
 		$this->date_naissance = $date_naissance;
 		$this->ville_users = $ville_users;
 		$this->newsletter = $newsletter;
+	    $this->type_compte = $type_compte;
 		
 				
 		$query = $conn->prepare("SELECT id_users FROM utilisateurs WHERE :pseudo_users = pseudo_users");
@@ -70,7 +72,43 @@ class utilisateurs {
 							  "prenom_users" => $this->prenom_users,
 							  "date_naissance" => $this->date_naissance,
 							  "ville_users" => $this->ville_users,
-							  "newsletter" => ($this->newsletter ? "1" : "0")));
+							  "newsletter" => $this->newsletter));
+							
+	}
+
+	// Ajouter un nouveau administrateur
+	public function users_admin(){
+				global $conn;
+		$query = $conn->prepare("INSERT INTO utilisateurs(id_users, 
+															pseudo_users,
+															email_users,
+															civilite,
+															nom_users,
+															prenom_users,
+															date_naissance,
+															ville_users,
+															newsletter,
+															type_compte) 
+								VALUES (:id_users,
+									    :pseudo_users,
+										:email_users,
+										:civilite,
+										:nom_users,
+										:prenom_users,
+										:date_naissance,
+										:ville_users,
+										:newsletter,
+										:type_compte)");
+		$query->execute(array("id_users" => $this->id_users, 
+							  "pseudo_users" => $this->pseudo_users,
+							  "email_users" => $this->email_users,
+							  "civilite" => $this->civilite,
+							  "nom_users" => $this->nom_users,
+							  "prenom_users" => $this->prenom_users,
+							  "date_naissance" => $this->date_naissance,
+							  "ville_users" => $this->ville_users,
+							  "newsletter" => $this->newsletter,
+							  "type_compte" => $this->type_compte));
 							
 	}
 	
