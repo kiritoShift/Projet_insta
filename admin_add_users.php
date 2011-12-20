@@ -144,14 +144,14 @@ spl_autoload_register('autoClass_racine');
 								</fieldset>				
 						
 				
-<!--********************************************newsletter********************************************-->
+<!--********************************************Newsletter et compte Admin********************************************-->
 							
 																
 								
 								<fieldset class="formulaire" style="width:350px;">
-								<legend> Newsletter </legend>
+								<legend> Newsletter et compte Admin </legend>
 								
-	  								<!--* Newsletter *-->
+	  								<!--* Newsletter, Compte Admin *-->
 
 								<br>
 	  							<input type="checkbox" id="newsletter" name="newsletter" tabindex="14" />	

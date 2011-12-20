@@ -158,6 +158,11 @@ class utilisateurs {
 			$query = $conn->prepare("UPDATE utilisateurs SET newsletter = :newsletter WHERE id_users = :id_users ;");
 			$query->execute(array("newsletter" => $this->newsletter, "id_users" => $this->id_users));
 		}
+			
+			if (!empty($this->type_compte)) {
+			$query = $conn->prepare("UPDATE utilisateurs SET type_compte = :type_compte WHERE id_users = :id_users ;");
+			$query->execute(array("type_compte" => $this->type_compte, "id_users" => $this->id_users));
+		}
 			if (!empty($this->nom_films)) {
 			$query = $conn->prepare("UPDATE utilisateurs SET nom_films = :nom_films WHERE id_users = :id_users ;");
 			$query->execute(array("nom_films" => $this->nom_films, "id_users" => $this->id_users));
