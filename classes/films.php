@@ -12,13 +12,15 @@ class films {
 	private $type_films;
 	private $jaquette_films;
 	private $select_id;
-	public function __construct($id_films = "", $titre_films = "", $sinopsys_films = "", $jaquette_films = "", $type_films =""){
+	private $id_allocine;
+	public function __construct($id_films = "", $titre_films = "", $sinopsys_films = "", $jaquette_films = "", $type_films ="", $id_allocine =""){
 		global $conn;
 		$this->id_films = $id_films;
 		$this->titre_films = $titre_films;
 		$this->sinopsys_films = $sinopsys_films;
 		$this->jaquette_films = $jaquette_films;
 		$this->type_films = $type_films;
+		$this->id_allocine = $id_allocine;
 		
 		$query = $conn->prepare("SELECT id_films FROM films WHERE :titre_films = titre_films");
 		$query->execute(array("titre_films" => $titre_films));
@@ -38,8 +40,8 @@ class films {
 	// fonction d'ajout d'un nouveau film
 	public function films_new(){
 		global $conn;
-		$query = $conn->prepare("INSERT INTO films(titre_films, sinopsys_films, jaquette_films, type_films) VALUES (:titre_films, :sinopsys_films, :jaquette_films, :type_films)");
-		$query->execute(array("titre_films" => $this->titre_films, "sinopsys_films" => $this->sinopsys_films, "jaquette_films" => $this->jaquette_films, "type_films" => $this->type_films));
+		$query = $conn->prepare("INSERT INTO films(titre_films, sinopsys_films, jaquette_films, type_films, id_allocine) VALUES (:titre_films, :sinopsys_films, :jaquette_films, :type_films, :id_allocine)");
+		$query->execute(array("titre_films" => $this->titre_films, "sinopsys_films" => $this->sinopsys_films, "jaquette_films" => $this->jaquette_films, "type_films" => $this->type_films, "id_allocine" => $this->id_allocine));
 	}
 	
 	// fonction de supression d'un film

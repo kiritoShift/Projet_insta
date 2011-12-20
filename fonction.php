@@ -9,6 +9,55 @@ function autoClass_racine($name) {
 	include("classes/$name.php");
 }
 
+function formatage_date($date) {
+	$tab_date=explode(" ", $date);
+	$jour=$tab_date[1];
+	$mois=$tab_date[2];
+	$ans=$tab_date[3];
+	
+	switch ($mois){
+		case "janvier":
+			$mois=01;
+			break;
+		case "fevrier":
+			$mois=02;
+			break;
+		case "mars":
+			$mois=03;
+			break;
+		case "avril":
+			$mois=04;
+			break;
+		case "mai":
+			$mois=05;
+			break;
+		case "juin":
+			$mois=06;
+			break;
+		case "juillet":
+			$mois=07;
+			break;
+		case "aout":
+			$mois=08;
+			break;
+		case "septembre":
+			$mois=09;
+			break;
+		case "octobre":
+			$mois=10;
+			break;
+		case "novembre":
+			$mois=11;
+			break;
+		case "decembre":
+			$mois=12;
+			break;
+	}
+	$tab_date=array($ans,$mois,$jour);
+	$tab_date[0]=str_ireplace("\n", "", $tab_date[0]);
+	$date=implode("-",$tab_date);
+	return $date;
+}
 function liste_films() {
   global $conn;
 	$query = $conn->prepare("SELECT * FROM films ORDER BY titre_films ASC;");
