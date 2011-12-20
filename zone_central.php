@@ -1,5 +1,12 @@
-
-
+<?php include "connexion_bdd.php"?>
+<?php
+include "fonction.php";
+spl_autoload_register("autoClass_racine");
+?>
+<?php include "entete.php" ?>
+<?php include "menugauche.php" ?>
+<?php include "menu_connection.php" ?>
+<?php include "zone_central.php" ?>
 
 <html>
 
@@ -13,7 +20,7 @@
 
 
 
-<?php //include "admin_add_users.php" ?> 
+
 
 
 
