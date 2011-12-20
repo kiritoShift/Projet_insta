@@ -19,8 +19,8 @@ class sortir {
 	// fonction d'ajout d'un nouveau sortir
 	public function sortir_new(){
 		global $conn;
-		$query =$conn->prepare("INSERT INTO sortir(type_sortie_films, date_sortie) VALUES (:type_sortie_films,:date_sortie)");
-		$query->execute(array("type_sortie_films" =>$this->type_sortie_films, "date_sortie" =>$this->date_sortie));
+		$query =$conn->prepare("INSERT INTO sortir(id_films, type_sortie_films, date_sortie) VALUES (:id_films,:type_sortie_films,:date_sortie)");
+		$query->execute(array("id_films" =>$this->id_films, "type_sortie_films" =>$this->type_sortie_films, "date_sortie" =>$this->date_sortie));
 	}
 	
 	// fonction de supression d'un sortir
