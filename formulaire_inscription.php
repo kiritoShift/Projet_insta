@@ -2,7 +2,7 @@
 <?php include "classes/mot_de_passe.php"?>
 <?php include "classes/utilisateurs.php"?>
 <?php include "entete.php" ?>
-
+<body>
 
 
  <div id="moncadre">
@@ -245,5 +245,5 @@
   	
 
 		</div>
-  </body>
+  
 </html>

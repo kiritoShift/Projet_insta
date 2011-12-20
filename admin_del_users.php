@@ -1,6 +1,5 @@
 <?php include "connexion_bdd.php"?>
-<?php include "classes/mot_de_passe.php"?>
-<?php include "classes/utilisateurs.php"?>
+
 <?php include "entete.php" ?>
 
 

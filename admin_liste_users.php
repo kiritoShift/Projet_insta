@@ -11,7 +11,7 @@ spl_autoload_register('autoClass_racine');
 
 
  <div id="moncadre">
-<html lang="fr">
+
  
   <head>
  
@@ -34,4 +34,3 @@ spl_autoload_register('autoClass_racine');
 	?>
 	
  	</div>
-</html>

@@ -1,9 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+
 
 <?php 
-session_start();
+include "entete.php";
+
 include_once ("connexion_bdd.php");
-include("entete.php");
 include("fonction.php");
 spl_autoload_register('autoClass_racine');
 
@@ -45,7 +45,7 @@ else
 				$result->execute();
 			}}}}
 			?>
-
+ <div id="moncadre">
 
 <head>
 <title>page utilisateur</title>
@@ -66,8 +66,8 @@ else
 	<br />
 	<table border=1 width="100%">
 		<tr>
-			<td><?php include("menu_user.php");	?>
-			</td>
+			
+			
 			<td>
 
 				<table align="center" bgcolor=#ffffCC border=1>
@@ -93,7 +93,7 @@ else
 												<td><font size="-1"><a href="page_user.php?choix=4"><b>Sinopsys</b>
 													</a> </font></td>
 											</TR>
-											<? //affichage des données sous forme de tableau
+											<?php //affichage des données sous forme de tableau
 											while ($val = $result->fetch(PDO::FETCH_ASSOC)) { ?>
 											
 											<TR bgcolor=white>
@@ -117,4 +117,4 @@ else
 			</td>
 		</tr>
 	</table>
-</body>
+</div>

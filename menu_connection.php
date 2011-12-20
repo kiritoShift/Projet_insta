@@ -29,6 +29,7 @@
 								
 	<a href="formulaire_inscription.php">Inscription</a>
 	<a href="admin.php">admin</a>
+	<a href="page_user.php">user</a>
 
 	
 	
@@ -93,6 +94,7 @@
 															<br />
 								<a href="formulaire_inscription.php">inscription</a>
 								<a href="admin.php">admin</a>
+								<a href="page_user.php">user</a>
 								
 								
 								

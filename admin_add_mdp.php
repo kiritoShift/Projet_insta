@@ -10,9 +10,9 @@ spl_autoload_register('autoClass_racine');
 <?php include "entete.php" ?>
 
 
-
+ <body>
  <div id="moncadre">
- <body> 
+ 
   
   
 <html lang="fr">
