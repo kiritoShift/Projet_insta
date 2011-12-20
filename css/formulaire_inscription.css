@@ -1,5 +1,38 @@
 
 
+#moncadre {
+ text-align:center;
+ border:2px solid #000000;
+ border-radius: 8px;  	
+  	
+  	
+width:885px;
+margin:70px auto;
+padding:10px;
+background-color:#fff;
+border-left:1px solid #000000; 
+border-right:1px solid #000000;
+border-bottom:1px solid #000000;
+border-top:1px solid #000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+div#ok
+{
+text-align:center;
+
+}
+
 body
 {
  font: 14px Bookman Old Style, Book Antiqua, Garamond; 
@@ -87,12 +120,7 @@ span
 	
 }
 
-
-
-
-
-
-
-
-	
-d
+a
+{
+text-align:center;
+}

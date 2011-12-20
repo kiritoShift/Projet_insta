@@ -130,15 +130,23 @@ spl_autoload_register('autoClass_racine');
 								
 	  								<!--* Newsletter et compte Admin *-->
 
-								<br>
+								<label for="type_compte">Compte Admin :</label>
+								<input type="text" id="type_compte" name="type_compte" maxlength="5" size="5"/>
+								<br />
+								<div id=ex>Mettre 1 pour être Admin</div>
+								<br />
+	  								
+	  								
+	  								
 	  							<input type="checkbox" id="newsletter" name="newsletter" tabindex="14" />	
 							    <FONT size="2"><span for="newsletter">L\'utilisateur recevra la newsletter</span>
 							    </FONT>
-							    
-								<br />
+							    <br />
+
 	  							<input type="checkbox" id="type_compte" name="type_compte" tabindex="14" />	
-							    <FONT size="2"><span for="type_compte">Compte Admin</span>
+							    <FONT size="2"><span for="type_compte">Admin</span>
 							    </FONT>
+							    <br />
 
 											    
 							    </fieldset>
@@ -157,7 +165,7 @@ spl_autoload_register('autoClass_racine');
 				  	}
 
 	else {
-  		$envoie_form = new utilisateurs($_POST['id_users'], $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], (isset($_POST['newsletter']) && $_POST['newsletter'] ? "1" : "0"), (isset($_POST['type_compte']) && $_POST['type_compte'] ? "1" : "0") );
+  		$envoie_form = new utilisateurs($_POST['id_users'], $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], (isset($_POST['newsletter']) && $_POST['newsletter'] ? "1" : "0"), (isset($_POST['type_compte']) && $_POST['type_compte'] ? "1" : "0"));
  	 	$envoie_form->users_update();
 	 		
 	 		echo "L'utilisateur " .$_POST['nom_users']." ".$_POST['prenom_users']. " a bien été modifier sur la base de données";
