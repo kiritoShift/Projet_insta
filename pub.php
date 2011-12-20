@@ -7,6 +7,7 @@
 
 		
 	<a href="acceuil.php"><img src="images/pub.jpg"/></a>
+	<meta http-equiv="refresh" content="2;URL=acceuil.php">
 	
 	
 	
