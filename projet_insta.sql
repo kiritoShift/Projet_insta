@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le : Lun 19 Décembre 2011 à 19:35
+-- Généré le : Mar 20 Décembre 2011 à 19:59
 -- Version du serveur: 5.5.16
 -- Version de PHP: 5.3.8
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données: `projet_insta`
 --
-CREATE DATABASE `projet_insta` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `projet_insta`;
 
 -- --------------------------------------------------------
 
@@ -29,9 +27,9 @@ USE `projet_insta`;
 --
 
 CREATE TABLE IF NOT EXISTS `acteurs` (
-  `id_acteur` int(11) NOT NULL AUTO_INCREMENT,
-  `nom_acteur` varchar(15) NOT NULL,
-  `prenom_acteur` varchar(15) NOT NULL,
+  `id_acteur` int(255) NOT NULL AUTO_INCREMENT,
+  `nom_acteur` varchar(50) DEFAULT NULL,
+  `prenom_acteur` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id_acteur`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
@@ -51,8 +49,8 @@ INSERT INTO `acteurs` (`id_acteur`, `nom_acteur`, `prenom_acteur`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `avoir_acteurs_favoris` (
-  `id_users` int(11) NOT NULL,
-  `id_films` int(11) NOT NULL
+  `id_users` int(100) NOT NULL,
+  `id_films` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -62,8 +60,8 @@ CREATE TABLE IF NOT EXISTS `avoir_acteurs_favoris` (
 --
 
 CREATE TABLE IF NOT EXISTS `avoir_films_favoris` (
-  `id_users` int(11) NOT NULL,
-  `id_films` int(11) NOT NULL
+  `id_users` int(100) NOT NULL,
+  `id_films` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -73,8 +71,8 @@ CREATE TABLE IF NOT EXISTS `avoir_films_favoris` (
 --
 
 CREATE TABLE IF NOT EXISTS `avoir_realisateur_favoris` (
-  `id_realisateur` int(11) NOT NULL,
-  `id_films` int(11) NOT NULL
+  `id_realisateur` int(100) NOT NULL,
+  `id_films` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -85,10 +83,11 @@ CREATE TABLE IF NOT EXISTS `avoir_realisateur_favoris` (
 
 CREATE TABLE IF NOT EXISTS `films` (
   `id_films` int(11) NOT NULL AUTO_INCREMENT,
-  `titre_films` varchar(255) NOT NULL,
-  `sinopsys_films` varchar(255) NOT NULL,
-  `jaquette_films` varchar(255) NOT NULL,
-  `type_films` varchar(255) NOT NULL,
+  `titre_films` varchar(255) DEFAULT NULL,
+  `sinopsys_films` varchar(255) DEFAULT NULL,
+  `jaquette_films` varchar(255) DEFAULT NULL,
+  `type_films` varchar(255) DEFAULT NULL,
+  `id_allocine` int(100) DEFAULT NULL,
   PRIMARY KEY (`id_films`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
@@ -96,9 +95,9 @@ CREATE TABLE IF NOT EXISTS `films` (
 -- Contenu de la table `films`
 --
 
-INSERT INTO `films` (`id_films`, `titre_films`, `sinopsys_films`, `jaquette_films`, `type_films`) VALUES
-(1, 'Om Shanti Om', 'C''est l''histoire d''un homme qui se réincarne 20 ans plutard après avoir été tué ...', '', ''),
-(2, 'Awarapan', 'C''est l''histoire d''un homme qui sauve la vie d''une femme esclave au péril de sa vie ....', '', '');
+INSERT INTO `films` (`id_films`, `titre_films`, `sinopsys_films`, `jaquette_films`, `type_films`, `id_allocine`) VALUES
+(1, 'Om Shanti Om', 'C''est l''histoire d''un homme qui se réincarne 20 ans plutard après avoir été tué ...', '', '', 0),
+(2, 'Awarapan', 'C''est l''histoire d''un homme qui sauve la vie d''une femme esclave au péril de sa vie ....', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -107,8 +106,8 @@ INSERT INTO `films` (`id_films`, `titre_films`, `sinopsys_films`, `jaquette_film
 --
 
 CREATE TABLE IF NOT EXISTS `jouer` (
-  `id_acteur` int(11) NOT NULL,
-  `id_films` int(11) NOT NULL
+  `id_acteur` int(100) NOT NULL,
+  `id_films` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -118,11 +117,11 @@ CREATE TABLE IF NOT EXISTS `jouer` (
 --
 
 CREATE TABLE IF NOT EXISTS `mot_de_passe` (
-  `id_mdp` int(11) NOT NULL AUTO_INCREMENT,
-  `id_users` int(1) NOT NULL,
-  `mdp` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `id_mdp` int(100) NOT NULL AUTO_INCREMENT,
+  `id_users` int(100) NOT NULL,
+  `mdp` varchar(255) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id_mdp`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Contenu de la table `mot_de_passe`
@@ -139,7 +138,15 @@ INSERT INTO `mot_de_passe` (`id_mdp`, `id_users`, `mdp`) VALUES
 (12, 3, '4a7d1ed414474e4033ac'),
 (13, 3, '4a7d1ed414474e4033ac'),
 (14, 19, '4dbf44c6b1be736ee92e'),
-(15, 20, '9336ebf25087d91c818e');
+(15, 20, '9336ebf25087d91c818e'),
+(16, 20, 'f7c0e071db137f5ae653'),
+(17, 21, '47bce5c74f589f4867db'),
+(18, 22, 'f561aaf6ef0bf14d4208'),
+(19, 23, '4a7d1ed414474e4033ac'),
+(20, 24, 'b53b3a3d6ab90ce02682'),
+(21, 25, 'ad57484016654da87125'),
+(22, 26, '6a1013d15771539dd026'),
+(23, 27, 'accc9105df5383111407');
 
 -- --------------------------------------------------------
 
@@ -148,9 +155,9 @@ INSERT INTO `mot_de_passe` (`id_mdp`, `id_users`, `mdp`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `realisateurs` (
-  `id_realisateur` int(11) NOT NULL AUTO_INCREMENT,
-  `nom_realisateur` varchar(15) NOT NULL,
-  `prenom_realisateur` varchar(15) NOT NULL,
+  `id_realisateur` int(100) NOT NULL AUTO_INCREMENT,
+  `nom_realisateur` varchar(50) DEFAULT NULL,
+  `prenom_realisateur` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id_realisateur`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
@@ -169,8 +176,8 @@ INSERT INTO `realisateurs` (`id_realisateur`, `nom_realisateur`, `prenom_realisa
 --
 
 CREATE TABLE IF NOT EXISTS `realiser` (
-  `id_realisateur` int(11) NOT NULL,
-  `id_films` int(11) NOT NULL
+  `id_realisateur` int(100) NOT NULL,
+  `id_films` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -191,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `sortie_films` (
 --
 
 CREATE TABLE IF NOT EXISTS `sortir` (
-  `id_films` int(11) NOT NULL,
+  `id_films` int(255) NOT NULL,
   `type_sortie_films` varchar(20) NOT NULL,
   `date_sortie` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -212,17 +219,17 @@ INSERT INTO `sortir` (`id_films`, `type_sortie_films`, `date_sortie`) VALUES
 
 CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `id_users` int(11) NOT NULL AUTO_INCREMENT,
-  `pseudo_users` varchar(15) NOT NULL,
-  `email_users` varchar(30) NOT NULL,
-  `civilite` varchar(8) NOT NULL,
-  `nom_users` varchar(15) NOT NULL,
-  `prenom_users` varchar(15) NOT NULL,
-  `date_naissance` varchar(10) NOT NULL,
-  `ville_users` varchar(30) NOT NULL,
-  `newsletter` tinyint(1) NOT NULL,
-  `type_compte` tinyint(1) NOT NULL,
+  `pseudo_users` varchar(100) DEFAULT NULL,
+  `email_users` varchar(100) DEFAULT NULL,
+  `civilite` varchar(20) DEFAULT NULL,
+  `nom_users` varchar(100) DEFAULT NULL,
+  `prenom_users` varchar(100) DEFAULT NULL,
+  `date_naissance` varchar(50) DEFAULT NULL,
+  `ville_users` varchar(50) DEFAULT NULL,
+  `newsletter` tinyint(1) DEFAULT NULL,
+  `type_compte` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_users`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
 
 --
 -- Contenu de la table `utilisateurs`
@@ -242,10 +249,16 @@ INSERT INTO `utilisateurs` (`id_users`, `pseudo_users`, `email_users`, `civilite
 (11, 'mohinder', 'adressemail', 'Mr', 'nom', 'prenom', '0000-00-00', 'bobigny', 1, 0),
 (12, 'mohinder', 'adressemail', 'Mr', 'nom', 'prenom', '0000-00-00', 'bobigny', 1, 0),
 (16, 'alice', 'aliceadsl@aliceadsl.fr', 'Mme', 'adsl', 'alice', '02/05/0995', 'Tiscali', 1, 0),
-(17, 'allo', 'allo@yopmail.fr', 'Mme', 'allo', 'allo', '02/05/1220', 'allo', 0, 0),
-(18, '', '', '', '', '', '', '', 0, 0),
-(19, 'boris', 'b.couraud@gmail.com', 'Mr', 'couraud', 'boris', '02/05/0995', 'Paris', 1, 0),
-(20, 'xxxxxx', 'xxxxxx', 'Mr', 'xxxxxxxxx', 'xxxxxxx', '07/12/1990', 'xxxx', 1, 0);
+(17, '17', 'Mme', '17', '17', '17', '17', '1', 1, 0),
+(18, 'a', 'Mlle', 'a', 'a', '01/06/1968', 'a', '1', 1, 1),
+(19, 'boris', 'b.couraud@gmail.com', 'Mr', 'couraud', 'boris', '02/05/0995', 'Paris', 1, 1),
+(20, 'nnnn', 'nnnn', 'M', 'nnn', 'nnnnn', '01/06/1968', 'nnnn', 1, 0),
+(21, 'aaa', 'aa', 'Mr', 'aaa', 'aaa', '02/05/0995', 'aaa', 1, 1),
+(22, '222', '2222', 'Mme', '2222', '2222', '222', '22222', 1, 1),
+(23, '2323', '3232', 'Mme', '2332', '3232', '07/12/1990', '3232', 1, 0),
+(25, 'ww', 'ww', 'Mr', 'www', 'www', 'ww', 'ww', 0, 1),
+(26, 'amez', 'sqsdqdsqsfd', 'Mr', 'amez', 'souf', '01/06/1968', 'dsffsdsd', 0, 1),
+(27, '27', '27', 'Mr', '27', '27', '27', '27', 0, 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
