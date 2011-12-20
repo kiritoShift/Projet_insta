@@ -9,6 +9,14 @@ function autoClass_racine($name) {
 	include("classes/$name.php");
 }
 
+function verification_compte($pseudo){
+	global $conn;
+	$query = $conn->prepare("SELECT * FROM films ORDER BY titre_films ASC;");
+	$query->execute();
+	$liste_films = $query->fetchAll(PDO::FETCH_ASSOC);
+	return $liste_films;
+}
+
 function formatage_date($date) {
 	$tab_date=explode(" ", $date);
 	$jour=$tab_date[1];
