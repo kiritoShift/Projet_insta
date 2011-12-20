@@ -1,6 +1,8 @@
 <?php include "connexion_bdd.php" ?>
-<?php include "classes/utilisateurs.php"?>
-<?php include "classes/mot_de_passe.php"?>
+<?php
+include "fonction.php";
+spl_autoload_register("autoClass_racine");
+?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
 <html>
@@ -97,8 +99,11 @@
 	 <input class="condition" type="submit" name="btnEnvoyer" value="Envoyer" />
 								<br />
 								<br />
-					
-	<p>Bonjour. Souhaitez-vous visiter <a href="formulaire_inscription.php">la page 2</a> ?</p>
+	<a href="formulaire_inscription.php">inscription</a>
+	
+	
+	
+	
 	<!--<input type="submit" name="btninscription" value="Inscription" href="formulaire_inscription.php" onclick="document.location.href="formulaire_incription.php"/>
 	 onclick="window.open(\'formulaire_inscription.php\', \'exemple\', \'height=800%, width=800, top=90, left=350, toolbar=no, menubar=no, location=yes, resizable=yes, scrollbars=yes, status=no\'); return false;"/> 
 	-->

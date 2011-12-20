@@ -1,11 +1,8 @@
 <?php include "connexion_bdd.php"?>
 <?php
-include 'fonction.php';
-spl_autoload_register('autoClass_racine');
+include "fonction.php";
+spl_autoload_register("autoClass_racine");
 ?>
-<?php include "entete.php" ?>
-<?php include "menugauche.php" ?>
-<?php include "menu_connection.php" ?>
 
 
  
@@ -23,7 +20,7 @@ spl_autoload_register('autoClass_racine');
  		 <P style="text-align:center"><img src="images/Sans titre.jpg" border="0" width="700" height="100"></P> 
  		 
   
-<div id="moncadre">
+
 
 
 
@@ -224,6 +221,7 @@ spl_autoload_register('autoClass_racine');
 										echo "<div id='ok'>Bonjour " .$_POST['civilite']." ".$_POST['nom_users']." ".$_POST['prenom_users'];
 										echo "<br />";
 										echo "bienvenue sur notre site unfauxcine</A>";
+										echo "<br /><a href='acceuil.php'>retourné a l'acceuil</a>";
 										/*echo "<br /> <html>
 											<head>
 												<a href=# onclick='windows.close();'>
@@ -253,7 +251,7 @@ spl_autoload_register('autoClass_racine');
   		
 ?>
 
-</div>
+
 
   <!--  if (isset($_POST["btnEnvoyer"])) { -->
   
