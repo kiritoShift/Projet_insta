@@ -122,11 +122,11 @@ class utilisateurs {
 	// Modifier un utilisateur
 	public function users_update() {
 		global $conn;
-		if (!empty($this->id_users)) {
+			if (!empty($this->id_users)) {
 			$query = $conn->prepare("UPDATE utilisateurs SET id_users = :id_users WHERE id_users = :id_users ;");
 			$query->execute(array("id_users" => $this->id_users, "id_users" => $this->id_users));
 		}
-		if (!empty($this->pseudo_users)) {
+			if (!empty($this->pseudo_users)) {
 			$query = $conn->prepare("UPDATE utilisateurs SET pseudo_users = :pseudo_users WHERE id_users = :id_users ;");
 			$query->execute(array("pseudo_users" => $this->pseudo_users, "id_users" => $this->id_users));
 		}
@@ -154,18 +154,18 @@ class utilisateurs {
 			$query = $conn->prepare("UPDATE utilisateurs SET ville_users = :ville_users WHERE id_users = :id_users ;");
 			$query->execute(array("ville_users" => $this->ville_users, "id_users" => $this->id_users));
 		}
-			if (!empty($this->newsletter)) {
+			if (empty($this->newsletter)) {
 			$query = $conn->prepare("UPDATE utilisateurs SET newsletter = :newsletter WHERE id_users = :id_users ;");
 			$query->execute(array("newsletter" => $this->newsletter, "id_users" => $this->id_users));
 		}
-			if (!empty($this->type_compte)) {
+			if (empty($this->type_compte))  {
 			$query = $conn->prepare("UPDATE utilisateurs SET type_compte = :type_compte WHERE id_users = :id_users ;");
 			$query->execute(array("type_compte" => $this->type_compte, "id_users" => $this->id_users));
 		}
 			if (!empty($this->nom_films)) {
 			$query = $conn->prepare("UPDATE utilisateurs SET nom_films = :nom_films WHERE id_users = :id_users ;");
 			$query->execute(array("nom_films" => $this->nom_films, "id_users" => $this->id_users));
-		}
+		}		
 	}
 }
 	
