@@ -44,7 +44,7 @@
  <li>
   <a href="#">BLUE RAY</a>
   <ul class="sousMenu">
-   <li><a href="#">Liste des Blue-Ray</a></li>
+   <li><a href="#">Liste des Blue</a></li>
    <li><a href="#">A VENIR</a></li>
  </ul>
  </li>
