@@ -70,7 +70,8 @@
  	$_SESSION['pseudo_users'] = $row['utilisateurs_pseudo_users'];
 
  	echo "Vous  etes connecté.<br />";
-    echo "<a href='deconnection.php'>Ce Deconnection </a>";
+    echo "<a href='deconnection.php'>Ce Deconnecter </a>";
+
  }
  else {
  	echo 'Tes identifiants sont erronés.<br/>
@@ -114,25 +115,6 @@
 ?>
 </form>
 </fieldset>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

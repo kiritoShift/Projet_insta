@@ -210,12 +210,15 @@
 										
 								  		
 								  		
-								  		echo "Le MDP a bien été ajouter";
-										echo "Bonjour " .$_POST['civilite']." ".$_POST['nom_users']." ".$_POST['prenom_users'];
+								  	
+										echo "<div id='ok'>Bonjour " .$_POST['civilite']." ".$_POST['nom_users']." ".$_POST['prenom_users'];
 										echo "<br />";
 										echo "bienvenue sur notre site unfauxcine";
-										echo "<br />";
-  		
+										echo "<br /><A href='javascript:self.close("formulaire_inscription.php");'>
+										
+										</A></div>"; 
+  										
+										
   		
   		
   		
