@@ -7,7 +7,7 @@
   <head>
  
     	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- 		<title>Formulaire d'inscription</title>
+ 		<title>Formulaire inscription</title>
  		<link rel="stylesheet" href="css/formulaire_inscription.css" />
   </head>
   
@@ -203,7 +203,7 @@
 								  		
 										$pseudo_users=$_POST['pseudo_users'];
 										global $conn;
-										$user = new utilisateurs("",$pseudo_users,"","","","","","");
+										$user = new utilisateurs("",$pseudo_users,"","","","","","","1");
 										$id_user = $user->users_get_id();
 										$mot_de_passe = new mot_de_passe("", md5($_POST['mdp']),$id_user);
 										$mot_de_passe->mot_de_passe_new();
@@ -214,9 +214,9 @@
 										echo "<div id='ok'>Bonjour " .$_POST['civilite']." ".$_POST['nom_users']." ".$_POST['prenom_users'];
 										echo "<br />";
 										echo "bienvenue sur notre site unfauxcine";
-										echo "<br /><A href='javascript:self.close("formulaire_inscription.php");'>
-										
-										</A></div>"; 
+										//echo "<br /><A href="javascript:self.close('Formulaire inscription');">Cliquez ici pour fermer la fenêtre</A>"
+										//<A href=javascript:self.close('formulaire_inscription.php');></A></div>; 
+										//<A href='javascript:self.close("Formulaire inscription");'>Cliquez ici pour fermer la fenêtre</A>
   										
 										
   		
