@@ -5,6 +5,10 @@ function autoClass($name) {
 	include("../classes/$name.php");
 }
 
+function autoClass_racine($name) {
+	include("classes/$name.php");
+}
+
 function liste_films() {
   global $conn;
 	$query = $conn->prepare("SELECT * FROM films ORDER BY titre_films ASC;");
