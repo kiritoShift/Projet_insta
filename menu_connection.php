@@ -1,9 +1,8 @@
 
-
 <form method="POST">
 <fieldset id="carreconnection" class="formulaire" style="width:200px;">
 <legend> Connection </legend>
-
+<?php if(!isset($_SESSION['pseudo_users']) || !$_SESSION['pseudo_users']): ?>
 <?php 
  if (empty($_POST['pseudo_users']) || empty($_POST['mdp'])) {
 			  		if (!empty($_POST['btnEnvoyer1'])) {
@@ -125,6 +124,12 @@
 
 
 ?>
-</form>
+<?php else: ?>
+		Vous  êtes connectés.<br />
+		<a href="deconnection.php">Ce Deconnecter </a>
+		<a href="formulaire_inscription.php">inscription</a>
+	    <a href="admin.php">admin</a>
+		<a href="page_user.php">user</a>
+<?php endif; ?>
 </fieldset>
-
+</form>

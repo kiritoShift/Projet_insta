@@ -1,4 +1,3 @@
-<?php include 'connexion_bdd.php'; ?>
 <?php 
 
 function autoClass($name) {

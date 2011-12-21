@@ -1,15 +1,14 @@
-<?php include "connexion_bdd.php" ?>
+
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
 <html>
 
 <head>
-       <link rel="stylesheet" media="screen" type="text/css" title="" href="css/entete.css" />
-		
+        <link rel="stylesheet" media="screen" type="text/css" title="" href="css/entete.css" />
  		<link rel="stylesheet" href="css/formulaire_inscription.css" />
        	<link rel="stylesheet" media="screen" type="text/css" title="" href="css/zone_central.css" />
        	<link rel="stylesheet" media="screen" type="text/css" title="" href="css/menu_connection.css" />
-       	
+       	<link rel="stylesheet" media="screen" type="text/css" title="" href="css/acceuil.css" />
 </head>
 
 

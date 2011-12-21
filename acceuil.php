@@ -1,17 +1,7 @@
 <?php include "connexion_bdd.php" ?>
-
 <?php include "entete.php" ?>
 <?php include "menu_connection.php" ?>
-<?php include "zone_central.php" ?>
-
-
-
-<body>
-<head>
-       <link rel="stylesheet" media="screen" type="text/css" title="" href="css/acceuil.css" />
-</head>
-
-
+<?php include "zone_central.php"?>
 
 
 <div id="bla">
@@ -20,6 +10,4 @@
 
 
 
-
-
-</body>
+<?php include "baspage.php"?>

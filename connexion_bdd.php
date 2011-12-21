@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * connection à la base de données
  */
