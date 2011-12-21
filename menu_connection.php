@@ -1,11 +1,11 @@
 
 <form method="POST" id="carreconnection" class="formulaire">
 	<fieldset>
-		<legend> Connection </legend>
+		<legend> Connexion </legend>
 		<?php if(!isset($_SESSION['pseudo_users']) || !$_SESSION['pseudo_users']): ?>
 			<?php if (empty($_POST['pseudo_users']) || empty($_POST['mdp'])): ?>
 			  	<?php if (!empty($_POST['btnEnvoyer1'])): ?>
-			  		<div id="messageerror">Merci de remplir les champ oblgatoire </div>
+			  		<div id="messageerror">Merci de remplir les champs obligatoires </div>
 				<?php endif; ?>
 				<p>
 					<label for="nom_users">pseudo :</label>
@@ -39,14 +39,14 @@
 					$row=$sql->fetch(PDO::FETCH_ASSOC);
 					$_SESSION['pseudo_users'] = $row['utilisateurs_pseudo_users'];
 				?>
-					<p>Vous  etes connecté.</p>
+					<p>Vous  êtes connecté.</p>
 					<p><a href='deconnection.php'>Se déconnecter </a></p>
 					<meta http-equiv="refresh" content="1;URL=acceuil.php">
 					<?php if($row['utilisateurs_type_compte']): ?>
 						<a href="admin.php">admin</a>
 					<?php endif; ?>
 				<?php else: ?>
-					Tes identifiants sont erronés.<br/>
+					Les identifiants sont erronés.<br/>
 				 	<label for="nom_users">pseudo :</label>
 					<input type="text" id="pseudo_users" name="pseudo_users"/>
 					
@@ -66,8 +66,8 @@
 				<?php endif; ?>
 			<?php endif; ?>
 		<?php else: ?>
-		<p>Vous  êtes connectés.</p>
-		<p><a href="deconnection.php">Ce Deconnecter </a></p>
+		<p>Vous  êtes connecté.</p>
+		<p><a href="deconnection.php">Se Deconnecter </a></p>
 		<?php endif; ?>
 	</fieldset>
 </form>

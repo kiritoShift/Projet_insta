@@ -86,13 +86,13 @@ spl_autoload_register('autoClass_racine');?>
 															<table border=1>
 																<TR bgcolor=#ffffCC>
 																	<TD><font size="1"><b>ID</b> </font></TD>
-																	<TD><font size="-1"><a href="page_user.php?choix=1"><b>Jacquette</b>
+																	<TD><font size="-1"><a href="page_user.php?choix=1"><b>Jaquette</b>
 																		</a> </font></TD>
 																	<TD><font size="-1"><a href="page_user.php?choix=2"><b>Nom
 																					du film</b> </a> </font></TD>
 																	<TD><font size="-1"><a href="page_user.php?choix=3"><b>Date
 																					de sortie</b> </a> </font></TD>
-																	<td><font size="-1"><a href="page_user.php?choix=4"><b>Sinopsys</b>
+																	<td><font size="-1"><a href="page_user.php?choix=4"><b>Synopsis</b>
 																		</a> </font></td>
 																</TR>
 																<?php //affichage des données sous forme de tableau

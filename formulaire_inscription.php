@@ -32,18 +32,18 @@ spl_autoload_register('autoClass_racine');
 				
 				
 							<fieldset class="formulaire" style="width:350px;">
-							<legend> Information personnelle </legend>
+							<legend> Informations personnelles </legend>
 				
 				
 									<!--************************************-->
   									<!--************* civiliter ************-->
   									<!--************************************-->
   								<br />
-  								<label for="civilite">Civiliter<FONT color="red">*</FONT> :</label>
+  								<label for="civilite">Civilité<FONT color="red">*</FONT> :</label>
   							
 								<select id="civilite" name="civilite">
 									<option value="" selected="selected">M, Mr, Melle</option>
-									<option value="Mr">Messieur</option>
+									<option value="Mr">Monsieur</option>
 									<option value="M">Madame</option>
 									<option value="Melle">Mademoiselle</option>	
 								</select>
@@ -112,7 +112,7 @@ spl_autoload_register('autoClass_racine');
 <!--*******************************************************************************************************************************************-->	
 								
 						<fieldset class="formulaire" style="width:350px;">
-						<legend> Information de connection </legend>
+						<legend> Informations de connexion </legend>
 								
 								
 									<!--************************************-->
@@ -162,13 +162,13 @@ spl_autoload_register('autoClass_racine');
 	  								<!--*************************************-->
 								<br />
 	  							<input type="checkbox" id="newsletter" name="newsletter" tabindex="14" />	
-							    <FONT size="2"><span for="newsletter">Je veut etre informer des prochaine sortie de film</span>
+							    <FONT size="2"><span for="newsletter">Je veux être informé(e) des prochaines sorties de films</span>
 							    </FONT>
 							    
 							    
 							    <br />
 							    <input type="checkbox" id="condition" name="condition" tabindex="14" required />
-							    <FONT size="2"><span for="condition">J&acute;accepte les conditions g&eacute;n&eacute;rale d&acute;utilisation<FONT color="red">*</FONT></span>
+							    <FONT size="2"><span for="condition">J&acute;accepte les conditions g&eacute;n&eacute;rales d&acute;utilisation<FONT color="red">*</FONT></span>
 							    </FONT>
 							    <br />
 							    <br />

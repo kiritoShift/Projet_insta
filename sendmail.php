@@ -30,7 +30,7 @@ foreach ($tab_sortir as $tab){
 	$date_limite=date( "Y-m-d");
 	$date_limite=date( "Y-m-d", time() + 7 * 24 * 60 * 60 );
 	$date_limite2=date("Y-m-d");
-	if ($tab->date_sortie < $date_limite && $date_limite2 <= $tab->date_sortie){
+	if ($tab->date_sortie <= $date_limite && $date_limite2 <= $tab->date_sortie){
 
 		$mail = new PHPmailer();
 		$mail->CharSet = 'UTF-8'; // choix de l'encodage.
@@ -48,7 +48,7 @@ foreach ($tab_sortir as $tab){
 		$mail->FromName = 'Boris Couraud';
 		$mail->AddAddress($tab->email_users);
 		$mail->AddReplyTo($tab->email_users);
-		$mail->Subject = 'Votre films va sortir';
+		$mail->Subject = 'Votre film va sortir en DVD';
 		$mail->Body = $body;
 		$verif = $mail->Send();
 		if (!$verif){

@@ -20,7 +20,7 @@
    
 			<ul id="menuDeroulant">
 			 <li>
-			  <a href="acceuil.php">Acceuil</a>
+			  <a href="acceuil.php">Accueil</a>
 			 </li>
 			 
 			 <li>
@@ -36,7 +36,7 @@
 			 </li>
 			
 			 <li>
-			  <a href="#">Actu</a>
+			  <a href="#">Actus</a>
 			 </li>
 			
 			</ul>
