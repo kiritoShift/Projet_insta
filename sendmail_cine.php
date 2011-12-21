@@ -20,7 +20,7 @@ foreach ($tab_sortir as $tab){
 	$body=" <html> 
 			<body align='center'>
 				Votre film va sortir au cinéma <br />
-				<img height='400' width='300' src='".$tab->jaquette_films."' alt='Pas d'image disponible'><br />
+				<img height='400' width='300' src='".$tab->jaquette_films."' alt=''><br />
 				Date de sortie : ".$tab->date_sortie."
 			</body>
 		</html>  ";
