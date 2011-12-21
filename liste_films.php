@@ -98,4 +98,3 @@ else
 
 </div>
 
-<?php include "baspage.php"?>

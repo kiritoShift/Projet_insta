@@ -245,5 +245,3 @@
 
 		</div>
   
-
-<?php include "baspage.php"?>
