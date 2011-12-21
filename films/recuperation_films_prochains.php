@@ -22,7 +22,7 @@ set_time_limit(300);
  * transformer le fichier XML en objet $xml
  * 
  */
-$xml=simplexml_load_file('http://rss.allocine.fr/ac/cine/cettesemaine.rss');
+$xml=simplexml_load_file('http://rss.allocine.fr/ac/cine/prochainement.rss');
 
 /**
  * 
@@ -87,8 +87,6 @@ foreach($xml->channel->item as $item){
 	else {
 		$tab_acteur[$i] = array();
 	}
-	
-	
 	//supression des espace au debut et en fin de chaine(trim) de chaque valeur du tableau(a l'aide de array_map)
 	$tab_realisateur[$i]=array_map('trim',($tab_realisateur[$i]));
 	$tab_acteur[$i]=array_map('trim',$tab_acteur[$i]);
@@ -102,15 +100,24 @@ foreach($xml->channel->item as $item){
 	//récupération du genre de film en début de description
 	$tabtype=explode("(",$sinopsys);
 	$type=trim($tabtype[0]);
-	
+	var_dump($i);
+	var_dump($allocine_id_film);
+	var_dump($item->title);
+	var_dump($sinopsys);
+	var_dump($item);
+	//var_dump($item->enclosure->attributes());
+	var_dump($type);
+	var_dump($date_sortie_cine);
 	if (isset($item->enclosure)){
 		$image=$item->enclosure->attributes();
 	}
 	else {
 		$image="pas d'image pour le moment";
 	}
+	var_dump($image);
 	// tableau avec (dans l'ordre) : titre du fulm, sinopsys du film, jaquette du film, type du film, date de sortie cine
 	$tab_liste_prochaine_sortie_cine[$i]=array((string)$item->title,$sinopsys,$image,$type ,$date_sortie_cine, $allocine_id_film);
+	var_dump($tab_liste_prochaine_sortie_cine[$i]);
 	//echo $tab_liste_prochaine_sortie_cine[$i][0]."<br />".$tab_liste_prochaine_sortie_cine[$i][1]."<br />".$tab_liste_prochaine_sortie_cine[$i][2]."<br />".$type."<br /><br />";
 	//var_dump($item);
 	$tab_film_acteur_realisateur[$i]=array($item->title,$tab_realisateur[$i],$tab_acteur[$i]);
