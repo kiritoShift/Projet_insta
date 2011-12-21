@@ -27,7 +27,7 @@
 				<?php
 				$pass = md5($_POST['mdp']); // On rÈcupËre le password du formulaire connexion.
 				
-				$sql=$conn->prepare("SELECT utilisateurs.id_users AS utilisateurs_id_users, utilisateurs.pseudo_users AS utilisateurs_pseudo_users FROM utilisateurs, mot_de_passe
+				$sql=$conn->prepare("SELECT utilisateurs.id_users AS utilisateurs_id_users, utilisateurs.pseudo_users AS utilisateurs_pseudo_users, utilisateurs.type_compte AS utilisateurs_type_compte FROM utilisateurs, mot_de_passe
 			 					 WHERE utilisateurs.id_users = mot_de_passe.id_users
 			 					 AND utilisateurs.pseudo_users=:pseudo_users
 			 					 AND  mot_de_passe.mdp=:mdp");
@@ -41,7 +41,9 @@
 				?>
 					<p>Vous  etes connecté.</p>
 					<p><a href='deconnection.php'>Ce Deconnecter </a></p>
-					<a href="admin.php">admin</a>
+					<?php if($row['utilisateurs_type_compte']): ?>
+						<a href="admin.php">admin</a>
+					<?php endif; ?>
 				<?php else: ?>
 					Tes identifiants sont erronés.<br/>
 				 	<label for="nom_users">pseudo :</label>
@@ -62,7 +64,6 @@
 		<?php else: ?>
 		<p>Vous  êtes connectés.</p>
 		<p><a href="deconnection.php">Ce Deconnecter </a></p>
-	    <a href="admin.php">admin</a>
 		<?php endif; ?>
 	</fieldset>
 </form>

@@ -27,7 +27,7 @@
 						
 								<h3>Ajouter, Modifier, Supprimer un utilisateur :</h3>
 									<p> 
-									<a href="admin_add_users.php">Ajouter un utilisateur</a>
+									<a href="admin_add_users.php">Ajouter un administrateur</a>
 									</p> 
 									<p> 
 									<a href="admin_update_users.php">Modification un utilisateur</a> 
