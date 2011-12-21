@@ -5,7 +5,7 @@ spl_autoload_register('autoClass');
 ?>
 <?php
 global $conn;
-set_time_limit(300);
+set_time_limit(3000);
 	
 //récupération de la date de sortie du DVD
 $query = $conn->prepare("SELECT * FROM films");

@@ -1,4 +1,4 @@
-<?php include 'connexion_bdd.php'; ?>
+
 <?php
 
 $query = $conn->prepare("

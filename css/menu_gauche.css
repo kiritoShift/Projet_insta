@@ -1,15 +1,6 @@
 #moncadregauche {
- position: absolute;
- text-align:left;
- border:2px solid #000000;
- border-radius: 8px;  	
- top:260;
- left:11;
-width:200px;
-padding:10px;
-background-color:#fff;
-border-left:1px solid #000000; 
-border-right:1px solid #000000;
-border-bottom:1px solid #000000;
-border-top:1px solid #000000;
+	border-radius: 8px;
+	padding:10px;
+	background-color:#fff;
+	border: 1px solid #000000;
 }

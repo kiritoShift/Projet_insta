@@ -5,14 +5,6 @@
 
 <div id="moncadregauche">
 
-
-
-
-
-
-
-
-
 </div>
 
 

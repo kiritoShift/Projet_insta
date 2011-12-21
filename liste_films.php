@@ -85,7 +85,7 @@ else
 										<TD height=110 width=200><font size="-2"><?php echo $val["titre_films"]?></font></TD>
 										<TD height=110 width=500><font size="-2"><?php echo $val["sinopsys_films"]?></font></TD>
 										<TD><font size="-2"><?php echo $val["type_films"]?> </font></TD>
-										<TD><font size="-2"></font><a href="favoris_add.php?id=<? echo $val['id_films']?>" title="ajouter favoris"><img src="images/etoile_favoris.gif" alt="etoile_favoris" border="0"> </a></TD>
+										<TD><font size="-2"></font><a href="favoris_add.php?id=<?php echo $val['id_films']?>" title="ajouter favoris"><img src="images/etoile_favoris.gif" alt="etoile_favoris" border="0"> </a></TD>
 									</TR>
 									<?php } ?>
 								</table>
