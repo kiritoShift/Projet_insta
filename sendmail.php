@@ -29,7 +29,8 @@ foreach ($tab_sortir as $tab){
 	
 	$date_limite=date( "Y-m-d");
 	$date_limite=date( "Y-m-d", time() + 7 * 24 * 60 * 60 );
-	if ($tab->date_sortie < $date_limite){
+	$date_limite2=date("Y-m-d");
+	if ($tab->date_sortie < $date_limite && $date_limite2 <= $tab->date_sortie){
 
 		$mail = new PHPmailer();
 		$mail->CharSet = 'UTF-8'; // choix de l'encodage.
