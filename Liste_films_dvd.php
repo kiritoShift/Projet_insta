@@ -1,4 +1,4 @@
-<?php include 'connexion_bdd.php'; ?>
+<?php include "connexion_bdd.php"; ?>
 <?php include "entete.php"?>
 
 <div id="main">

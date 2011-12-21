@@ -23,8 +23,6 @@
 				</p>
 								
 				<a href="formulaire_inscription.php">Inscription</a>
-				<a href="admin.php">admin</a>
-				<a href="page_user.php">user</a>
 			<?php else: ?>
 				<?php
 				$pass = md5($_POST['mdp']); // On rÈcupËre le password du formulaire connexion.
@@ -43,6 +41,7 @@
 				?>
 					<p>Vous  etes connecté.</p>
 					<p><a href='deconnection.php'>Ce Deconnecter </a></p>
+					<a href="admin.php">admin</a>
 				<?php else: ?>
 					Tes identifiants sont erronés.<br/>
 				 	<label for="nom_users">pseudo :</label>
@@ -57,16 +56,13 @@
 						<input class="condition" type="submit" name="btnEnvoyer" value="Envoyer" />
 					</p>
 					<a href="formulaire_inscription.php">inscription</a>
-					<a href="admin.php">admin</a>
-					<a href="page_user.php">user</a>
+					
 				<?php endif; ?>
 			<?php endif; ?>
 		<?php else: ?>
 		<p>Vous  êtes connectés.</p>
-		<a href="deconnection.php">Ce Deconnecter </a>
-		<a href="formulaire_inscription.php">inscription</a>
+		<p><a href="deconnection.php">Ce Deconnecter </a></p>
 	    <a href="admin.php">admin</a>
-		<a href="page_user.php">user</a>
 		<?php endif; ?>
 	</fieldset>
 </form>
