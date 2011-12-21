@@ -156,7 +156,7 @@ spl_autoload_register('autoClass_racine');
 														    
 															<br />
 								  							<!-- input type="checkbox" id="type_compte" name="type_compte" tabindex="14" /-->	
-														    <!--FONT size="2"><span for="newsletter">Compte Admin</span-->
+														    <!--FONT size="2"><span for="type_compte">Compte Admin</span-->
 														    <!--/FONT-->
 							
 																		    
@@ -175,7 +175,7 @@ spl_autoload_register('autoClass_racine');
 													  	}
 							  	else {
 							  			
-							  		$envoie_utilisateurs = new utilisateurs('', $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], (isset($_POST['newsletter']) && $_POST['newsletter'] ? "1" : "0"));		
+							  		$envoie_utilisateurs = new utilisateurs('', $_POST['pseudo_users'], $_POST['email_users'], $_POST['civilite'], $_POST['nom_users'], $_POST['prenom_users'], $_POST['date_naissance'], $_POST['ville_users'], (isset($_POST['newsletter']) && $_POST['newsletter'] ? "1" : "0"), 1 );		
 							  		$envoie_utilisateurs->users_admin();
 							  			
 										echo "L'utilisateur " .$_POST['nom_users']." ".$_POST['prenom_users']. " a bien été créer";

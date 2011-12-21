@@ -26,7 +26,7 @@
 			 <li>
 			  <a href="#">Films</a>
 			  <ul class="sousMenu">
-			   	<li><a href="liste_films_cine.php">Ciné</a></li>
+			   	<li><a href="liste_films_cine.php">Cin&eacute;</a></li>
 			   	<li><a href="liste_films_dvd.php">Dvd</a></li>
 			 </ul>
 			 </li>

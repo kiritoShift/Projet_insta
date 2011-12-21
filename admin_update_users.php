@@ -1,3 +1,4 @@
+<?php include "connexion_bdd.php"?>
 <?php include "entete.php"?>
 <?php
 include 'fonction.php';
@@ -124,11 +125,7 @@ spl_autoload_register('autoClass_racine');
 																			
 												  								<!--* Newsletter et compte Admin *-->
 											
-																			<label for="type_compte">Compte Admin :</label>
-																			<input type="text" id="type_compte" name="type_compte" maxlength="5" size="5"/>
-																			<br />
-																			<div id=ex>Mettre 1 pour être Admin</div>
-																			<br />
+																			
 												  								
 												  								
 												  								
