@@ -6,7 +6,7 @@ spl_autoload_register('autoClass');
 <?php
 global $conn;
 set_time_limit(3000);
-	
+
 //récupération de la date de sortie du DVD
 $query = $conn->prepare("SELECT * FROM films");
 $query->execute(array());
@@ -34,9 +34,9 @@ foreach ($tab_film as $tab){
 								AND type_sortie_films = 'dvd'");
 			$sth->execute(array("id_films" => $id_films));
 			if (!$sth->rowCount()) {
-			$date_sortie_cine = new sortir($id_films,"dvd",$date_sortie_dvd);
-			$date_sortie_cine->sortir_new();
-			}	
+				$date_sortie_cine = new sortir($id_films,"dvd",$date_sortie_dvd);
+				$date_sortie_cine->sortir_new();
+			}
 		}
 	}
 }
