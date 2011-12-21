@@ -20,10 +20,8 @@
    
 			<ul id="menuDeroulant">
 			 <li>
-			  <a href="#">FILM</a>
+			  <a href="acceuil.php">Acceuil</a>
 			  <ul class="sousMenu">
-			   	<li><a href="liste_films.php">Liste des films</a></li>
-			   	<li><a href="acceuil.php">A VENIR</a></li>
 			  </ul>
 			 </li>
 			 
