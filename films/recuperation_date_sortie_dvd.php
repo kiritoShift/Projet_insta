@@ -18,17 +18,10 @@ foreach ($tab_film as $tab){
 	$id_films=$tab->id_films;
 	$url_dvd="http://www.allocine.fr/film/fichefilm-".$id."/vod-dvd/";
 	$code_html_url_dvd=file_get_contents($url_dvd);
-	$dvd_existe=explode('<div class="tabs_main">' ,$code_html_url_dvd);
-	$dvd_existe=explode('Le saviez-vous ?</span>' ,$dvd_existe[1]);
-	$dvd_existe=explode('Bandes-annonces',$dvd_existe[0]);
-	$dvd_existe=explode('Photos</a></li><li><span class=', $dvd_existe[1]);
-	if (isset($dvd_existe[1])){
-		$dvd_existe=explode('>DVD,', $dvd_existe[1]);
-	}
-	if (isset($dvd_existe[1]) && $dvd_existe[0]==='"inactive"'){
-		$existance=false;
-	}
-	else {
+	$dvd_existe=explode('Le saviez-vous ?' ,$code_html_url_dvd);
+	$dvd_existe=explode('Photos', $dvd_existe[0]);
+	$dvd_existe=strpos($dvd_existe[1], 'inactive');
+	if ($dvd_existe!=false){
 		$dvd=explode('<div class="content">',$code_html_url_dvd);
 		$dvd2=strpos($dvd[1],"(DVD)");
 		if ($dvd2!=false){
