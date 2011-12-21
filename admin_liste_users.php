@@ -3,7 +3,6 @@
 include 'fonction.php';
 spl_autoload_register('autoClass_racine');
 ?>
-<?php include "connexion_bdd.php"?>
 <?php include "classes/mot_de_passe.php"?>
 <?php include "classes/utilisateurs.php"?>
 <?php include "entete.php" ?>
@@ -61,18 +60,18 @@ else
 				<tr><td>
    					<table border=1>
    						<TR bgcolor=#ffffCC>
-     						<TD><font size="-1"><a href="admin_liste_users.php?choix=1"><b>id</b></font></TD>
+     						<TD><font size="-1"><a href="admin_liste_users.php?choix=1"><b>id</b></a></font></TD>
      						<TD><font size="-1"><a href="admin_liste_users.php?choix=2"><b>Pseudo</b></a></font></TD>
-     						<TD><font size="-1"><a href="admin_liste_users.php?choix=3"><b>Nom</b></font></TD>
-     						<TD><font size="-1"><a href="admin_liste_users.php?choix=4"><b>Prenom</b></font></TD>					
+     						<TD><font size="-1"><a href="admin_liste_users.php?choix=3"><b>Nom</b></a></font></TD>
+     						<TD><font size="-1"><a href="admin_liste_users.php?choix=4"><b>Prenom</b></a></font></TD>					
      					</TR>
-     					<? while ($tab2 = $result->fetch(PDO::FETCH_ASSOC)) { ?>
+     					<?php while ($tab2 = $result->fetch(PDO::FETCH_ASSOC)) { ?>
      					<TR bgcolor=white>
-     						<TD><font size="-2"><? echo $tab2["id_users"]?></font></TD>
-     						<TD><font size="-2"><? echo $tab2["pseudo_users"]?></font></TD>
-     						<TD height=110 width=200><font size="-2"><? echo $tab2["nom_users"]?></font></TD>
-     						<TD height=110 width=500><font size="-2"><? echo $tab2["prenom_users"]?></font></TD>
-     					</TR><? } ?>
+     						<TD><font size="-2"><?php echo $tab2["id_users"]?></font></TD>
+     						<TD><font size="-2"><?php echo $tab2["pseudo_users"]?></font></TD>
+     						<TD height=110 width=200><font size="-2"><?php echo $tab2["nom_users"]?></font></TD>
+     						<TD height=110 width=500><font size="-2"><?php echo $tab2["prenom_users"]?></font></TD>
+     					</TR><?php } ?>
    					</table>
    				</td></tr>
 			</table>

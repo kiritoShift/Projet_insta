@@ -2,19 +2,17 @@
 <?php include "classes/mot_de_passe.php"?>
 <?php include "classes/utilisateurs.php"?>
 <?php include "entete.php" ?>
-<?php session_start()?>
 
 
- <div id="moncadre">
-  <head>
- 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+ <div id="moncadregauche">
+
  
     <title>Page d'administration</title>
-  <!--   <link rel="stylesheet" href="css/admin.css" /> -->
+
     
-  </head>
- 
+   
 	<body>
 	<h1 align=center>Bienvenue sur la page d'administration</h1>
 	<br />

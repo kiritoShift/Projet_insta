@@ -1,9 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
-
 <?php 
 include_once ("connexion_bdd.php");
 include ("entete.php");
-include ("baspage.php");
+
 
 $choix=0;
 if(isset($_GET["choix"]))
@@ -50,19 +48,15 @@ else
  }}}}}
 ?>
 
-<html>
-<head>
+
+
+
+
+<div id="moncadre">
 <title>liste des films</title>
-<meta http-equiv="Content-Type" content="text/html; charset=MacRoman">
-<link rel="stylesheet" media="screen" type="text/css" title="menu" href="css/menu.css" />
 
-
-
-</head>
 	<body>
-<table border=1 width="100%">
-	<tr>
-	<td>
+
 
 		<table align="center" bgcolor=#ffffCC border=1>
 			<tr><td><b><font size="-1">Liste des films</font></B></td></tr>
@@ -80,22 +74,21 @@ else
      						<TD><font size="-1"><a href="liste_films.php?choix=4"><b>synopsys</b></font></TD>
      						<TD><font size="-1"><a href="liste_films.php?choix=5"><b>type de film</b></font></TD>						
      					</TR>
-     					<? while ($val = $result->fetch(PDO::FETCH_ASSOC)) { ?>
+     					<?php while ($val = $result->fetch(PDO::FETCH_ASSOC)) { ?>
      					<TR bgcolor=white>
      						<form method="post">
-     						<TD><font size="-2"><? echo $val["id_films"]?></font></TD>
-     						<TD><font size="-2"><img src="<? echo $val["jaquette_films"]?>" width=90 height=110 /></font></TD>
-     						<TD height=110 width=200><font size="-2"><? echo $val["titre_films"]?></font></TD>
-     						<TD height=110 width=500><font size="-2"><? echo $val["sinopsys_films"]?></font></TD>
-     						<TD><font size="-2"><? echo $val["type_films"]?></font></TD>
+     						<TD><font size="-2"><?php echo $val["id_films"]?></font></TD>
+     						<TD><font size="-2"><img src="<?php echo $val["jaquette_films"]?>" width=90 height=110 /></font></TD>
+     						<TD height=110 width=200><font size="-2"><?php echo $val["titre_films"]?></font></TD>
+     						<TD height=110 width=500><font size="-2"><?php echo $val["sinopsys_films"]?></font></TD>
+     						<TD><font size="-2"><?php echo $val["type_films"]?></font></TD>
       						<TD><font size="-2"></font><input name="favoris" type="image" src="images/etoile_favoris.gif"> favoris</TD>
-     					</TR><? } ?>
+     					</TR><?php } ?>
    					</table>
    				</td></tr>
 			</table>
 			</td></tr>
 		</table>
-	</td></tr>
-</table>
-</body>
-</html>
+</div>
+
+<?php include "baspage.php"?>

@@ -1,3 +1,11 @@
+#footer
+{
+ margin: 0 auto 20px auto;
+
+ width: 900px;
+ border:2px solid #000000;
+ border-radius: 8px;  	
+}
 #bando
 {
 	width: 900px;

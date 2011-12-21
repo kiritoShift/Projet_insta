@@ -1,8 +1,7 @@
-<?php include "connexion_bdd.php"?>
+<?php include "connexion_bdd.php"; ?>
 <?php include "classes/mot_de_passe.php"?>
 <?php include "classes/utilisateurs.php"?>
-<?php include "entete.php" ?>
-<body>
+<?php include "entete.php"?>
 
 
  <div id="moncadre">
@@ -39,7 +38,7 @@
 									<!--************************************-->
   									<!--************* civiliter ************-->
   									<!--************************************-->
-  								<br>
+  								<br />
   								<label for="civilite">Civiliter<FONT color="red">*</FONT> :</label>
   							
 								<select id="civilite" name="civilite">
@@ -56,7 +55,7 @@
   									<!--************************************-->
   									
 								<label for="nom_users">Nom<FONT color="red">*</FONT> :</label>
-								<input type="text" id="nom_users" name="nom_users" required/>
+								<input type="text" id="nom_users" name="nom_users" required />
 								<br />
 								<br />
 								
@@ -66,7 +65,7 @@
   									<!--************************************-->
 						
 								<label for="prenom_users">Prenom<FONT color="red">*</FONT> :</label>
-								<input type="text" id="prenom_users" name="prenom_users" required/>
+								<input type="text" id="prenom_users" name="prenom_users" required />
 								<br />
 								<br />
 								
@@ -76,7 +75,7 @@
   									<!--************************************-->
 								
 								<label for="email_users">Adresse Email<FONT color="red">*</FONT> :</label>
-								<input type="text" id="email_users" name="email_users" required/>
+								<input type="text" id="email_users" name="email_users" required />
 								<br />
 								<br />
 								
@@ -86,7 +85,7 @@
   									<!--************************************-->
 						
 								<label for="ville_users">Ville :</label>
-								<input type="text" id="ville_users" name="ville_users"/>
+								<input type="text" id="ville_users" name="ville_users" />
 								<br />
 								<br />
 								
@@ -97,9 +96,9 @@
 				 
 				 
 								<label for="date_naissance">Date de naissance :</label>
-								<input type="text" id="date_naissance" name="date_naissance" maxlength="10" size="10"/>
+								<input type="text" id="date_naissance" name="date_naissance" maxlength="10" size="10" />
 								<br />
-								<div id=ex>jj/mm/aaaa</div>
+								<div id="ex">jj/mm/aaaa</div>
 								<br />
 								<br />
 									
@@ -121,7 +120,7 @@
 	  								<!--************************************-->
 								<br>
 								<label for="pseudo_user">Pseudo<FONT color="red">*</FONT> :</label>
-								<input type="text" id=pseudo_users" name="pseudo_users" required/>
+								<input type="text" id="pseudo_users" name="pseudo_users" required />
 								<br />
 								<br />
 								
@@ -131,7 +130,7 @@
 	  								<!--************************************-->
 						
 								<label for="Mdp">Mot de passe<FONT color="red">*</FONT> :</label>
-								<input type="password" id="Mdp" name="mdp" required/>
+								<input type="password" id="Mdp" name="mdp" required />
 								<br />
 								<br />
 								
@@ -142,7 +141,7 @@
 	  								<!--************************************-->
 						
 								<label for="Cmdp">confirmation du Mot de passe<FONT color="red">*</FONT> :</label>
-								<input type="password" id="Cmdp" name="cmdp" required/>
+								<input type="password" id="Cmdp" name="cmdp" required />
 								<br />
 								<br />
 							
@@ -168,7 +167,7 @@
 							    
 							    
 							    <br />
-							    <input type="checkbox" id="condition" name="condition" tabindex="14" required/>
+							    <input type="checkbox" id="condition" name="condition" tabindex="14" required />
 							    <FONT size="2"><span for="condition">J&acute;accepte les conditions g&eacute;n&eacute;rale d&acute;utilisation<FONT color="red">*</FONT></span>
 							    </FONT>
 							    <br />
@@ -180,7 +179,7 @@
 							    
 							    </fieldset>
 								<br />
-								 <div id="test"><input class="condition" type="submit" name="btnEnvoyer" value="Envoyer" /><div>
+								 <div id="test"><input class="condition" type="submit" name="btnEnvoyer" value="Envoyer" /></div>
 								<br />
 								<br />
 								
@@ -207,8 +206,8 @@
 								  	
 										echo "<div id='ok'>Bonjour " .$_POST['civilite']." ".$_POST['nom_users']." ".$_POST['prenom_users'];
 										echo "<br />";
-										echo "bienvenue sur notre site unfauxcine</A>";
-										echo "<br /><a href='acceuil.php'>retourné a l'acceuil</a>";
+										echo "bienvenue sur notre site unfauxcine";
+										echo "<br /><a href='acceuil.php'>retourné a l'acceuil</a></div>";
 										/*echo "<br /> <html>
 											<head>
 												<a href=# onclick='windows.close();'>
@@ -231,7 +230,7 @@
   			
 									}
   								else{
-  									echo "<div id='ok'>error</a>";
+  									echo "<div id='ok'>error</div>";
   								}	
   		
   		
@@ -246,4 +245,5 @@
 
 		</div>
   
-</html>
+
+<?php include "baspage.php"?>
