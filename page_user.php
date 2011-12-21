@@ -4,39 +4,45 @@ include "entete.php";
 include_once ("connexion_bdd.php");
 include("fonction.php");
 spl_autoload_register('autoClass_racine');?>
-					
-
+	
+	
+<title>page utilisateur</title>
+					<meta http-equiv="Content-Type" content="text/html; charset=MacRoman">
+					<link rel="stylesheet" media="screen" type="text/css" title="menu"
+						href="css/menu.css" />				
+<div id="main">
+ 	<div id="moncadre">
 					<?php
 					if (isset($_SESSION['pseudo_users'])){
 					$id_users= new utilisateurs("",$_SESSION['pseudo_users'],"","","","","","","","");
 					$id_users=$id_users->users_get_id();
 					// recherche dans la base de donnée pour séléctionner les données à afficher et pouvoir faire le tri par colonne
 					$choix=0;
-					if(isset($_GET["choix"]))
-					{
-						$choix=$_GET["choix"];
-					}
-					if($choix==1)
-					{
-						$result=$conn->prepare("SELECT jaquette_films, pseudo_users FROM avoir_films_favoris, films, utilisateurs WHERE utilisateurs.id_users = avoir_films_favoris.id_users AND films.id_films = avoir_films_favoris.id_films AND avoir_films_favoris.id_users = :id_users order by jaquette_films ASC");
-						$result->execute(array("id_users" => $id_users));
-					}
-					else
-					{
-						if($choix==2)
-						{
-							$result=$conn->prepare("SELECT titre_films, pseudo_users FROM avoir_films_favoris, films, utilisateurs WHERE utilisateurs.id_users = avoir_films_favoris.id_users AND films.id_films = avoir_films_favoris.id_films AND avoir_films_favoris.id_users = :id_users ORDER BY titre_films ASC");
-							$result->execute(array("id_users" => $id_users));
-						}
-						else
-						{
-							if($choix==3)
+							if(isset($_GET["choix"]))
 							{
-								$result=$conn->prepare("SELECT date_sortie, pseudo_users FROM sortir, films, utilisateurs WHERE sortir.id_films = films.id_films AND films.id_films = utilisateurs.id_users AND avoir_films_favoris.id_users = :id_users ORDER BY date_sortie ASC");
-								$result->execute(array("id_users" => $id_users));
+								$choix=$_GET["choix"];
 							}
-							else
-							{
+								if($choix==1)
+								{
+									$result=$conn->prepare("SELECT jaquette_films, pseudo_users FROM avoir_films_favoris, films, utilisateurs WHERE utilisateurs.id_users = avoir_films_favoris.id_users AND films.id_films = avoir_films_favoris.id_films AND avoir_films_favoris.id_users = :id_users order by jaquette_films ASC");
+									$result->execute(array("id_users" => $id_users));
+								}
+								else
+								{
+								if($choix==2)
+								{
+									$result=$conn->prepare("SELECT titre_films, pseudo_users FROM avoir_films_favoris, films, utilisateurs WHERE utilisateurs.id_users = avoir_films_favoris.id_users AND films.id_films = avoir_films_favoris.id_films AND avoir_films_favoris.id_users = :id_users ORDER BY titre_films ASC");
+									$result->execute(array("id_users" => $id_users));
+								}
+								else
+								{
+								if($choix==3)
+								{
+									$result=$conn->prepare("SELECT date_sortie, pseudo_users FROM sortir, films, utilisateurs WHERE sortir.id_films = films.id_films AND films.id_films = utilisateurs.id_users AND avoir_films_favoris.id_users = :id_users ORDER BY date_sortie ASC");
+									$result->execute(array("id_users" => $id_users));
+								}
+								else
+								{
 								if($choix==4)
 								{
 									$result=$conn->prepare("SELECT sinopsys_films, pseudo_users FROM avoir_films_favoris, films, utilisateurs WHERE utilisateurs.id_users = avoir_films_favoris.id_users AND films.id_films = avoir_films_favoris.id_films AND avoir_films_favoris.id_users = :id_users ORDER BY sinopsys_films ASC");
@@ -48,13 +54,9 @@ spl_autoload_register('autoClass_racine');?>
 									$result->execute(array("id_users" => $id_users));
 								}}}}
 					
-?>
-<title>page utilisateur</title>
-					<meta http-equiv="Content-Type" content="text/html; charset=MacRoman">
-					<link rel="stylesheet" media="screen" type="text/css" title="menu"
-						href="css/menu.css" />
-<div id="main">
- 	<div id="moncadre">
+						?>
+
+
 					
 						<br />
 						<br />
@@ -117,20 +119,16 @@ spl_autoload_register('autoClass_racine');?>
 								</td>
 							</tr>
 						</table>
-				<?php }	
+	<?php }	
 	else {
-		echo "<div id='main'>
- 				<div id='moncadre'>
- 				Connectez vous !
- 				</div>
- 				</div> ";
+		echo "Connectez vous !";
 	}?>
 		</div>
 
-	
 		<div id="left">
 			<?php include "menu_connection.php"; ?>
 		</div>
 </div>
+
 		<div id="footer">
 		</div>

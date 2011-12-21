@@ -40,7 +40,8 @@
 					$_SESSION['pseudo_users'] = $row['utilisateurs_pseudo_users'];
 				?>
 					<p>Vous  etes connecté.</p>
-					<p><a href='deconnection.php'>Ce Deconnecter </a></p>
+					<p><a href='deconnection.php'>Se déconnecter </a></p>
+					<meta http-equiv="refresh" content="1;URL=acceuil.php">
 					<?php if($row['utilisateurs_type_compte']): ?>
 						<a href="admin.php">admin</a>
 					<?php endif; ?>
@@ -55,7 +56,10 @@
 					</p>
 				
 					<p>`
-						<input class="condition" type="submit" name="btnEnvoyer" value="Envoyer" />
+						<input class="condition" type="submit" name="btnEnvoyer" value="Envoyer"  />
+						
+						
+						
 					</p>
 					<a href="formulaire_inscription.php">inscription</a>
 					
