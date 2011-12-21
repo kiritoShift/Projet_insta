@@ -47,7 +47,6 @@ foreach($xml->channel->item as $item){
 	$sinopsys=$item->description;
 	
 	//recuperation de l'id allocine du film
-	//var_dump ($sinopsys);
 	$allocine_id_film= explode('<a href="http://www.allocine.fr/film/fichefilm_gen_cfilm=',$sinopsys);
 	$allocine_id_film= explode('.html">', $allocine_id_film[1]);
 	$allocine_id_film= $allocine_id_film[0];
@@ -65,7 +64,6 @@ foreach($xml->channel->item as $item){
 	
 	//séparation du contenu dans un tableau
 	$tabdescription= explode("</p>",$sinopsys);
-	//var_dump ($tabdescription);
 	//recupération du sinopsys et suppression des balise html a l'aide de la fonction strip_tags
 	$sinopsys=strip_tags($tabdescription[0]);
 	$realisateur_acteur=strip_tags($tabdescription[1]);
@@ -100,26 +98,17 @@ foreach($xml->channel->item as $item){
 	//récupération du genre de film en début de description
 	$tabtype=explode("(",$sinopsys);
 	$type=trim($tabtype[0]);
-	var_dump($i);
-	var_dump($allocine_id_film);
-	var_dump($item->title);
-	var_dump($sinopsys);
-	var_dump($item);
-	//var_dump($item->enclosure->attributes());
-	var_dump($type);
-	var_dump($date_sortie_cine);
 	if (isset($item->enclosure)){
 		$image=$item->enclosure->attributes();
 	}
 	else {
 		$image="pas d'image pour le moment";
 	}
-	var_dump($image);
 	// tableau avec (dans l'ordre) : titre du fulm, sinopsys du film, jaquette du film, type du film, date de sortie cine
 	$tab_liste_prochaine_sortie_cine[$i]=array((string)$item->title,$sinopsys,$image,$type ,$date_sortie_cine, $allocine_id_film);
-	var_dump($tab_liste_prochaine_sortie_cine[$i]);
+
 	//echo $tab_liste_prochaine_sortie_cine[$i][0]."<br />".$tab_liste_prochaine_sortie_cine[$i][1]."<br />".$tab_liste_prochaine_sortie_cine[$i][2]."<br />".$type."<br /><br />";
-	//var_dump($item);
+
 	$tab_film_acteur_realisateur[$i]=array($item->title,$tab_realisateur[$i],$tab_acteur[$i]);
 	
 	$i++;
