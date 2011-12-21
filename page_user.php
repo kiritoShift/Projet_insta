@@ -1,6 +1,7 @@
 
 
 <?php 
+include_once "connexion_bdd.php";
 include "entete.php";
 
 include_once ("connexion_bdd.php");
@@ -98,15 +99,15 @@ else
 											
 											<TR bgcolor=white>
 												<TD><font size="-2"><?php echo $val["id_films"]?></font></TD>
-												<TD><font size="-2"><img src="<? echo $val["jaquette_films"]?>" width=90 height=110 /> </font></TD>
-												<TD height=110 width=200><font size="-2"><? echo $val["titre_films"]?></font></TD>
+												<TD><font size="-2"><img src="<?php echo $val["jaquette_films"]?>" width=90 height=110 /> </font></TD>
+												<TD height=110 width=200><font size="-2"><?php echo $val["titre_films"]?></font></TD>
 												<TD height=110><font size="-2"></font></TD>
-												<td height=110 width=500><font size="-2"><? echo $val["sinopsys_films"]?></font></td>
+												<td height=110 width=500><font size="-2"><?php echo $val["sinopsys_films"]?></font></td>
 												<TD><font size="-2"></font>
-												<a href="favoris_del.php?id=<? echo $val['id_films']?>" title="supprimer favoris"><img src="images/iconePoubelle.gif" alt="iconePoubelle" border="0"></a>
+												<a href="favoris_del.php?id=<?php echo $val['id_films']?>" title="supprimer favoris"><img src="images/iconePoubelle.gif" alt="iconePoubelle" border="0"></a>
 												</TD>
 											</TR>
-											<? } ?>
+											<?php } ?>
 										</table>
 									</td>
 								</tr>
