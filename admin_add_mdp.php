@@ -1,19 +1,18 @@
-
-<?php include "admin.php"?>
+<?php include "entete.php"?>
 <?php
 include 'fonction.php';
 spl_autoload_register('autoClass_racine');
 ?>
 
+ <title>Page ajout MDP</title>
+    <link rel="stylesheet" href="css/admin.css" />
+<div id="main">
+ 	<div id="moncadre">
 
-
- <body>
- <div id="moncadre1">
  
   
   
-    <title>Page ajout MDP</title>
-    <link rel="stylesheet" href="css/admin.css" />
+   
 
  
 	
@@ -81,7 +80,7 @@ spl_autoload_register('autoClass_racine');
 								
 							    </fieldset>
 								<br />
-								 <div id="test"><input class="condition" type="submit" name="btnEnvoyer" value="Envoyer" /><div>
+								 <div id="test"><input class="condition" type="submit" name="btnEnvoyer" value="Envoyer" /></div>
 								<br />
 								<br />
 						
@@ -110,6 +109,14 @@ spl_autoload_register('autoClass_racine');
 	
   		
 ?>
-	
+		</div>
+				<div id="left">
+					<?php include "menu_connection.php"; ?>
+					<?php include "menu_gauche_admin.php"; ?>
+			
+				</div>
+		
 </div>
-</html>
+		<div id="footer">
+		</div>
+	

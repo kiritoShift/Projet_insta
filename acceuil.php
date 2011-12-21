@@ -9,7 +9,7 @@
 	
 	<div id="left">
 		<?php include "menu_connection.php"; ?>
-		<?php include "menu_gauche.php"; ?>
+
 	</div>
 	
 </div>

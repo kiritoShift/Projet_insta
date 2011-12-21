@@ -1,18 +1,18 @@
-<?php include "connexion_bdd.php"; ?>
-<?php include "classes/mot_de_passe.php"?>
-<?php include "classes/utilisateurs.php"?>
+<?php include "connexion_bdd.php"?>
 <?php include "entete.php"?>
-
-
- <div id="moncadre">
+<?php
+include 'fonction.php';
+spl_autoload_register('autoClass_racine');
+?>
+<div id="main">
+ 	<div id="moncadre">
   
   
     
 
- 		 <!-- <FONT size="7pt" face="movie times"> Formulaire d/inscription<br /></FONT>    -->
- 		 <p style="text-align:center"><img src="images/Sans titre.jpg" border="0" width="700" height="100"></p> 
+ 		 <p style="text-align:center"><img src="images/Sans titre.jpg" border="0" width="640" height="100"></p> 
 
-<?php
+	<?php
   
   if (empty($_POST['nom_users']) || empty($_POST['prenom_users']) || empty($_POST['civilite']) || empty($_POST['email_users']) || empty($_POST['pseudo_users']) || empty($_POST['cmdp']) || empty($_POST['mdp']) ||  empty($_POST['condition'])) {
 			  		if (!empty($_POST['btnEnvoyer'])) {
@@ -207,25 +207,7 @@
 										echo "<div id='ok'>Bonjour " .$_POST['civilite']." ".$_POST['nom_users']." ".$_POST['prenom_users'];
 										echo "<br />";
 										echo "bienvenue sur notre site unfauxcine";
-										echo "<br /><a href='acceuil.php'>retourné a l'acceuil</a></div>";
-										/*echo "<br /> <html>
-											<head>
-												<a href=# onclick='windows.close();'>
-												Cliquez ici pour fermer la fenêtre
-												</a>
-												</head>
-												
-												";*/
-										//echo "<input type='submit' name='fermer' value='fermer' href=(onclick='windows.close()');/>" ;
-										//echo "<input type="submit" name="btninscription" value="Inscription" href="formulaire_inscription.php" onclick="window.open(\'formulaire_inscription.php\',); return false;"/>" 
-										
-										
-										
-										
-										
-										//echo "<br /><A href="javascript:self.close('Formulaire inscription');">Cliquez ici pour fermer la fenêtre</A>"
-										//<A href=javascript:self.close('formulaire_inscription.php');></A></div>; 
-										//<A href='javascript:self.close("Formulaire inscription");'>Cliquez ici pour fermer la fenêtre
+										echo "<p><a href='acceuil.php'>retourné a l'acceuil</a></div></p>";
 												 
   			
 									}
@@ -236,12 +218,21 @@
   		
   		
 ?>
-
-
-
-  <!--  if (isset($_POST["btnEnvoyer"])) { -->
-  
-  	
+ 	
 
 		</div>
+		
+		
+			<div id="left">
+				<?php include "menu_connection.php"; ?>
+			</div>
+	
+
+
+			<div id="footer">
+			</div>
+
+
+  </div>
+  
   

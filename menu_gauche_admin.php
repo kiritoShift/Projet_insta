@@ -1,24 +1,10 @@
-<?php include "connexion_bdd.php"?>
-<?php include "entete.php"; ?>
+
+<?php //include "classes/mot_de_passe.php"?>
+<?php //include "classes/utilisateurs.php"?>
 
 
-<div id="main">
- 		<div id="moncadre">
- 		 <h1 align=center>Bienvenue sur la page d'administration</h1>
-		 <h1>Page d'administration</h1>
-   		 	
-		
-		</div>
-		
-		<div id="left">
-			<?php include "menu_connection.php"; ?>
-			<?php include "classes/mot_de_passe.php"?>
-			<?php include "classes/utilisateurs.php"?>
-			
-				<div id="moncadregauche">
-							
-							
-						
+<div id="moncadregauche">
+
 								<h3>Afficher tous les utilisateurs :</h3>
 									<p> 
 									<a href="admin_liste_users.php">Liste utilisateurs</a>
@@ -49,14 +35,6 @@
 									<p> 
 									<a href="admin_del_mdp.php">Supprimer le MDP d'un utilisateur</a>
 									</p> 
-									
-						</div>
-	
-		
-			
-		</div>
 </div>
 
-		<div id="footer">
-		</div>
 

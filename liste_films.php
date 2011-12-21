@@ -51,11 +51,13 @@ else
 
 
 
-
-<div id="moncadre">
 	<title>liste des films</title>
+	
+<div id="main">
+	<div id="moncadre">
 
-	<body>
+
+
 
 
 		<table align="center" bgcolor=#ffffCC border=1>
@@ -96,5 +98,12 @@ else
 			</tr>
 		</table>
 
+	</div>
+			<div id="left">
+				<?php include "menu_connection.php"; ?>
+			</div>
+				
 </div>
-
+			
+			<div id="footer">
+			</div>

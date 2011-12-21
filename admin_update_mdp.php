@@ -1,26 +1,19 @@
-
-<?php include "admin.php"?>
+<?php include "entete.php"?>
 <?php
 include 'fonction.php';
 spl_autoload_register('autoClass_racine');
 ?>
 
 
+ <title>Page modification MDP</title>
 
 
- <div id="moncadre1">
+
+ <div id="main">
+ 	<div id="moncadre">
 
  
-  <head>
- 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- 
-    <title>Page modification MDP</title>
-    <link rel="stylesheet" href="css/admin.css" />
-    
-  </head>
- 
-	<body>
+
 	<h2 align=center> Page de modification des mots de passe utilisateurs</h2>
 	
 	
@@ -82,7 +75,7 @@ spl_autoload_register('autoClass_racine');
 								
 							    </fieldset>
 								<br />
-								 <div id="test"><input class="condition" type="submit" name="btnEnvoyer" value="Envoyer" /><div>
+								 <div id="test"><input class="condition" type="submit" name="btnEnvoyer" value="Envoyer" /></div>
 								<br />
 								<br />
 						
@@ -115,4 +108,14 @@ spl_autoload_register('autoClass_racine');
 ?>
 	
  	</div>
-</html>
+		<div id="left">
+			<?php include "menu_connection.php"; ?>
+			<?php include "menu_gauche_admin.php"; ?>
+	
+		
+			
+		</div>
+</div>		
+
+		<div id="footer">
+		</div>
