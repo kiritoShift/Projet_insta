@@ -1,9 +1,9 @@
-
+<?php include "admin.php"?>
 <?php
 include 'fonction.php';
 spl_autoload_register('autoClass_racine');
 ?>
-<?php include "admin.php"?>
+
 <?php
 $choix=0;
 if(isset($_GET["choix"]))
@@ -37,7 +37,7 @@ else
 			?>
 
 
- <div id="moncadre">
+ <div id="moncadre1">
 
  
   <head>

@@ -1,10 +1,10 @@
-<?php include "connexion_bdd.php"?>
 
-<?php include "entete.php" ?>
-
+<?php include "admin.php"?>
 
 
- <div id="moncadre">
+
+
+ <div id="moncadre1">
   
   
   

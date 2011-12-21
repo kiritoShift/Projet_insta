@@ -1,30 +1,20 @@
 
-<?php include 'connexion_bdd.php'; ?>
+<?php include "admin.php"?>
 <?php
 include 'fonction.php';
 spl_autoload_register('autoClass_racine');
 ?>
-<?php include "connexion_bdd.php"?>
-<?php include "classes/mot_de_passe.php"?>
-<?php include "classes/utilisateurs.php"?>
-<?php include "entete.php" ?>
+
 
 
  <body>
- <div id="moncadre">
+ <div id="moncadre1">
  
   
   
-<html lang="fr">
- 
-  <head>
- 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- 
     <title>Page ajout MDP</title>
     <link rel="stylesheet" href="css/admin.css" />
-    
-  </head>
+
  
 	
 	<h2 align=center> Page d'ajout des mots de passe utilisateurs</h2>

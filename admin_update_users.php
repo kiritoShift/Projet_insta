@@ -1,25 +1,14 @@
-<?php include 'connexion_bdd.php'; ?>
+<?php include "admin.php"?>
 <?php
 include 'fonction.php';
 spl_autoload_register('autoClass_racine');
 ?>
-<?php include "connexion_bdd.php"?>
-<?php include "classes/mot_de_passe.php"?>
-<?php include "classes/utilisateurs.php"?>
-<?php include "entete.php" ?>
 
 
 
- <div id="moncadre">
- 
-  <head>
- 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- 
-    <title>Page modification utilisateurs</title>
-    <link rel="stylesheet" href="css/admin.css" />
-    
-  </head>
+
+
+ <div id="moncadre1">
  
 	<body>
 	<h2 align=center> Page de modification des utilisateurs</h2>

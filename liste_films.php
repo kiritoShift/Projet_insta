@@ -90,4 +90,3 @@ else
 		</table>
 </div>
 
-<?php include "baspage.php"?>
