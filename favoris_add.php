@@ -9,7 +9,4 @@ $new->avoir_films_favoris_new();
 
 ?>
 
-<html>
-   <META http-equiv="Refresh" content = "10;URL=page_user.php">
-
-</html>
+<META http-equiv="Refresh" content="0;URL=page_user.php">
