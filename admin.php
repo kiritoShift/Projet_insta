@@ -6,16 +6,16 @@
 
 
 
- <div id="moncadregauche">
 
- 
+
+ 		 
     <title>Page d'administration</title>
-
-    
-   
-	<body>
+		
+    <div id="moncadre">
 	<h1 align=center>Bienvenue sur la page d'administration</h1>
 	<br />
+	</div>
+	 <div id="moncadregauche">
 
 		<u><h3>Afficher tous les utilisateurs :</h3></u>
 			<B> 

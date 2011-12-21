@@ -68,21 +68,20 @@ else
 				<tr><td>
    					<table border=1>
    						<TR bgcolor=#ffffCC>
-     						<TD><font size="-1"><a href="liste_films.php?choix=1"><b>id</b></font></TD>
+     						<TD><font size="-1"><a href="liste_films.php?choix=1"><b>id</b></a></font></TD>
      						<TD><font size="-1"><a href="liste_films.php?choix=2"><b>Jaquette</b></a></font></TD>
-     						<TD><font size="-1"><a href="liste_films.php?choix=3"><b>titre du film</b></font></TD>
-     						<TD><font size="-1"><a href="liste_films.php?choix=4"><b>synopsys</b></font></TD>
-     						<TD><font size="-1"><a href="liste_films.php?choix=5"><b>type de film</b></font></TD>						
+     						<TD><font size="-1"><a href="liste_films.php?choix=3"><b>titre du film</b></a></font></TD>
+     						<TD><font size="-1"><a href="liste_films.php?choix=4"><b>synopsys</b></a></font></TD>
+     						<TD><font size="-1"><a href="liste_films.php?choix=5"><b>type de film</b></a></font></TD>						
      					</TR>
      					<?php while ($val = $result->fetch(PDO::FETCH_ASSOC)) { ?>
      					<TR bgcolor=white>
-     						<form method="post">
      						<TD><font size="-2"><?php echo $val["id_films"]?></font></TD>
      						<TD><font size="-2"><img src="<?php echo $val["jaquette_films"]?>" width=90 height=110 /></font></TD>
      						<TD height=110 width=200><font size="-2"><?php echo $val["titre_films"]?></font></TD>
      						<TD height=110 width=500><font size="-2"><?php echo $val["sinopsys_films"]?></font></TD>
      						<TD><font size="-2"><?php echo $val["type_films"]?></font></TD>
-      						<TD><font size="-2"></font><input name="favoris" type="image" src="images/etoile_favoris.gif"> favoris</TD>
+      						<TD><font size="-2"></font><a href="favoris_add.php?id=<? echo $val['id_films']?>" title="ajouter favoris"><img src="images/etoile_favoris.gif" alt="etoile_favoris" border="0"></a></TD>
      					</TR><?php } ?>
    					</table>
    				</td></tr>
