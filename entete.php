@@ -9,6 +9,7 @@
        	<link rel="stylesheet" media="screen" type="text/css" title="" href="css/zone_central.css" />
        	<link rel="stylesheet" media="screen" type="text/css" title="" href="css/menu_connection.css" />
        	<link rel="stylesheet" media="screen" type="text/css" title="" href="css/acceuil.css" />
+       	<link rel="stylesheet" media="screen" type="text/css" title="" href="css/menu_gauche.css" />
 </head>
 
 
@@ -29,8 +30,8 @@
   
   <a href="#">FILM</a>
   <ul class="sousMenu">
-   <li><a href="acceuil.php">Liste des films</a></li>
-   <li><a href="#">A VENIR</a></li>
+   <li><a href="liste_films.php">Liste des films</a></li>
+   <li><a href="acceuil.php">A VENIR</a></li>
   </ul>
  </li>
  
