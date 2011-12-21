@@ -3,7 +3,10 @@ include_once ("connexion_bdd.php");
 include("fonction.php");
 spl_autoload_register('autoClass_racine');
 
-$new=new avoir_films_favoris($_SESSION['pseudo_users'], $_GET['id']);
+$id_users= new utilisateurs("",$_SESSION['pseudo_users'],"","","","","","","","");
+$id_users=$id_users->users_get_id();
+
+$new=new avoir_films_favoris($id_users, $_GET['id']);
 $new->avoir_films_favoris_delete();
 
 
