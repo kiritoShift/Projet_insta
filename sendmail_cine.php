@@ -4,29 +4,26 @@ include "/classes/PHPMailer_5.2.0/class.phpmailer.php";
 include 'fonction.php';
 spl_autoload_register('autoClass_racine');
 
-
 $query = $conn->prepare("
 						SELECT utilisateurs.email_users, sortir.date_sortie, films.titre_films, films.jaquette_films
 						FROM sortir, avoir_films_favoris, utilisateurs, films
 						WHERE avoir_films_favoris.id_films = sortir.id_films
 						AND avoir_films_favoris.id_users = utilisateurs.id_users
 						AND sortir.id_films=films.id_films
-						AND type_sortie_films = 'dvd';
+						AND type_sortie_films = 'cine';
 						");
 $query->execute(array());
 $tab_sortir= $query->fetchAll(PDO::FETCH_OBJ);
-
 
 foreach ($tab_sortir as $tab){
 	
 	$body=" <html> 
 			<body align='center'>
-				Votre film va sortir en dvd <br />
+				Votre film va sortir au cinéma <br />
 				<img height='400' width='300' src='".$tab->jaquette_films."' alt='Pas d'image disponible'><br />
 				Date de sortie : ".$tab->date_sortie."
 			</body>
 		</html>  ";
-	
 	$date_limite=date( "Y-m-d");
 	$date_limite=date( "Y-m-d", time() + 7 * 24 * 60 * 60 );
 	if ($tab->date_sortie < $date_limite){
