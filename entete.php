@@ -21,31 +21,22 @@
 			<ul id="menuDeroulant">
 			 <li>
 			  <a href="acceuil.php">Acceuil</a>
-			  <ul class="sousMenu">
-			  </ul>
 			 </li>
 			 
 			 <li>
-			  <a href="#">DVD</a>
+			  <a href="#">Films</a>
 			  <ul class="sousMenu">
-			   	<li><a href="#">Liste des DVD</a></li>
-			   	<li><a href="#">A VENIR</a></li>
+			   	<li><a href="liste_films_cine.php">Ciné</a></li>
+			   	<li><a href="liste_films_dvd.php">Dvd</a></li>
 			 </ul>
 			 </li>
 			 
 			 <li>
-			  <a href="#">BLUE RAY</a>
-			  <ul class="sousMenu">
-			   	<li><a href="#">Liste des Blue</a></li>
-			   	<li><a href="#">A VENIR</a></li>
-			 </ul>
+			  <a href="page_user.php">Ma page</a>			  
 			 </li>
 			
 			 <li>
-			  <a href="#">ACTUALITER</a>
-			  <ul class="sousMenu">
-			   	<li><a href="#">Test</a></li>
-			 </ul>
+			  <a href="#">Actu</a>
 			 </li>
 			
 			</ul>
