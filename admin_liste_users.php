@@ -1,11 +1,9 @@
-<?php include 'connexion_bdd.php'; ?>
+
 <?php
 include 'fonction.php';
 spl_autoload_register('autoClass_racine');
 ?>
-<?php include "classes/mot_de_passe.php"?>
-<?php include "classes/utilisateurs.php"?>
-<?php include "entete.php" ?>
+<?php include "admin.php"?>
 <?php
 $choix=0;
 if(isset($_GET["choix"]))
