@@ -11,7 +11,3 @@
 <div id="bla">
 
 </div>
-
-
-
-<?php include "baspage.php"?>

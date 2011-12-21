@@ -1,16 +1,14 @@
-<?php include 'connexion_bdd.php'; ?>
+
+<?php include "admin.php"?>
 <?php
 include 'fonction.php';
 spl_autoload_register('autoClass_racine');
 ?>
-<?php include "connexion_bdd.php"?>
-<?php include "classes/mot_de_passe.php"?>
-<?php include "classes/utilisateurs.php"?>
-<?php include "entete.php" ?>
 
 
 
- <div id="moncadre">
+
+ <div id="moncadre1">
 
  
   <head>

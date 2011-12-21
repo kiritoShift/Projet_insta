@@ -42,7 +42,7 @@ else
 			}
 			else
 			{
-				$result=$conn->prepare("SELECT *, pseudo_users FROM avoir_films_favoris, films, utilisateurs WHERE utilisateurs.id_users = avoir_films_favoris.id_users AND films.id_films = avoir_films_favoris.id_films AND pseudo_users = 'toto' ");
+				$result=$conn->prepare("SELECT *, pseudo_users FROM avoir_films_favoris, films, utilisateurs WHERE utilisateurs.id_users = avoir_films_favoris.id_users AND films.id_films = avoir_films_favoris.id_films");
 				$result->execute();
 			}}}}
 			?>
