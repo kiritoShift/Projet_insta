@@ -41,8 +41,8 @@ foreach ($tab_sortir as $tab){
 		// ajout d'une image
 		//$mail->AddEmbeddedImage("chemin_image", "non_image", "cid_image");
 
-		$mail->From = 'couraud.boris@gmail.com';
-		$mail->FromName = 'Boris Couraud';
+		$mail->From = '';
+		$mail->FromName = '';
 		$mail->AddAddress($tab->email_users);
 		$mail->AddReplyTo($tab->email_users);
 		$mail->Subject = 'Votre film va sortir au cinema';
