@@ -34,8 +34,8 @@ foreach ($tab_sortir as $tab){
 		$mail->IsSMTP();
 		$mail->Host = 'ssl://smtp.gmail.com:465';
 		$mail->SMTPAuth = true; // Si votre serveur requiert une authentification.
-		$mail->Username = 'couraud.boris@gmail.com';
-		$mail->Password = 'almoukabalass75017';
+		$mail->Username = '';
+		$mail->Password = '';
 		$mail->IsHTML(true); // Envoi en html
 
 		// ajout d'une image
